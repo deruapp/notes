@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+ <html lang="pl">
+ <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/notes/assets/css/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/ekko-lightbox.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/highlight.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/style.css" />
+
+    <script src="/notes/assets/js/libs/jquery-3.6.0.min.js"></script>
+    <script src="/notes/assets/js/libs/bootstrap.min.js"></script>
+    <script src="/notes/assets/js/libs/ekko-lightbox.min.js"></script>
+    <script src="/notes/assets/js/libs/highlight.min.js"></script>
+
+    <title>Notatki z informatyki stosowanej</title>
+ </head>
+ <body>
+    <div class="container" id="main-container">
+    <header class="note-section card card-body bg-light">
+        <h1>Podstawy programowania (wykłady, semestr  1)</h1>
+
+        <nav>
+            <ul class="nav nav-tabs">
+                
+        
+                
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/notes/notepage/sem1/lectures/podstawy_programowania/wyk_podstawy_programowania_notatki/">Notatki z zajęć</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem1/lectures/podstawy_programowania/wyk_podstawy_programowania_materialy/">Opracowania i materiały do nauki</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem1/lectures/podstawy_programowania/wyk_podstawy_programowania_info/">Informacje o zaliczeniu i prowadzącym</a>
+                    </li>
+                
+            </ul>
+        </nav>
+    
+        <p style="margin-top: 20px;"><a href="/notes/">(&larr; powrót do strony głównej)</a></p>
+    </header>
+
+    <section class="note-section card card-body bg-light">
+    <h1>Garść definicji</h1>
+
+    <div class="note-subsection">
+        <strong>Kompilator:</strong>
+        <ul>
+            <li>program tłumaczący kod źródłowy na inny kod, najczęściej maszynowy</li>
+            <li>taki kod maszynowy posiada adresy względne i trzeba go potraktować linkerem, aby dostać program możliwy do odpalenia</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Konsolidator (inaczej linker):</strong>
+        <ul>
+            <li>program łączący skompilowane "pliki obiektowe" w jeden plik wykonywalny</li>
+            <li>dołącza do pliku wykonywalnego biblioteki</li>
+            <li>zamienia adresy względne "wyplute" przez kompilator na adresy bezwzględne</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>IDE:</strong>
+        <ul>
+            <li>integrated development environment</li>
+            <li>zintegrowane środowisko programistyczne, bardzo ułatwiające programowanie</li>
+            <li>przykładowe IDE to PyCharm, CLion i Visual Studio</li>
+            <li>nie mylić z dyskami IDE (Integrated Drive Electronics)</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Narzędzia RAD:</strong>
+        <ul>
+            <li>rapid application development</li>
+            <li>narzędzia RAD to rozwinięcie konceptu IDE</li>
+            <li>bardzo ułatwiają tworzenie na przykład interfejsów graficznych</li>
+            <li>w narzędziach RAD interfejsy graficzne tworzy się metodą przeciągnij-i-upuść</li>
+            <li>przykładowe narzędzia RAD to Visual Studio, C++ Builder</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>API:</strong>
+        <ul>
+            <li>application programming interface</li>
+            <li>są to polecenia, które można wykorzystywać przy programowaniu</li>
+            <li>dzięki ich użyciu, nasz program ma dostęp do pewnych funkcji innego programu</li>
+            <li>na przykład dzięki API Allegro możemy stworzyć program, który kupuje coś na Allegro</li>
+        </ul>
+    </div>
+
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Podstawy C</h1>
+
+    <div class="note-subsection">
+        <strong>Typy danych:</strong>
+
+        <ol>
+            <li>
+                Typy proste
+                <ul>
+                    <li>int, float, double, bool, char (i ich odmiany)</li>
+                    <li>
+                        typy specjalne
+                        <ul>
+                            <li>void - typ nieokreślony, pusty typ danych (używamy go gdy funkcja nie zwraca żadnych danych)</li>
+                            <li>wskaźnik - przechowuje adres w pamięci komputera, gdzie znajdują się jakieś określone dane</li>
+                            <li>referencja - oznaczana znakiem &amp;, jest to numer jakiejś komórki w pamięci komputera</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Typy złożone (składają się z innych typów)
+                <ul>
+                    <li>struct</li>
+                    <li>union</li>
+                    <li>class</li>
+                    <li>array</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Komentarze w C i CPP:</strong>
+        <p>Uwaga, komentarzy nie wolno zagnieżdżać!</p>
+        <pre><code>
+            /*komentarz wielolinijkowy*
+            // komentarz jednolinijkowy
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Podstawowe biblioteki:</strong>
+        <pre><code>
+            // standardowe wejście/wyjście
+            #include &lt;stdio.h&gt;
+            // dodatkowe funkcje wejścia/wyjścia
+            #include &lt;conio.h&gt; 
+        </code></pre>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>System binarny</h1>
+
+    <div class="note-subsection">
+        <strong>Jak komputer przechowuje liczby ujemne?</strong>
+        <p>Reprezentacja U2</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Najstarszy i najmłodszy bit</strong>
+        <p>Najstarszy bit to najczęściej ten najbardziej po lewej, a najmłodszy najbardziej po prawej.</p>
+        <p>Najstarszy jest najważniejszy, bo ma najwyższą wartość. Najmłodszy jest najmniej ważny, bo ma najmniejszą wartość.</p>
+        <p><u>10010</u> - 1 jest najstarszym bitem, a 0 najmłodszym</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>System liczbowy U2</strong>
+        <p>C i C++ używają systemu U2 (kodu uzupełnień do dwóch), aby przechowywać wartości ujemne.</p>
+        <p>W takim kodzie najbardziej znaczący bit zawsze przyjmuje wartość ujemną</p>
+        <p>Więcej o tym systemie można doczytać tu: <a href="http://www.algorytm.edu.pl/systemy-liczbowe/u2.html" target="_blank">(link do artykułu)</a></p>
+        <p>00000010<sub>u2</sub> = 2<sub>dec</sub> (najbardziej znaczący bit to 0, więc liczba dodatnia)</p>
+        <p>10000000<sub>u2</sub> = -128<sub>dec</sub> (najbardziej znaczący bit to 1, więc liczba ujemna)</p>
+        <p>11111111<sub>u2</sub> = -1<sub>dec</sub> (same jedynki w systemie U2 zawsze oznaczają liczbę -1</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Operatory bitowe</h1>
+
+    <ul>
+        <li>a | b</li>
+        <li>a & b</li>
+        <li>a ^ b</li>
+        <li>a &lt;&lt; b</li>
+        <li>a &gt;&gt; b</li>
+    </ul>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Kwalifikatory znaku i długości zmiennych</h1>
+
+    <pre><code>
+        signed int x; // typ x ze znakiem, taka zmienna może być dodatnia lub ujemna
+        unsigned int xx; // typ x bez znaku, taka zmienna zawsze będzie większa lub równa od zera
+        long int xxx; // normalny int jest zwykle 32-bitowy, a long int jest 64-bitowy
+        short int xxxx; // normalny int jest zwykle 32-bitowy, a short int jest 16-bitowy
+
+        // zamiast 'signed int' można pisać po prostu 'int'
+    </code></pre>
+
+    <p><strong>Uwaga!</strong> Nie powinno się porównywać zmiennych unsigned ze zmiennymi signed.</p>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Wczytywanie i wyświetlanie danych z konsoli</h1>
+
+    <div class="note-subsection">
+        <strong>Funkcje wymagające dołączenia biblioteki stdio.h</strong>
+        <pre><code>
+            printf("Drukowanie na ekranie)
+            scanf("&d", &nazwazmiennej)  // wcztytywanie danych ze standardowego wejścia i konwersja
+            gets(tablica)  // wczytuje stringi ze standardowego wejścia do tablicy
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Wybrane modyfikatory funkcji print:</strong>
+        <ul>
+            <li>%s (znaki)</li>
+            <li>%d, %04d (liczba całkowita)</li>
+            <li>%f, %.2f, %06.2f (float)</li>
+            <li>%x (postać heksadecymalna, hex)</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Znaki specjalne</strong>
+        <ul>
+            <li>\a dzwonek</li>
+            <li>\n nowa linia</li>
+            <li>\r carriage return [kursor wraca na początek linii]</li>
+            <li>\t tabulator poziomy</li>
+            <li>\v tabulator pionowy</li>
+        </ul>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Instrukcje</h1>
+
+    <strong>Trzeba znać zasadę działania następujących instrukcji:</strong>
+    <ul>
+        <li>if</li>
+        <li>switch</li>
+        <li>for</li>
+        <li>while</li>
+        <li>do-while</li>
+    </ul>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Zmienne i ich rodzaje</h1>
+
+    <div class="note-subsection">
+        <strong>Zachowanie zmiennych globalnych:</strong>
+        <pre><code>
+            int x;
+            int main() {
+                int y;
+
+                printf("%d", x); // spowoduje wyświetlenie 0 (bo zmienne globalne mają wartości domyślne)
+                printf("%d", y); // spowoduje błąd kompilacji, bo podjęto próbę pobrania wartości niezainicjalizowanej zmiennej lokalnej
+            }
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Zmienne register:</strong>
+        <pre><code>
+            register int x = 20;
+        </code></pre>
+        <p>Zmienne typu register z założenia są cały czas przechowywane w rejestrze procesora. W praktyce jest to jednak tylko wskazówka, dla przykładu w Windowsie nie ma możliwości utworzenia zmiennej register.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Zmienne extern:</strong>
+        <pre><code>
+            extern int x;
+        </code></pre>
+        <p>Zmienna typu extern to deklaracja zmiennej globalnej, która znajduje się w jakimś innym pliku.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Zmienne static:</strong>
+        <pre><code>
+            static int x;
+        </code></pre>
+        <p>Zmienna typu static zachowuje swoją wartość w poszczególnych wywołaniach danej funkcji</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Stałe</h1>
+
+    <div class="note-subsection">
+        <strong>Przy użyciu dyrektyw preprocesora:</strong>
+        <pre><code>#define PI 3.14</code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przy użyciu słowa kluczowego const:</strong>
+        <pre><code>const float PI = 3.14;</code></pre>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Funkcje</h1>
+
+    <div class="note-subsection">
+        <strong>Podział funkcji</strong>
+        <ol>
+            <li>Funkcje globalne</li>
+            <li>Funkcje składowe (związane z obiektami jakichś klas)</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Inny podział funkcji</strong>
+        <ol>
+            <li>Funkcje wbudowane</li>
+            <li>Funkcje zdefiniowane przez użytkownika (programistę)</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Deklaracja a definicja</strong>
+        <pre><code>
+            // to są definicje
+            int dodaj(int, int);
+            int odejmij(int a, int b);
+            
+            // to jest deklaracja
+            int pomnoz(int a, int b) {return a*b;}
+        </code></pre>
+        <p>Definicja funkcji to inaczej jej prototyp.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Makroinstrukcje</strong>
+
+        <p>Makroinstrukcje – dyrektywy preprocesora działające jak funkcje (mogą przyjmować argumenty</p>
+
+        <pre><code>
+            #define DANE printf("Podaj dane użyszkodniku")
+            #define max(x,y) ((x)>(y)?(x):(y))
+        </code></pre>
+
+        <p>Jedna makroinstrukcja może nawet wywoływać drugą</p>
+
+        <p>Makroinstrukcje mogą być wielolinijkowe – wtedy trzeba umieścić znak \ na końcu linijki</p>
+    </div>
+
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Tablice</h1>
+
+    <div class="note-subsection">
+        <strong>Tablica jednowymiarowa:</strong>
+        <pre><code>int elo[3] = {1, 2, 3};</code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Tablica wielowymiarowa:</strong>
+        <pre><code>
+            int elo[3][4] = {&lcub;1,2, 3, 4}, {3, 4, 5, 6}, {5, 6, 7, 8&rcub;};
+            int elo2[2][2] = {1, 2, 3, 4};
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>O tablicach:</strong>
+        <ul>
+            <li>Tablica to uporządkowana kolekcja danych jednego typu.</li>
+            <li>Tablice mogą być automatic, static i external. Nie mogą być register!!</li>
+            <li>Tablice static i globalne są wypełniane zerami (lub ogólnie wartościami domyślnymi).</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Uwaga!</strong>
+        <pre><code>
+            const int X = 5;
+            int elo[X]; // niedozwolone, trzeba użyć #define X 5
+        </code></pre>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Struktury</h1>
+
+    <div class="note-subsection">
+        <strong>Jak definiować struktury?</strong>
+        <pre><code>
+            struct punkt {
+                int x;
+                int y;
+            } p1, p2;  // zmienne strukturalne (globalne zmienne utworzone na podstawie danej struktury)
+        
+            p1.x = 20;
+        
+            struct {
+                int x;
+                int y;
+            } pp11, pp22; // gdy zadeklarowaliśmy zmienne strukturalne, struktura nie musi mieć nazwy
+        </code></pre>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Dyrektywa preprocesora - typedef</h1>
+
+    <pre><code>
+        #typedef unsigned long int uli
+        uli liczba1, liczba2; // uli to od teraz skrócony zapis dla unsigned long int
+    </code></pre>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Wskaźniki</h1>
+
+    <pre><code>
+        w = &amp;z  // przypisz do w adres zmiennej z
+        z = *w  // przypisz do z wartość, na którą wskazuje wskaźnik w (wyłuskiwanie wartości)
+        w++, w--  // zwiększa adres zmiennej, na jaką wskazuje wskaźnk o 1
+        w1 == w2 // czy wskaźniki wskazują na te samą zmienną?
+        w1 = w2  // podstaw pod w1 adres zmiennej na jaką wskazuje w2
+
+        int x = 5;
+        printf("%d", sizeof(s));
+        // Wszystkie wskaźniki mają ten sam rozmiar.
+
+        wsk = 0;
+        wsk = NULL;
+        wsk = &amp;k;
+        wsk = (int*) 25550; // absolutny adres w pamięci
+
+        register int x = 20;
+        int *wsk = &amp;x; //niepoprawne, zmienne rejestrowe nie mają adresu
+    </code></pre>
+</section>
+</div>
+
+
+    <script>hljs.highlightAll();</script>
+    <script src="/notes/assets/js/normalize-indents.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+ </body>
+</html>

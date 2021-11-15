@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+ <html lang="pl">
+ <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/notes/assets/css/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/ekko-lightbox.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/highlight.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/style.css" />
+
+    <script src="/notes/assets/js/libs/jquery-3.6.0.min.js"></script>
+    <script src="/notes/assets/js/libs/bootstrap.min.js"></script>
+    <script src="/notes/assets/js/libs/ekko-lightbox.min.js"></script>
+    <script src="/notes/assets/js/libs/highlight.min.js"></script>
+
+    <title>Notatki z informatyki stosowanej</title>
+ </head>
+ <body>
+    <div class="container" id="main-container">
+    <header class="note-section card card-body bg-light">
+        <h1>Narzędzia programistyczne (wykłady, semestr  1)</h1>
+
+        <nav>
+            <ul class="nav nav-tabs">
+                
+        
+                
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/notes/notepage/sem1/lectures/narzedzia_programistyczne/wyk_narzedzia_programistyczne_notatki/">Notatki z zajęć</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem1/lectures/narzedzia_programistyczne/wyk_narzedzia_programistyczne_materialy/">Opracowania i materiały do nauki</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem1/lectures/narzedzia_programistyczne/wyk_narzedzia_programistyczne_info/">Informacje o zaliczeniu i prowadzącym</a>
+                    </li>
+                
+            </ul>
+        </nav>
+    
+        <p style="margin-top: 20px;"><a href="/notes/">(&larr; powrót do strony głównej)</a></p>
+    </header>
+
+    <section class="note-section card card-body bg-light">
+    <h1>Języki kompilowane i interpretowane</h1>
+
+    <div class="note-subsection">
+        <strong>Można wyróżnić trzy grupy języków:</strong>
+        <ul>
+            <li>
+                interpretowane (skryptowe)
+                <ul>
+                    <li>aby uruchomić program (skrypt) w takim języku, konieczne jest posiadanie interpretera</li>
+                    <li>na przykład Python, JavaScript</li>
+                </ul>
+            </li>
+            <li>
+                kompilowane do postaci kodu maszynowego
+                <ul>
+                    <li>napisany program jest tłumaczony bezpośrednio na kod maszynowy, który jest wykonywany przez procesor</li>
+                    <li>na przykład C, C++, Rust</li>
+                </ul>
+            </li>
+            <li>
+                kompilowane do postaci kodu bajtowego
+                <ul>
+                    <li>napisany program jest tłumaczony do postaci kodu bajtowego, który nie jest wykonywany przez procesor, a przez maszynę wirtualną (na przykład JVM)</li>
+                    <li>na przykład C#, Java, Kotlin</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <p>Każdy język ma swoje zastosowania i zasadniczo żaden nie jest uniwersalny. Trzeba znać różnice między językami (i ich rodzajami) i wybierać konkretny język do danego zastosowania.</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Automatyczne dokumentowanie kodu</h1>
+
+    <div class="note-subsection">
+        <p>Systemy automatycznego dokumentowania kodu umożliwiają generowanie dokumentacji na podstawie komentarzy o określonej składni.</p>
+        <p>Dokumentacja taka może być wyświetlana jako podpowiedź w IDE, lub można na jej podstawie wygenerować dokument (na przykład dokument HTML).</p>
+    </div>
+
+    <div class="note-subsection">
+        <p>Przykładowe systemy automatycznego dokumentowania kodu to Javadoc (do Javy) i Pydoc (do Javy).</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przykładowy wygląd komentarza (na przykładzie Javadoc):</strong>
+        <pre><code>
+            /**
+            * Metoda zwracająca sumę dwóch liczb
+            * @param liczba1    Pierwszy składnik sumy
+            * @param liczba2    Drugi składnik sumy
+            * @return           Suma liczb przekazanych jako argument metody
+            */
+            int suma(int liczba1, int liczba2) {
+                return liczba1 + liczba2;
+            }
+        </code></pre>
+    </div>
+
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Debugger</h1>
+
+    <div class="note-subsection">
+        Debugger pozwala śledzić przebieg wykonania aplikacji linijka po linijce. Można dzięki temu analizować jakie linie kodu wykonują się w danej kolejności i jaki jest stan poszczególnych zmiennych w różnych momentach wykonywania programu.
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przykładowe polecenia debuggera:</strong>
+        <p>(takie same lub bardzo podobne występują we większości debuggerów)</p>
+        <ul>
+            <li>
+                step into<br/>
+                wykonuje po kolei kod programu po jednej instrukcji<br/>
+                step into powoduje wykonywanie instrukcji, która jest w aktualnym miejscu wykonania programu; jeżeli instrukcja ta jest wywołaniem procedury, nastepną wyświetloną instrukcją jest pierwsza instrukcja w tej procedurze.
+            </li>
+            <li>
+                step into<br/>
+                działanie podobne do step into, za wyjątkiem przypadku gdy instrukcja zawiera wywołanie procedury<br/>
+                step over wykonuje procedurę jako jedną jednostkę, i przechodzi do następnej instrukcji w aktualnej procedurze<br/> dlatego też, następną wyświetlaną instrukcją jest kolejna instrukcja w aktualnej procedurze, niezależnie czy jest ona wywołaniem innej procedury
+            </li>
+            <li>
+                step out<br/>
+                powoduje wykonanie pozostałych linii funkcji, która jest aktuanie wykonywana<br/>
+                nastepną wyświetlaną instrukcją, jest instrukcja nastepująca po wywołaniu procedury<br/>
+                wykonywane są wszystkie linie kodu pomiędzy aktualnym punktem i końcowym
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Systemy automatycznego budowania</h1>
+
+    <div class="note-subsection">
+        Systemy automatycznego budowania bardzo ułatwiają budowanie gotowych aplikacji. Takie systemy pozwalają w uporządkowany sposób zarządzać zagadnieniami takimi jak: kompilacja, testowanie, budowanie czy wynajdowanie i pobieranie zależności.
+    </div>
+
+    <div class="note-subsection">
+        Ważnyl elementem, który bardzo przyśpiesza budowanie aplikacji, jest system przeciwdziałający rekompilacji plików, które się nie zmieniły. System automatycznego budowania bada zmiany w plikach i będzie rekompilował tylko te, w których nastąpiły jakieś zmiany. Jest to szczególnie przydatne w ogromnych projektach, w których bez takiego systemu kompilacja trwałaby długie godziny.
+    </div>
+
+    <div class="note-subsection">
+        Przykładowe systemy budowania to Maven i Gradle. Oba umożliwiają budowanie aplikacji napisanych w Javie. 
+    </div>
+
+    <div class="note-subsection">
+        <strong>Etapy budowania aplikacji w Mavenie:</strong>
+        <ol>
+            <li>compile (kompiluj pliki)</li>
+            <li>compile-test (kompiluj testy jednostkowe)</li>
+            <li>test (wykonaj testy jednostkowe)</li>
+            <li>package (pakowanie skompilowanego programu i zasobów, np. do pliku jar)</li>
+            <li>install (instalowanie)</li>
+        </ol> 
+        <p>Jeżeli któryś z etapów budowania się nie powiedzie, to następne nie są wykonywane.</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>IDE</h1>
+
+    <div class="note-subsection">
+        <p><span class="note-term">IDE</span> - Integrated Development Environment</p>
+    </div>
+
+    <div class="note-subsection">
+        <p>IDE umożliwia:</p>
+
+        <ul>
+            <li>tworzenie i edycję kodu źródłowego (uzupełnianie składni)</li>
+            <li>kompilację, debugowanie i profilowanie</li>
+            <li>tworzenie testów</li>
+            <li>zarządzanie zależnościami (zależnośc = biblioteka)</li>
+            <li>edycję GUI, edycję baz danych</li>
+            <li>integrację z oprogramowaniem zewnętrznym (np. serwerem aplikacji)</li>
+            <li>automatyczne generowanie diagramów, kodu i dokumentacji</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <p>Za najlepsze IDE uznaje się między innymi programy Jetbrains. Ich przykładowe IDE to PyCharm (do Pythona), PhpStorm (do PHP) i CLion (do C/C++).</p>
+    </div>
+
+    <div class="note-subsection">
+        <p><strong>Ctrl + Spacja</strong> - bardzo przydatny skrót, występuje we większości IDE; wywołuje on system podpowiadania, który może podpowiedzieć programiście jak dokończyć daną linijkę lub jak rozwiązać jakiś błąd, który wystąpił</p>
+    </div>
+</section>
+
+</div>
+
+
+    <script>hljs.highlightAll();</script>
+    <script src="/notes/assets/js/normalize-indents.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+ </body>
+</html>

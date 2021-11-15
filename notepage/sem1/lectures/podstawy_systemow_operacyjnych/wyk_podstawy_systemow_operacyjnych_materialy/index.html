@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+ <html lang="pl">
+ <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/notes/assets/css/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/ekko-lightbox.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/highlight.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/style.css" />
+
+    <script src="/notes/assets/js/libs/jquery-3.6.0.min.js"></script>
+    <script src="/notes/assets/js/libs/bootstrap.min.js"></script>
+    <script src="/notes/assets/js/libs/ekko-lightbox.min.js"></script>
+    <script src="/notes/assets/js/libs/highlight.min.js"></script>
+
+    <title>Notatki z informatyki stosowanej</title>
+ </head>
+ <body>
+    <div class="container" id="main-container">
+    <header class="note-section card card-body bg-light">
+        <h1>Podstawy systemów operacyjnych (wykłady, semestr  1)</h1>
+
+        <nav>
+            <ul class="nav nav-tabs">
+                
+        
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem1/lectures/podstawy_systemow_operacyjnych/wyk_podstawy_systemow_operacyjnych_notatki/">Notatki z zajęć</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/notes/notepage/sem1/lectures/podstawy_systemow_operacyjnych/wyk_podstawy_systemow_operacyjnych_materialy/">Opracowania i materiały do nauki</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem1/lectures/podstawy_systemow_operacyjnych/wyk_podstawy_systemow_operacyjnych_info/">Informacje o zaliczeniu i prowadzącym</a>
+                    </li>
+                
+            </ul>
+        </nav>
+    
+        <p style="margin-top: 20px;"><a href="/notes/">(&larr; powrót do strony głównej)</a></p>
+    </header>
+
+    <section class="note-section card card-body bg-light">
+    <h1>Prezentacje z wykładów:</h1>
+    <ul>
+        <li>Prezentacja 1: <a href="../files/prez_1.pdf" target="_blank">(link 1)</a></li>
+        <li>Prezentacja 2: <a href="../files/prez_2.pdf" target="_blank">(link 2)</a></li>
+        <li>Prezentacja 3: <a href="../files/prez_3.pdf" target="_blank">(link 3)</a></li>
+        <li>Prezentacja 4: <a href="../files/prez_4.pdf" target="_blank">(link 4)</a></li>
+        <li>Prezentacja 5: <a href="../files/prez_5.pdf" target="_blank">(link 5)</a></li>
+        <li>Prezentacja 6: <a href="../files/prez_6.pdf" target="_blank">(link 5)</a></li>
+    </ul>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Opracowania:</h1>
+    <ul>
+        <li>Opracowanie nr 1 [by Pepe&amp;Temus]: <a href="../files/opr-pepe-temus.pdf" target="_blank">(link 1)</a></li>
+    </ul>
+</section>
+</div>
+
+
+    <script>hljs.highlightAll();</script>
+    <script src="/notes/assets/js/normalize-indents.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+ </body>
+</html>

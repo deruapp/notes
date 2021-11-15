@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+ <html lang="pl">
+ <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/notes/assets/css/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/ekko-lightbox.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/highlight.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/style.css" />
+
+    <script src="/notes/assets/js/libs/jquery-3.6.0.min.js"></script>
+    <script src="/notes/assets/js/libs/bootstrap.min.js"></script>
+    <script src="/notes/assets/js/libs/ekko-lightbox.min.js"></script>
+    <script src="/notes/assets/js/libs/highlight.min.js"></script>
+
+    <title>Notatki z informatyki stosowanej</title>
+ </head>
+ <body>
+    <div class="container" id="main-container">
+    <header class="note-section card card-body bg-light">
+        <h1>Algorytmy i struktury danych (wykłady, semestr  1)</h1>
+
+        <nav>
+            <ul class="nav nav-tabs">
+                
+        
+                
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/notes/notepage/sem1/lectures/algorytmy_i_struktury_danych/wyk_algorytmy_i_struktury_danych_notatki/">Notatki z zajęć</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem1/lectures/algorytmy_i_struktury_danych/wyk_algorytmy_i_struktury_danych_materialy/">Opracowania i materiały do nauki</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem1/lectures/algorytmy_i_struktury_danych/wyk_algorytmy_i_struktury_danych_info/">Informacje o zaliczeniu i wykładowcy</a>
+                    </li>
+                
+            </ul>
+        </nav>
+    
+        <p style="margin-top: 20px;"><a href="/notes/">(&larr; powrót do strony głównej)</a></p>
+    </header>
+
+    <section class="note-section card card-body bg-light">
+    <h1>Czym jest algorytm? 🤔</h1>
+
+    <div class="note-subsection">
+        <strong>Bardzo ważne, definicja algorytmu:</strong><br />
+        <em>Można ją zapisać własnymi słowami, ale musi być zachowany poniższy sens:</em><br/>
+        skończony uporządkowany ciąg jasno zdefiniowanych czynności koniecznych do wykonania pewnego zadania
+    </div>
+
+    <div class="note-subsection">
+        <strong>Sposoby zapisu algorytmu:</strong><br />
+        <ul>
+            <li>język naturalny</li>
+            <li>pseudokod</li>
+            <li>schemat blokowy</li>
+            <li>język programowania</li>
+            <li>lista kroków</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Podziały algorytmów:</strong><br />
+        <ul>
+            <li>proste (liniowe) lub rozgałęzione</li>
+            <li>rekurencyjne, iteracyjne</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Cechy algorymu:</strong><br />
+        <ul>
+            <li>posiada pewne dane wejściowe i dane wyjściowe</li>
+            <li>posiada złożoność (musi być w jakiś sposób złożony, jeśli coś przykładowo tylko drukuje dane z wejścia na wyjście, to nie jest algorytmem)</li>
+            <li>skończony (nie może wykonywać się w nieskończoność!)</li>
+            <li>określony deterministycznie [zawsze dla tego samego wejścia jest to samo wyjście; brak losowości]</li>
+        </ul>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Trochę wstępnych informacji</h1>
+
+    <div class="note-subsection">
+        <strong>Należy znać pojęcia:</strong><br />
+        <ul>
+            <li>LIFO (last in, first out)</li>
+            <li>FIFO (first in, first out)</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Typy danych, które będziemy używać w algorytmach:</strong><br />
+        <ul>
+            <li>liczby (całkowite, dziesiętne, dwójkowe)</li>
+            <li>znaki (litery, ciągi liter)</li>
+            <li>wskaźniki (wyznaczają adresy innych obiektów)</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Rodzaje pamięci:</strong><br />
+        <ul>
+            <li>rejestry procesora</li>
+            <li>pamięć operacyjna (i plik wymiany)</li>
+            <li>dyski twarde</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        STRUKTURY DANYCH + ALGORYTMY = WYNIKI (rozwiązanie problemu)
+    </div>
+
+    <div class="note-subsection">
+        <strong>Ważna uwaga:</strong>
+        Informacje to nie to samo co dane!
+    </div>
+
+    <div class="note-subsection">
+        <strong>Informatyka zajmuje się informacją, która:</strong>
+        <ol>
+            <li>przechowywana jest w strukturach danych</li>
+            <li>przetwarzana za pomocą algorytmów</li>
+        </ol>
+    </div>
+
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Schemat blokowy</h1>
+
+    <strong>Rodzaje bloków występujących w schematach blokowych:</strong> <br />
+
+    <a href="../img/bloki_w_schemacie_blokowym.png" data-toggle="lightbox">
+        <img src="../img/bloki_w_schemacie_blokowym.png" class="note-img img-fluid" style="width: 250px;" />
+    </a>
+
+    <p><em>Uwaga prowadzącego: najlepiej rysować schematy blokowe w taki sposób, aby miały jeden początek i jeden koniec (aby nie było kilku bloków kończących)</em></p>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Liczby zespolone</h1>
+
+    <div class="note-subsection">
+        <a href="../img/delta_w_liczbach_zespolonych.png" data-toggle="lightbox">
+            <img src="../img/delta_w_liczbach_zespolonych.png" class="note-img img-fluid" style="width: 360px;" />
+        </a>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Algorytm liczenia równania kwadratowego (razem z wynikami zespolonymi):</strong><br />
+        <a href="../img/liczenie_delty_schemat_blokowy.jpg" data-toggle="lightbox">
+            <img src="../img/liczenie_delty_schemat_blokowy.jpg" class="note-img img-fluid" style="width: 160px;" />
+        </a>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Struktury danych</h1>
+    <ol>
+        <li>Tablice jednowymiarowe (wektory)</li>
+        <li>
+            Tablice wielowymiarowe (macierze)<br />
+            W macierzy najczęściej pierwszym indeksem jest wiersz, drugim kolumna (tak jak na matematyce)
+        </li>
+        <li>
+            Stos
+            <ul>
+                <li>Działa zgodnie z zasadą LIFO</li>
+                <li>Ma funkcje Push i Pop</li>
+                <li>Każdy element na stosie składa się z przechowywanej zmiennej + wskaźnika przechowującego kolejny element na stosie</li>
+                <li>
+                    Dodatkowe funkcje stosu:
+                    <ol>
+                        <li>Top – przechowuje wskaźnik do szczytu stosu</li>
+                        <li>Przepełnienie - dla stosu o zadeklarowanej maksymalnej wielkości</li>
+                        <li>Stos pusty – sprawdza czy stos jest pusty</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>
+            Kolejka
+            <ul>
+                <li>Działa zgodnie z zasadą FIFO</li>
+                <li>Liniowa struktura danych</li>
+                <li>Elementy pobieramy z początku</li>
+                <li>Nowe elementy wstawiamy na koniec</li>
+                <li>Pierwszy element nazywamy głową, ostatni element nazywamy ogonem</li>
+            </ul>
+        </li>
+        <li>
+            Lista
+            <ul>
+                <li>Liniowa struktura danych</li>
+                <li>Lista to ciąg elementów, w którym każdy element pamięta swojego następcę i poprzednika</li>
+                <li>Pozwala wstawiać elementy w dowolnym miejscu</li>
+                <li>Lista umożliwia symulowanie zarówno kolejki, jak i stosu</li>
+                <li>
+                    Podstawowe funkcje listy:
+                    <ul>
+                        <li>Search(L, x) – znajduje wskaźnik do elementu o kluczu x, bądź NULL jeśli nie ma elementu z kluczem</li>
+                        <li>Insert(L, x, w) – wstawia element o kluczu x w miejscu wskazanym przez w</li>
+                        <li>Delete(L, w) – usuwa element wskazywany przez w</li>
+                        <li>Min(L) – zwraca element o najmniejszym kluczu</li>
+                        <li>Max(L) – zwraca element o największym kluczu</li>
+                    </ul>
+                </li>
+                <li>
+                    "Zabawa w pociąg"
+                    <ul>
+                        <li>Listę można zobrazować jako ciąg osób trzymających się za ręce. Każda osoba trzyma swojego lewego i prawego sąsiada</li>
+                        <li>W takiej strukturze możliwe jest dodawanie nowej osoby w dowolnym miejscu</li>
+                        <li>Możliwe jest też usuwanie osób z takiej listy (pociągu)</li>
+                        <li>Ważne jest wtedy, aby sąsiedzi uwzględnili zmianę i poprawili uchwyt rąk</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            Drzewo binarne
+            <ul>
+                <li>
+                    Węzeł reprezentowany za pomocą rekordów:
+                    <ol>
+                        <li>klucz węzła</li>
+                        <li>wskaźnik do ojca</li>
+                        <li>wskaźnik do lewego syna</li>
+                        <li>wskaźnik do prawego syna</li>
+                    </ol>
+                </li>
+                <li>
+                    Drzewo binarne ma korzeń (wierzchołek) i liście
+                </li>
+                <li>„Drzewo regularne” to takie, w którym każdy element ma albo 2 synów, albo 0</li>
+            </ul>
+        </li>
+        <li>
+            Kopiec (sterta, stóg, ang. heap)
+            <ul>
+                <li>
+                    szczególny rodzaj drzewa, w którym wartości potomków węzła są w stałej relacji z wartością rodzica (najczęściej większosć/mniejszość)
+                </li>
+                <li>
+                    na przykład może występować relacja, że syn ma zawsze wartość mniejszą od ojca
+                </li>
+            </ul>
+        </li>
+        <li>
+            Rekord
+            <ul>
+                <li>Struktura danych typowa dla baz danych</li>
+                <li>Struktura w której można przechowywać zmienne dowolnego typu (tzw. pola)</li>
+                <li>Rekord powinien przechowywać dane na temat tego samego obiektu</li>
+                <li>
+                    Przykładowy rekord:
+                    <ul>
+                        <li>REKORD STUDENT</li>
+                        <li>POLA IMIE, NAZWISKO, NR_INDEKSU, KIERUNEK, SEMESTR, WYDZIAŁ</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ol>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Złożoność obliczeniowa algorytmów</h1>
+
+    <div class="note-subsection">
+        <strong>Właściwości idealnego algorytmu:</strong><br />
+        <ul>
+            <li>prosty kod</li>
+            <li>łatwy do zrozumienia</li>
+            <li>może być napisany w każdym języku programowania</li>
+            <li>liczy się szybko</li>
+            <li>potrzebuje niewiele pamięci</li>
+            <li>zawsze daje poprawne wyniki</li>
+        </ul>
+        <p>Przy czym trzeba pamiętać, że idealny algorytm nie istnieje :)</p>
+    </div>
+    
+    <div class="note-subsection">
+        <strong>Koszt algorytmu</strong>
+        <ul>
+            <li>
+                pamięć
+                <ul>
+                    <li>liczba zmiennych</li>
+                    <li>ilość miejsca potrzebna dla danych</li>
+                </ul>
+            </li>
+            <li>
+                czas
+                <ul>
+                    <li>liczba instrukcji</li>
+                    <li>liczba operacji arytmetycznych</li>
+                    <li>liczba wywołań procedury</li>
+                </ul>
+            </li>
+        </ul>
+        <p>Najczęściej bardziej skomplikowany algorytm może być albo szybki, albo zajmować mało pamięci - trudno pogodzić oba :(</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Złożoność czasowa (złożoność obliczeniowa)</strong>
+        <p>Złożoność czasowa to ilość czasu niezbędnego do rozwiązania problemu w zależności od liczby danych wejściowych.</p>
+        <p>Złożoność czasowa jest zatem pewną funkcją, która jako argument przyjmuje liczbę danych wejściowych (n), na przykład T(n) = 2n<sup>2</sup> + n + 5</p>
+        <p>Złożoność czasową wyrażamy albo w jednostkach czasu, albo w liczbie operacji, które należy wykonać dla n danych, aby otrzymać rozwiązanie problemu. Zwykle używamy liczby operacji, rzadziej czasu.</p>
+        <p style="font-style: italic;">Licząc liczbę operacji w schemacie blokowym, zwykle pomijamy: instrukcje stopu i startu, instrukcje wejścia/wyjścia</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Złożoność pamięciowa</strong>
+        <p>Złożoność pamięciowa to liczba komórek pamięci, która będzie zajęta przez dane i wyniki pośrednie tworzone w trakcie pracy algorytmu. Wyrażamy ją zwykle w bajtach <span style="font-style: italic;">(obliczając to na zaliczeniu trzeba samemu wybrać ile bajtów będą zajmować poszczególne zmienne)</span>.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Trzy postacie złożoności:</strong>
+        <ul>
+            <li>złożoność minimalna (optymistyczna) - dla najbardziej korzystnego zestawu danych</li>
+            <li>złożoność średnia - zużycie zasobów dla typowych (losowych) danych</li>
+            <li>złożoność maksymalna (pesymistyczna) - dla najbardziej niekorzystnego zestawu danych</li>
+        </ul>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Sortowanie przez wstawianie</h1>
+
+    <div class="note-subsection">
+        <strong>Sortowanie przez wstawianie (insertion sort)</strong>
+        <p>Sortowanie jest podobne do układania kart pobieranych z talii.</p>
+        <p>Bierzemy pierwszą kartę z talii.</p>
+        <p>Pobieramy kolejne, aż do wyczerpania talii.</p>
+        <p>Każdą pobraną kartę porównujemy z kartami, które już trzymamy w ręce i szukamy dla niej miejsca przed pierwszą kartą starszą. Gdy znajdziemy takie miejsce, rozsuwamy karty i nową wstawiamy na przygotowane w ten sposób miejsce. Jeżeli nasza karta jest najstarsza (najmłodsza), to umieszczamy ją na samym końcu.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przykładowa implementacja algorytmu (w Pythonie)</strong>
+        <pre><code>
+            from random import randrange
+
+            list_size = 10
+            my_list = [randrange(1, 100) for _ in range(1, list_size + 1)]
+
+            for i in range(1, list_size):
+                for j in reversed(range(0, i)):
+                    if my_list[j+1] &lt; my_list[j]:
+                        my_list[j+1], my_list[j] = my_list[j], my_list[j+1]
+        </code></pre>
+    </div>
+
+    <!--<div class="note-subsection">
+        <strong>Sortowanie przez wybór (selection sort)</strong>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Sortowanie przez zamianę (exchange sort)</strong>
+    </div>-->
+
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Sortowanie przez wybór</h1>
+
+    <div class="note-subsection">
+        <strong>Sortowanie przez wybór (selection sort)</strong>
+        <ol>
+            <li>Szukamy w zbiorze elementu najmniejszego i wymieniamy go z elementem na pierwszej pozycji.</li>
+            <li>Znów wyszukujemy element najmniejszy i wymieniamy go z elementem na drugiej pozycji.</li>
+            <li>I tak dla każdego elementu.</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przykładowa implementacja algorytmu (w Pythonie)</strong>
+        <pre><code>
+            from random import randrange
+
+            list_size = 10
+            my_list = [randrange(1, 100) for _ in range(1, list_size + 1)]
+
+            for i in range(0, list_size):
+                min_index, min_value = i, my_list[i]
+                for j in range(i + 1, list_size):
+                    if my_list[j] &lt; min_value:  # aby zrobić sortowanie malejące, zmieniamy tu znak na &gt;
+                        min_index, min_value = j, my_list[j]
+                my_list[i], my_list[min_index] = my_list[min_index], my_list[i]
+        </code></pre>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Sortowanie przez zamianę</h1>
+
+    <div class="note-subsection">
+        <strong>Sortowanie bąbelkowe (bubble sort)</strong>
+        <ol>
+            <li>Jest to sztandarowy przykład algorytmu działającego "przez zamianę".</li>
+            <li>Polega na stopniowym zamienianiu miejscami sąsiadujących elementów, tak długo aż zbiór danych zostanie posortowany.</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przykładowa implementacja algorytmu (w Pythonie)</strong>
+        <pre><code>
+            from random import randrange
+
+            list_size = 100
+            my_list = [randrange(1, 100) for _ in range(1, list_size + 1)]
+
+            for i in range(0, list_size - 1):
+                for j in range(0, list_size - i - 1):
+                    if my_list[j] > my_list[j + 1]:
+                        my_list[j], my_list[j + 1] = my_list[j + 1], my_list[j]
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Ulepszona implementacja algorytmu</strong>
+        <pre><code>
+            from random import randrange
+
+            list_size = 100
+            my_list = [randrange(1, 100) for _ in range(1, list_size + 1)]
+
+            for i in range(0, list_size - 1):
+                has_swapped = False
+                for j in range(0, list_size - i - 1):
+                    if my_list[j] > my_list[j + 1]:
+                        my_list[j], my_list[j + 1] = my_list[j + 1], my_list[j]
+                        has_swapped = True
+                if not has_swapped:
+                    break
+        </code></pre>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Sortowanie - c.d.</h1>
+
+    <div class="note-subsection">
+        <strong>Inne algorytmy</strong>
+        <ul>
+            <li>
+                Quick sort
+                <ul>
+                    <li>algorytm zrealizowany na podstawie reguły "dziel i zwyciężaj"</li>
+                    <li>stopniowo dzielimy tablicę na dwie mniejsze części, w każdej części przenosząc liczby większe i mniejsze na jedną ze stron</li>
+                    <li>w procesie przenoszenia, środkowy element nazywamy "pivotem"</li>
+                </ul>
+            </li>
+            <li>
+                Shell sort
+                <ul>
+                    <li>Autor algorytmu zauważył, że algorytmy sortowania "przez zamianę" działają lepiej, gdy przekazujemy im do posortowania zbiór względnie posortowany.</li>
+                    <li>Sortowany zbiór dzielimy na mniejsze podzbiory, w których każdy element jest oddalony od innego o równą odległość. Powstałe zbiory sortujemy sortowaniem przez zamianę.</li>
+                    <li>Następnie tworzymy nowe zbiory, zmniejszając odległość między elementami - a p potem również sortujemy je "przez zamianę"</li>
+                    <li>Powtarzamy to tak długo, aż odległość pomiędzy poszczególnymi elementami podzbiorów nie wyniesie 1.</li>
+                </ul>
+            </li>
+            <li>Sortowanie drzewiaste/stogowe</li>
+        </ul>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Algorytmy iteracyjne &amp; algorytmy rekurencyjne</h1>
+
+    <div class="note-subsection">
+        <strong>Algorytm rekurencyjny</strong>
+        <p>Algorytm rekurencyjny polega na tym, że obiekt składa się częściowo z samego siebie.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Algorytm iteracyjny</strong>
+        <p>Algorytm iteracyjny to taki, w którym zastosowano pętle.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Problem skoczka szachowego</strong>
+        <p>Przykładowy problem, który można rozwiązać rekurencją. Trzeba znaleźć taką ścieżkę dla skoczka szachowego, aby odwiedził on każde pole - oraz aby każde pole odwiedzone zostało tylko jeden raz.</p>
+        <img src="../img/problem_skoczka.gif" alt="problem skoczka - gif" class="img-fluid" />
+    </div>
+
+    <div class="note-subsection">
+        <strong>Problem ośmiu hetmanów</strong>
+        <p>Przykładowy problem, który można rozwiązać rekurencją. Trzeba w taki sposób rozstawić 8 hetmanów na planszy szachowej, aby żaden z nich nie mógł zbić innego.</p>
+        <img src="../img/osiem_hetmanow.png" alt="problem 8 hetmanów" class="img-fluid" />
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Grafy</h1>
+    
+    <div class="note-subsection">
+        <strong>Czym jest graf?</strong>
+        <p>Graf – struktura składająca się z wierzchołków (oznaczanych V) i gałęzi między nimi (oznaczanych E).</p>
+        <img src="../img/graf.png" alt="problem 8 hetmanów" class="img-fluid" />
+    </div>
+
+    <div class="note-subsection">
+        <strong>Rodzaje grafów</strong>
+        <ul>
+            <li>Graf nieskierowany – gałęzie są dwukierunkowe</li>
+            <li>Graf skierowany – gałęzie są jednokierunkowe</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Graf Eulerowski</strong>
+        <ul>
+            <li>Graf Eulera (eulerowski) to taki graf, w którym można skonstruować cykl Eulera, czyli cykl, który przechodzi przez każdą jego krawędź dokładnie raz i wraca do punktu wyjściowego.</li>
+            <li>Aby było możliwe zbudowanie takiej ścieżki, każdy wierzchołek grafu z wyjątkiem najwyżej dwóch musi mieć parzysty stopień (łączyć się z parzystą liczbą krawedzi).</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Pojęcia związane z grafami</strong>
+        <ul>
+            <li>Jeśli krawędź łączy dwa wierzchołki, to jest z nimi <strong>incydentna</strong>. W grafach skierowanych rozróżnia się początkowy i końcowy wierzchołek krawędzi.</li>
+            <li><strong>Pętla własna</strong> - krawędź łącząca wierzchołek z samym sobą</li>
+            <li><strong>Ścieżka lub droga</strong> - (w grafie skierowanym) sekcwencja krawędzi taka, że koniec jednej krawędzi jest początkiem następnej</li>
+            <li><strong>Długością ścieżki</strong> nazywamy liczbę należących do niej krawędzi</li>
+        </ul>
+    </div>
+</section>
+
+
+</div>
+
+
+    <script>hljs.highlightAll();</script>
+    <script src="/notes/assets/js/normalize-indents.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+ </body>
+</html>

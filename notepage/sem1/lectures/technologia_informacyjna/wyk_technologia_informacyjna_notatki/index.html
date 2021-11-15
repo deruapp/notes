@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+ <html lang="pl">
+ <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/notes/assets/css/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/ekko-lightbox.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/highlight.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/style.css" />
+
+    <script src="/notes/assets/js/libs/jquery-3.6.0.min.js"></script>
+    <script src="/notes/assets/js/libs/bootstrap.min.js"></script>
+    <script src="/notes/assets/js/libs/ekko-lightbox.min.js"></script>
+    <script src="/notes/assets/js/libs/highlight.min.js"></script>
+
+    <title>Notatki z informatyki stosowanej</title>
+ </head>
+ <body>
+    <div class="container" id="main-container">
+    <header class="note-section card card-body bg-light">
+        <h1>Technologia informacyjna (wykłady, semestr  1)</h1>
+
+        <nav>
+            <ul class="nav nav-tabs">
+                
+        
+                
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/notes/notepage/sem1/lectures/technologia_informacyjna/wyk_technologia_informacyjna_notatki/">Notatki z zajęć</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem1/lectures/technologia_informacyjna/wyk_technologia_informacyjna_materialy/">Opracowania i materiały do nauki</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem1/lectures/technologia_informacyjna/wyk_technologia_informacyjna_info/">Informacje o zaliczeniu i prowadzącym</a>
+                    </li>
+                
+            </ul>
+        </nav>
+    
+        <p style="margin-top: 20px;"><a href="/notes/">(&larr; powrót do strony głównej)</a></p>
+    </header>
+
+    <section class="note-section card card-body bg-light">
+    <h1>Technologie informacyjne</h1>
+
+    <div class="note-subsection">
+        <strong>Definicja:</strong>
+        Technologia informacyjna to zespół środków (urządzeń) takich jak komputery i ich urządzenia zewnętrzne oraz sieci komputerowe i narzędzi (czyli oprogramowanie), jak również inne technologie (takie jak telekomunikacja)
+    </div>
+
+    <div class="note-subsection">
+        <strong>Technologie informacyjne są związane z:</strong>
+        <ol>
+            <li>zbieraniem</li>
+            <li>przechowyywaniem</li>
+            <li>przetwarzaniem</li>
+            <li>przesylaniem</li>
+            <li>rozdzielaniem</li>
+            <li>oraz prezentacją informacji (tekstów, obrazów, dźwięków)</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Dziedziny zastosowań technologii informacyjnej:</strong>
+        <p>informatyka biurowa, edukacyjna, ekspercka, gospodarcza, medyczna, przemysłowa, rynkowa, transakcyjna, zarządcza, rozrywkowa</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Trzy rewolucje</h1>
+    <ol>
+        <li>
+            Rewolucja przemysłowa
+            <ul>
+                <li>maszyna parowa</li>
+                <li>silnik spalinowy</li>
+                <li>elektryczność [kondensator, ogniwo elektryczne, prawo Ohma, silnik elektryczny, fale elektromagnetyczne]</li>
+            </ul>
+        </li>
+        <li>
+            Etap pierwszy rewolucji informacyjnej
+            <ul>
+                <li>Prasa drukarska</li>
+                <li>Telegraf</li>
+                <li>Telefon</li>
+                <li>Radio</li>
+                <li>Telewizja</li>
+            </ul>
+        </li>
+        <li>
+            Etap drugi rewolucji informacyjnej
+            <ul>
+                <li>Komputery [1946]</li>
+                <li>Technika satelitarna</li>
+                <li>Internet [1969]</li>
+                <li>Telefonia komorkowa</li>
+            </ul>
+        </li>
+    </ol>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Przykładowe prace teoretyczne</h1>
+
+    <ul>
+        <li>Euklides - algorytm Euklidesa (algorytm wyznaczania największego wspólnego dzielnika dwóch liczb)</li>
+        <li>Muhammad ibn Musa al-Chuwarizmi - dzięki niemu wdrożono dziesiętny system liczenia i pozycyjny system zapisu liczb, ułożył tablice funkcji trygonometrycznych</li>
+        <li>Alan Turing - abstrakcyjny model komputera służącego do wykonywania algorytmów</li>
+        <li>E. Dijkstra - problem ucztujących filozofów</li>
+        <li>Claude E. Shannon - jeden z twórców teorii informacji; komputer szachowy Maniac; kod binarny; formuły matem.</li>
+    </ul>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Krótka historia komputerów</h1>
+
+    <div class="note-subsection">
+        <strong>Maszyny zbudowane przed erą komputerów</strong>
+
+        <ul>
+            <li>
+                zautomatyzowane krosno Jacquarda – 1801 <br />
+                tworzyhło wzór na tkaninie określany na podstawie karty perforowanej
+            </li>
+            <li>
+                maszyna różnicowa Babbage'a – 1883 <br />
+                służyła do obliczania pewnych wzorów matematycznych
+            </li>
+            <li>
+                tabulator Hollerith'a - 1890 <br />
+                urządzenie do mechanicznego tworzenia zestawień danych [spis ludności w USA]
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="note-subsection">
+        <strong>Pierwszy kalkulator</strong> <br />
+        Harvard Mark I<br />
+        Zbudowany przez pracownika firmy IBM (Howarda Aikena)<br />
+        Zbudował go w latach 1939-1944 z przekaźników elektromagnetycznych
+    </div>
+
+    <div class="note-subsection">
+        <strong>Maszyny liczące</strong> <br />
+        Z1 - pierwsza binarna maszyna licząca [Konrad Zuse]<br />
+        Potem były jeszcze maszyny: Z2, Z3, Z4
+    </div>
+
+    <div class="note-subsection">
+        <strong>Pierwszy komputer:</strong>
+        <ul>
+            <li><span class="note-term">Atanasoff-Berry Calculator [ABC]</span> - na podstawie wyroku sądu w USA jest uważany za pierwszy komputer w historii ludzkości</li>
+            <li><span class="note-term">ENIAC</span> - wcześniej uważany za pierwszy komputer, jednak sąd federalny unieważnił mu patent, uznając że twórcy ENIACa zapożyczyli część pomysłów od autorów ABC</li>
+    </li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Inne komputery:</strong>
+        <ul>
+            <li><span class="note-term">EDVAC</span> - pierwsza maszyna przechowująca dane w pamięci komputera</li>
+            <li><span class="note-term">UNIVAC</span> - pierwszy komputer ogólnego przeznaczenia (nieprzeznaczony wyłącznie na potrzeby armii); była to maszyna programowalna, nie wymagająca inżynierów do obsługi</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Ostatnie lata rozwoju komputerów:</strong>
+        <ol>
+            <li>
+                Lata 70
+                <ul>
+                    <li>komputery czwartej generacji (oparte na obwodach scalonych dużej skali integracji)</li>
+                    <li>sieci komputerowe</li>
+                </ul>
+            </li>
+            <li>
+                Lata 80
+                <ul>
+                    <li>początek ery komputerów osobistych [IBM PC, Apple, Atari, Commodore, Sinclair]</li>
+                    <li>systemy operacyjne MS DOS, Windows</li>
+                    <li>wzrost mocy obliczeniowej</li>
+                </ul>
+            </li>
+            <li>
+                Lata 90 (do teraz)
+                <ul>
+                    <li>mikrokomputery [palmtop]</li>
+                    <li>laptopy, notebooki</li>
+                    <li>smartfony, tablety</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Komputery w Polsce:</strong>
+
+        <ul>
+            <li>XYZ</li>
+            <li>ZAM-2</li>
+            <li>UMC-1</li>
+            <li>ODRA 1001</li>
+            <li>Momik, K-202</li>
+            <li>Mera 30</li>
+            <li>Mazovia</li>
+        </ul>
+    </div>
+
+</section>
+
+
+<section class="note-section card card-body bg-light">
+    <h1>Dane i informacje</h1>
+
+    <div class="note-subsection">
+        <strong>Czym są dane?</strong>
+        <p>Dane to liczby, pojęcia lub rozkazy przedstawione w sposób dogodny do przesyłania, interpretacji, przetwarzania metodami ręcznymi lub automatycznymi.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym jest informacja?</strong>
+        <p>Informacja to treść komunikatu przekazywanego za pomocą danych.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Jakość informacji można rozpatrywać w wymiarze:</strong>
+        <ol>
+            <li>wymiarze czasu (czy jest aktualna, z jaką częstotliwością jest dostarczana)</li>
+            <li>wymiarze treści (dokładność, odpowiedniość, kompletność, zwiętłość, zakres)</li>
+            <li>wymiarze formy (przejrzystość, szczegółowość, uporządkowanie, forma prezentacji i rodzaj mediów)</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Procesy przetwarzania danych</strong>
+        <ol>
+            <li><span class="note-term">selekcja</span> – wybór danych wg określonych kryteriów</li>
+            <li><span class="note-term">klasyfikacja</span> – podział danych na kategorie</li>
+            <li><span class="note-term">sortowanie</span> – grupowanie danych w określonym porządku</li>
+            <li><span class="note-term">obliczanie</span> – obliczanie czegoś</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Postacie danych</strong>
+        <ol>
+            <li>znaki</li>
+            <li>mowa</li>
+            <li>obrazy</li>
+            <li>wykresy</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Nośniki przenoszenia danych</strong>
+        <ol>
+            <li>dźwięki</li>
+            <li>zapachy</li>
+            <li>błyski (impulsy świetlne)</li>
+            <li>kartki papieru</li>
+            <li>impulsy elektryczne</li>
+        </ol>
+    </div>
+</section>
+
+
+<section class="note-section card card-body bg-light">
+    <h1>System informacyjny</h1>
+
+    <div class="note-subsection">
+        <strong>Definicja systemu informacyjnego</strong>
+        <p>
+            <span class="note-term">System informacyjny</span> to posiadająca wiele poziomów struktura pozwalająca użytkownikowi na przetwarzanie, za pomocą procedur i modeli, informacji wejściowych w wyjściowe. Natomiast <span class="note-term">system informatyczny</span> jest wydzieloną, skomputeryzowaną, częścią systemu informacyjnego
+        </p>
+    </div>
+    
+    <div class="note-subsection">
+        <strong>Elementy składowe systemu informacyjnego</strong>
+        <ol>
+            <li>Nadawcy i odbiorcy informacji (osoby fizyczne i prawne)</li>
+            <li>Zbiory informacji (zestawy informacji o określonym charakterze)</li>
+            <li>Kanały informacji (drogi przepływu informacji)</li>
+            <li>Metody i techniki przetwarzania informacji</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Podział systemu informacyjnego na struktury</strong>
+        <ol>
+            <li>Struktura funkcjonalna – określa cele i zadania systemu</li>
+            <li>Struktura informacyjna – to zbiory informacji jakimi dysponuje system</li>
+            <li>Struktura przestrzenna – określa rozmieszczenie elementów ze struktury informacyjnej i technicznej</li>
+            <li>Struktura konstrukcyjno-techniczna – jakie mamy urządzenia, jak są zbudowane</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Zasoby systemu informacyjnego</strong>
+        <ul>
+            <li>ludzkie</li>
+            <li>informacyjne</li>
+            <li>proceduralne</li>
+            <li>techniczne</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Funkcje systemu informacyjne:</strong>
+        <ul>
+            <li>gromadzenie informacji</li>
+            <li>przetwarzanie danych</li>
+            <li>przechowywanie informacji</li>
+            <li>prezentowanie informacji</li>
+            <li>przesyłanie informacji</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Zadania systemu informacyjego:</strong>
+        <p>Podstawowe zadanie to dostarczanie użytkownikom informacji, na podstawie których podejmowane i wprowadzane są w życie decyzje regulujące działanie na przykład systemów gospodarczych.</p>
+        <p>Kluczowym zadaniem systemu informacyjnego jest przetwarzanie danych (za pomocą różnych technologii informacyjnych lub ręcznie).</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Elementy systemu informatycznego:</strong>
+        <table class="table table-bordered" style="text-align: center;">
+            <tr>
+                <td colspan="2">ZASOBY OSOBOWE</td>
+            </tr>
+            <tr>
+                <td>Elementy organizacyjne</td>
+                <td>Elementy informacyjne</td>
+            </tr>
+            <tr>
+                <td>Sprzęt</td>
+                <td>Oprogramowanie</td>
+            </tr>
+        </table>
+    </div>
+
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Algorytmy i struktury</h1>
+
+    <div class="note-subsection">
+        <strong>Podstawowe struktury danych:</strong>
+        <ol>
+            <li>Rekord - grupa danych różnego typu, posiadająca pewną strukturę, z możliwością modyfikacji (zapisu i odczytu)</li>
+            <li>Tablica – struktura danych jednakowego typu, dostęp do danych za pomocą indeksu (indeksów)</li>
+            <li>Lista – struktura danych składająca się z połączonych ze sobą w łańcuszek komórek (zawierających dane)</li>
+            <li>Drzewo – hierarchiczna struktura danych</li>
+            <li>Stos – liniowa struktura danych; dane są dokładane i pobierane z wierzchołka stosu (LIFO)</li>
+            <li>Kolejka – struktura danych implementująca model FIFO</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Definicja algorytmu</strong>
+        <p>Algorytm to uporządkowany zestaw jednoznacznych wykonywalnych kroków określających skończony proces, w tym czynności koniecznych do wykonania pewnego zadania w kończonej liczbie kroków</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Algorytm można przedstawić:</strong>
+        <ol>
+            <li>zapisem słownym</li>
+            <li>schematem blokowym</li>
+            <li>językiem formalnym (pseudokodem)</li>
+            <li>językiem programowania</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Sposoby działania algorytmów:</strong>
+        <ol>
+            <li>sekwencyjny (liniowy)</li>
+            <li>równoległy (może wystąpić rozgałęzienie)</li>
+            <li>rekurencyjny (jeżeli kod programu wywołuje samego siebie)</li>
+            <li>iteracyjny (powtarzamy pewne kroki określoną liczbę razy lub dopóki jakiś warunek jest spełniony)</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Złożoność obliczeniowa algorytmu:</strong>
+        <p>
+            Złożoność obliczeniowa to ilość zasobów komputerowych koniecznych do wykonania programu realizującego algorytm.
+            Przedstawiamy ją jako funkcję pewnego parametru, określającego rozmiar rozwiązywania zadania.
+        </p>
+        <p>
+            Ponieważ w przypadku szacowania złożoności obliczeniowej mówimy o czasie i pamięci, to wyróżniamy złożoność pamięciową i czasową.
+        </p>
+        <p>
+            Złożoność może być optymistyczna, pesymistyczna lub średnia!
+        </p>
+    </div>
+
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Pojęcia związane z Internetem (i sieciami!)</h1>
+
+    <div class="note-subsection">
+        <strong>Czym jest Internet?</strong>
+        Sieć Internet to ogólnoświatowy system połączeń między komputerami, określany również jako sieć sieci.
+    </div>
+
+    <div class="note-subsection">
+        <strong>Definicja Internetu:</strong>
+        Internet to zespół urządzeń identyfikowanych za pomocą adresów IP (takich jak hosty, serwery i inne urządzenia wyposażone w karty sieciowe) połączonych za pomocą urządzeń sieciowych (takich jak modemy, routery, koncentratory i przełączniki) i komunikujących się za pomocą zestawu protokołów internetowych (np. TCP/IP) z wykorzystaniem infrastruktury telekomunikacyjnej.
+    </div>
+
+    <div class="note-subsection">
+        <strong>Różnica między Internetem a WWW</strong>
+        <p>
+            Sieć WWW (WWW lub W3) to system powszechnie akceptowanych standardów do przechowywwania pobierania formatowania i wyświetlania informacji za pośrednictwem architektury klient/serwer.
+            Sieć obsługuje wszystkie rodzaje informacji cyfrowych, w tym tekst, grafikę i dźwięk.
+            Zastosowanie graficznego interfejsu użytkownika (GUI) ułatwia nawigację i korzystanie z zasobów sieci WWW.
+            Internet funkcjonuje jako mechanizm transportowy, podczas gdy sieć WWW jest aplikacją, która używa tych funkcji transportowych.
+        </p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Intranet a ekstranet</strong>
+        <p>
+            Intranet [nie mylić z internetem] – wydzielona sieć komputerowa np. w firmie, oparta na protokołach internetowych, oferująca usługi typu poczta, strony WWW, usługi bazodanowe etc, ale tylko pracownikom danej frmy
+        </p>
+        <p>
+            Ekstranet – zamknięta sieć komputerowa oparta na protokołach internetowych przeznaczona do wymiany infromacji z partnerami biznesowymi posiadającymi odpowiednie uprawnienia
+        </p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Portal a wortal</strong>
+        <p>
+            Portal internetowy – rodzaj serwisu informacyjnego zawierającego aktualne wiadomości polityczne, pogodowe, sportowe i inne; taki portal zazwyczaj posiada także tematyczny katalog stron, wyszukiwarkę treści w nim zawartych lub w zasobach całego Internetu
+        </p>
+        <p>
+            Wortal – szczególny rodzaj portalu, publikjący informacje tematyczne poświęcone jednej dziedzinie: np. wortal filmowy, teleinformatyczny, sportowy
+        </p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>E-learning a distance learning</strong>
+        <p>
+            E-learning – odnosi się do nauki wspieranej przez Internet (taka nauka może odbywać się w salach lekcyjnych jako wsparcie dla konwencjonalnego nauczania) (może też odbywać się online, wówczas e-learning jest częścią distance learningu)
+        </p>
+        <p>Distance Learning – nauczanie na odległość</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>E-commerce a e-biznes</strong>
+        <p>
+            E-commerce - proces kupowania, sprzedawania, przekazywania lub wymiany produktów, usług lub informacji za pośrednictwem sieci komputerowych (zazwyczaj Internetu)
+        </p>
+        <p>E-biznes - podobnie jak e-commerce, ale jest to pojęcie szersze, bo zawiera w sobie również obsługę klientów, wpspółpracę z partnerami biznesowymi oraz wykonywanie transakcji elektronicznych </p>
+    </div>
+
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Internet Rzeczy</h1>
+
+    <div class="note-subsection">
+        <strong>Internet of Things (Internet Rzeczy):</strong>
+        <p>Ekosystem, w którym wyposażone w sensory przedmioty komunikują się z komputerami lub smartfonami.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przykładowe zastosowania internetu rzeczy:</strong>
+        <p>ochrona środowiska i gospodarki wodnej, przemysł, transport, energetyka, zarządzanie miastami, zarządzanie mieszkaniami i budynkami, ochrona zdrowia, handel, życie codzienne, obronność</p>
+    </div>
+
+    <div class="note-subsection">
+        <p>Koncepcję Internetu Rzeczy stworzył brytyjski przedsiębiorca Kevin Ashton.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Główna koncepcja Internetu Rzeczy:</strong>
+        <ol>
+            <li>Mamy przedmioty wyposażone w czujniki</li>
+            <li>Jest jakaś sieć komputerowa, która je łączy</li>
+            <li>Oraz są urządzenia, które odbierają te dane i na ich podstawie wywołują określoną reakcję</li>
+        </ol>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Beacony</h1>
+
+    <div class="note-subsection">
+        <strong>Czym jest beacon?</strong>
+        <p>
+            Beacon to małe urządzenie wysyłające sygnał radiowy i komunikujące się np. ze smartfonami za pomocą połączenia Bluetooth.
+        </p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przykładowe miejsca, gdzie używa się beaconów</strong>
+        <ol>
+            <li>Virtualna Warszawa</li>
+            <li>Muzeum Sztuki Współczesnej w Krakowie</li>
+            <li>Apple Store (sklepy są wyposażone w beacony, które informują klientów np. o promocjach i umożliwiające zawołanie obsługi lub dokonanie transakcji bez użycia karty)</li>
+        </ol>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Cloud Computing (CC)</h1>
+
+    <div class="note-subsection">
+        <strong>Definicja Cloud Computingu opracowana przez IBM:</strong>
+        <p>CC to nowy model wykorzystania sprzętu i oprogramowania i nowy styl przetwarzania, w którym procesy biznesowe, aplikacje, dane i zasoby IT są dostarczane do użytkowników w formie usług.</p>
+    </div>
+    
+    <div class="note-subsection">
+        <strong>Zasada działania Cloud Computingu:</strong>
+        <p>
+            Zasada działania polega na przeniesieniu całego ciężaru świadczenia usług IT (danych, oprogramowania lub mocy obliczeniowej) na serwer i umożliwienie stałego dostępu poprzez komputery klienckie. Dzięki temu ich bezpieczeństwo nie zależy od tego, co stanie się z komputerem klienckim, a szybkość procesów wynika z mocy obliczeniowej serwera. Wystarczy zalogować się z jakiegokolwiek komputera z dostępem do Internetu by zacząć korzystać z dobrodziejstw chmury obliczeniowej. 
+        </p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Modele dostarczania usług CC:</strong>
+        <ul>
+            <li>
+                chmura prywatna (private cloud)<br />
+                zasoby potrzebne dla usługi IT należą do jednego przedsiębiorstwa; dostawca i odbiorca chmury to jednostki organizacyjne tego samego przedsiębiorstwa
+            </li>
+            <li>
+                chmura dedykowana (community cloud)<br />
+                chmura obsługująca określoną grupę odbiorców (np. tylko państwowe uczelnie wyższe)
+            </li>
+            <li>
+                chmura publiczna (public cloud)<br />
+                dostawca oferuje usługi „w chmurze” publicznie, dla wielu odbiorców
+            </li>
+            <li>
+                chmura hybrydowa (hybrid cloud)<br />
+                kombinacja przedstawionych wyżej
+            </li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Typy usług CC:</strong>
+        <ol>
+            <li>
+                infrastruktura jako usługa (Infrastructure as a Service – IaaS)<br />
+                odbiorca dostaje wirtualny serwer (serwery) z określonymi zasobami (CPU, RAM, dyski) z zainstalowanym (lub nie) systenen operacyjnymm
+            </li>
+            <li>
+                platforma jako usługa (Platform as a Service – PaaS)<br />
+                odbiorca dostaje gotową platformę do rozwoju aplikacji zgodnie ze specyfikacją (baza danych, serwer aplikacji, narzędzia programistyczne)
+            </li>
+            <li>
+                oprogramowanie jako usługa (Software as a Service)<br />
+                odbiorca dostaje gotową aplikację lub platformę biznesową
+            </li>
+            <li>
+                proces biznesowy jako usługa (Business Process as a Service – BpaaS)<br />
+                odbiorca zleca wykonanie określonego procesu biznesowego (np. Help Desk, eLearning, księgowość) pozostawiając sobie funkcje kontrolne
+            </li>
+            <li>
+                kolokacja<br />
+                najprostsza forma „usług w chmurze”, czyli udostępnienie serwerowni, klimatyzowanego pomieszczenia z szafą serwerową na własny sprzęt, zasilaniem, internetem
+            </li>
+        </ol>
+    </div>
+    
+    <div class="note-subsection">
+        <strong>Zalety CC:</strong>
+        <ol>
+            <li>skalowalność – dynamiczne przydzielanie zasobów wraz ze wzrostem zapotrzebowania</li>
+            <li>dostępność – usługi w chmurze są dostępne z każdego komputera podłączonego do internetu</li>
+            <li>wydajność – centra obliczeniowe, będące największymi chmurami publicznymi, oferują moc nieosiągalną dla nawet najbardziej rozbudowanej stacji roboczej</li>
+            <li>łatwe zarządzanie – firma korzystająca z kompleksowego zestawu usług w chmurze może nimi zarządzać za pomocą wygodnego w obsłudze oprogramowania</li>
+            <li>elastyczność – powiązane ze skalowalnością, prościej można wdrożyć dodatkowe usługi</li>
+            <li>niezawodność – koszty zabezpieczenia danych przed utratą mogą być kosztowne, a centra obliczeniowe mogą sobie pozwolić na takie wydatki</li>
+            <li>ekologia – efektywniejsze wykorzystanie zasobów przekłada się na mniejsze zużycie zasobów naturalnych (chociaż to nie zawsze jest prawda, według prowadzącego ta zaleta jest kwestionowalna)</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Wady CC</strong>
+        <ol>
+            <li>ryzyko ataku DdoS</li>
+            <li>ograniczone rozwiązania (zakres usług jest ograniczony i narzucony przez dostawcę)</li>
+            <li>wydajność – faktyczna wygoda korzystania z poszczególnych rozwiązań jest ograniczona szybkością transmisji danych pomiędzy komputerem użytkownika a chmurą</li>
+        </ol>
+    </div>
+
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Sztuczna inteligencja</h1>
+
+    <div class="note-subsection">
+        <strong>Sztuczna inteligencja:</strong>
+        <p>SI wiąże zagadnienia informatyki, neurologii i psychologii. Jej głównym zcelem jest stworzenie oprogramowania, które mogłoby zastąpić człowieka.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przykładowe zastosowania SI:</strong>
+        <ul>
+            <li>Zastosowania sztucznej inteligencji:</li>
+            <li>systemy ekspertowe (np. badanie zdolności kredytowej)</li>
+            <li>rozpoznawanie optyczne lub rozpoznawanie mowy</li>
+            <li>programy gier (np. szachy, go)</li>
+            <li>maszynowe tłumaczenie tekstów</li>
+        </ul>
+    </div>
+</section>
+
+
+<section class="note-section card card-body bg-light">
+    <h1>Kodowanie danych</h1>
+
+    <div class="note-subsection">
+        <strong>Czym jest kodowanie danych?</strong>
+        <p>Kodowanie danych to zamiana jednej formy informacji na inną, zwykle odpowiednią dla danego urządzenia przetwarzającego dane.</p>
+        <p>Kodem nazywa się wzajemne jednoznaczne odwzorowanie, które każdej wiadomości z alfabetu źródła przyporządkowuje ciąg określonych symboli kodowych.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Kodowanie binarne</strong>
+        <p>Kod binarny to kod wykorzystujący sygnały dwuwartościowe (0 i 1). System dwójkowy jest naturalnym systemem informatyki.</p>
+        <p>8 bitów = bajt, za pomocą 8 bitów można zapisać 256 różnych wartości</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przykłady kodowania</strong>
+        <ol>
+            <li>
+                kodowanie tekstu
+                <ol>
+                    <li>kod ASCII - powstał w latach 60. XX wieku, jest to 128 liczb, a do każdej liczby jest przypisany jakiś symbol lub instrukcja sterująca</li>
+                    <li>UNICODE - zawiera różnych 65536 znaków</li>
+                </ol>
+            </li>
+            <li>
+                kodowanie liczb całkowitych
+                <ol>
+                    <li>kodowanie dziesiętne</li>
+                    <li>
+                        kodowanie binarne
+                    </li>
+                    <li>
+                        kodowanie liczb ujemnych w systemie binarnym
+                        <ul>
+                            <li>metoda znak-moduł</li>
+                            <li>metoda U2 (uzupełnień do dwóch)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                kodowanie liczb rzeczywistych
+                <ol>
+                    <li>
+                        kodowanie w systemie zmiennoprzecinkowym (floating-point number)<br/>
+                        binarny zapis liczby w postaci wykładniczej, polega na przechowywaniu w postaci binarnej mantysę i cechę - czyli dwie wartości, na podstawie których można wyznaczyć przybliżoną wartość przechowywanej liczby
+                    </li>
+                    <li>
+                        kodowanie w systemie stałoprzecinkowm (fixed-point number)<BR/>
+                        mamy z góry ustaloną liczbę bitów, z których pewna ilość przechowuje część całkowitą liczby, a reszta jej część ułamkową
+                    </li>
+                </ol>
+            </li>
+            <li>
+                kodowanie grafiki
+                <ol>
+                    <li>
+                        grafika rastrowa
+                        <ul>
+                            <li>obraz złożony z kropek (pikseli) - bitmapa</li>
+                            <li>barwa każdego piksela jest kodowana na określonej liczbie bitów</li>
+                            <li>skalowanie grafiki w postaci rastrowej może powodować utratę jakości</li>
+                        </ul>
+                    </li>
+                    <li>
+                        grafika wektorowa
+                        <ul>
+                            <li>obraz złożony z wektorów (kodowany początek, koniec, barwa)</li>
+                            <li>figury geometryczne (typ, położenie, kolor)</li>
+                            <li>grafikę waktorową można przeskalować bez straty jakości</li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                kodowanie dźwięku
+                <ol>
+                    <li>
+                        przykładowe formaty: mp3, ogg, wav
+                    </li>
+                    <li>
+                        pojęcia związane z kodowaniem dźwięku
+                        <ul>
+                            <li>próbkowanie -  proces polegający na odczytywaniu chwilowego poziomu sygnału akustycznego i zapisywaniu jego wartości w postaci cyfrowej; ponieważ sygnał akustyczny cały czas się zmienia, zapis jest tym lepszy, im częściej (więcej razy na sekundę) jest próbkowany</li>
+                            <li>kwantyzacja - sygnał analogowy może przyjmować dowolne wartości, a sygnał cyfrowy może być wyrażony wyłacznie używając pewnej skończonej ilości bitów; aby zapisać sygnał analogowy w formie cyfrowej, należy więc przypisać każdemu analogowemu odczytowi jakąś najbliższą wartość cyfrową; wiąże się to oczywiście z utratą części informacji</li>
+                            <li>kodowanie</li>
+                            <li>kompresja</li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        
+    </div>
+
+    <div class="note-subsection">
+        <strong>Podstawowe rodzaje kodów</strong>
+        <ol>
+            <li>
+                Nadmiarowe
+                <ol>
+                    <li>kody detekcyjne – umożliwiają wykrywanie przekłamań [np. kod z kontrolą parzystości]</li>
+                    <li>kody korekcyjne – umożliwiają korekcję wykrytych przekłamań</li>
+                </ol>
+            </li>
+            <li>
+                Nienadmiarowe
+                <li>kody równomierne - wszystkie ciągi kodowe mają jednakową długość</li>
+                <li>kody nierównomierne - ciągi kodowe mogą mieć różne długości</li>
+            </li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Kompresja to działanie, które pozwala na zmniejszenie objętości pliku wynikowego lub strumienia danych.</strong>
+        <p>Wyróżniamy kompresję:</p>
+        <ol>
+            <li>bezstratną – odtworzona informacja jest identyczna z oryginałem</li>
+            <li>stratną – polega na eliminowaniu pewnych elementów oryginału w celu uzyskania lepszej efektywności kompresji</li>
+        </ol>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Prawa autorskie, ochrona i bezpieczeństwo danych</h1>
+
+    <div class="note-subsection">
+        <p>Oprogramowanie może być zabezpieczone szeregiem warunków, a najważniejsze z nich to:</p>
+        <ul>
+            <li>ograniczenie liczby kopii</li>
+            <li>zakaz udostępniania osobom trzecim</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        Umowa licencyjna w szczególności może określać możliwości w zakrsie:
+        <ul>
+            <li>zwielokrotniania programu (w całości lub części)</li>
+            <li>modyfikowania programu (tłumaczenie, przystosowywnie)</li>
+            <li>rozpowszechniania proogramu (sprzedaż, dzierżawa)</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <p>Korzystanie z produktów w ramach umowy licencyjnej może dotyczyć:</p>
+        <ul>
+            <li>jednej kopii oprogramowania</li>
+            <li>oprogramowania towarzyszącego (OEM)</li>
+            <li>programowania Open Source</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Co to jest umowa licencyjna?</strong>
+        <p>Umowa licyncyjna to umowa formalno-prawna zawierana pomiędzy firmą posiadającą prawa autorskie do oprogramowania, a podmiotem który używa tego oprogramoania. Taka umowa może określać warunki użytkowania i zasady odpłatności. </p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przykładowe rodzaje licencji:</strong>
+        <ul>
+            <li>shareware - program jest darmowy przez pewien czas (żeby móc go przetestować), a po tym okresie trzeba go usunąć lub zakupić (przykładowy program - WinRar)</li>
+            <li>trial - program jest darmowy przez pewien czas, a po upływie tego czasu blokowana jest część lub całość funkcji - i trzeba kupić program, by te funkcje odblokować (przykładowy program - Windows Server)</li>
+            <li>freeware (wolne oprogramowanie) - program jest darmowy, ale użytkownik nie ma dostępu do kodu źródłowego (przykładowy program - Adobe Reader)</li>
+            <li>Open Source (otwarte oprogramowanie)</li>
+            <li>abandonware - program porzucony przez jego autora; program jest darmowy, ale autor nie udostępnia już żadnych aktualizacji ani pomocy technicznej</li>
+            <li>donationware - w zamian za używanie programu użytkownik jest zachęcany do złożenia dotacji na rzecz autora</li>
+            <li>adware - program jest darmowy, ale wyświetla reklamy (przykładowy program - duża część aplikacji w Sklepie Play)</li>
+            <li>GNU GPL - licencja wolnego i otwartego oprogramowania, używa jej między innymi Linux; oprogramowanie GNU/GPL można dowolnie modyfikować i zmieniać, pod warunkiem że tą modyfikację również opublikujemy pod licencją GNU/GPL </li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>EULA - End User Licence Agreement</strong>
+        <p>Licencja użytkowania EULA to licencja nakładająca dodatkowe ograniczenia na użytkownika, np. możliwość instalacji określonej liczby kopii czy ilość użytkowników mogących używać danego oprogramowania.
+        Standardowym elementem niemal każdej licencji oprogramowania jest klauzula o wyłączonej odpowiedzialności autora, np. za szkody które może spowodować program.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Rodzaje licencji:</strong>
+        <ol>
+            <li>jednostanowiskowa (one-site license) - licencja na jedno stanowisko</li>
+            <li>grupowa (site license) - licencja na więcej niż jedno stanowisko</li>
+            <li>licencja sieciowa – szczególna odmiana licencji grupowej, przeznaczona dla użytkowników pracujące w jednej sieci lokalnej</li>
+            <li>licencja firmware – rodzaj licencji dotyczącej oprogramowania, zainstalowanego na stałe w urządzeniu, służącego do zarządzania nim</li>
+        </ol>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>RODO</h1>
+
+    <div class="note-subsection">
+        <strong>Co wprowadziło RODO?</strong>
+        <ol>
+            <li>Bezpośrednia odpowiedzialność przetwarzającego dane</li>
+            <li>Zgłaszanie naruszeń</li>
+            <li>Nowe i rozszerzone prawa obywateli</li>
+            <li>Ograniczenie profilowania</li>
+            <li>Wyznaczenie Inspektora Ochrony Danych Osobowych</li>
+            <li>Obowiązkowa inwentaryzacja danych i wymagania związane z dokumentacją</li>
+            <li>Nowe zasady uzyskiwania zgód na przetwarzanie danych</li>
+            <li>Rozbudowanie obowiązku informacji o przetwarzaniu danych</li>
+            <li>Ocena wpływu ochrony danych</li>
+            <li>Transfer danych poza Unię Europejską</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <p><strong>Dane osobowe</strong> to informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej.</p>
+        <p><strong>Przetwarzanie danych</strong> to operacja lub zestaw operacji wykonywanych na danych osobowych lub zestawach danych osobowych.</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Bezpieczeństwo systemu informatycznego i ochrona danych</h1>
+
+    <div class="note-subsection">
+        <p>Najczęstszy powód utraty danych to awaria systemu, drugi najczęstrzy to błąd człowieka.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Zagrożenia dla bezpieczeństwa systemów i użytkowików internetu:</strong>
+        <ol>
+            <li>podsłuch danych w sieci i dostęp nieuprawnionych osób do informacji zgromadzonych na dyskach, np. w bazach danych</li>
+            <li>nieuprawnione korzystanie z zasobów systemu komputerowego, np. uruchomienie programu (wykorzystanie mocy procesora)</li>
+            <li>blokada usług systemu poprzez zlecenie serwerowi olbrzymiej liczby zadań powodujących takie obciążenie systemu, że kolejne zlecenia nie zą obsługiwane lub czas ich realizacji znacząco wzrasta</li>
+            <li>utrata danych na stkutek złośliwego niszczenia zasobów informacyjnych systemu komputerowego, np. poprzez włamanie się do systemu lub w wyniku działania wirusa komputerowego</li>
+            <li>fałszowanie informacji lub/oraz podawanie się za innych użytkowników i działanie w ich imieniu i na ich rachunek, np. rozsyłanie wiadomości z cudzego e-maila</li>
+            <li>fizyczne odcięcie serwera od sieci, na przykład awaria zasilania lub kradzież komputera</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Wybrane metody zabezpieczenia informacji:</strong>
+        <ul>
+            <li>urządzenia zastępcze</li>
+            <li>czynniki fizycznego bezpieczeństwa informacji</li>
+            <li>autoryzacja i uwierzytelnianie</li>
+            <li>szyfrowanie informacji</li>
+            <li>podpis elektroniczny</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przyczyny utraty danych:</strong>
+        <ul>
+            <li>Przypadkowe skasowanie</li>
+            <li>Celowe skasowanie celem zacierania śladów lub jako efekt sabotażu</li>
+            <li>Działanie złośliwego oprogramowania (np. wirusa)</li>
+            <li>Uszkodzenie w wyniku przerwy w dostawie energii elektrycznej lub skoku napięcia</li>
+            <li>Błędy oprogramowania korzystającego z danych lub je aktualizującego</li>
+            <li>Nieprawidłowe wyłączenie komputera</li>
+            <li>Uszkodzenmie urządzenia pamiętającego</li>
+            <li>Uszkodzenmie lub brak struktur systemu plików</li>
+            <li>Formatowanie</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Metody zabezpieczenia danych przez zniszczeniem:</strong>
+        <ul>
+            <li>Zapisywanie na mozliwie niezawodnych urządzeniach pamięciowych</li>
+            <li>Zabezpieczenie przed dostępem niepowołanych osób</li>
+            <li>Zapisywanie na kilku nośnikach, z których każdy będzie przechowywany w innym miejscu</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Metody zabezpieczania przed wirusami, robakami, trojanami:</strong>
+        <ul>
+            <li>Rozwiązania dostępne w postaci dedykowanych urządzeń filtrujących ruch</li>
+            <li>System alertowania generujący komunikaty dla administratorów</li>
+            <li>Zaawansowane możliwości raportowania i zdalnego zarządzania</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Metody kontroli przed nieporządanymi treściami:</strong>
+        <ul>
+            <li>Rozwiązania pozwalające w sposób niezauważalny przez użytkowników monitorować ich działania w sieci internetowej, tworzyć raporty, jak również w pełni zarządzać wykorzystaniem Internetu</li>
+            <li>Możliwość kategoryzacji stron internetowych oraz blokowania niepożądanych kategorii niezwiązanych z wykonywaną pracą (np. pornoli)</li>
+            <li>Wbudowany system alertowania generujący powiadomienia dla administratorów</li>
+            <li>Zaawansowane możliwości raportowania i zdalnego zarządzania</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Rodzaje złośliwego oprogramowania:</strong>
+        <ol>
+            <li>dialer – występował w dobie popularności modemów, wirus taki zmieniał numer z którym łączył się modem w celu zwiększenia opłat za połączenie (obecnie takie wirusy raczej już nie występują)</li>
+            <li>exploit</li>
+            <li>SQL/URL injections</li>
+            <li>
+                wirus - program lub fragment wrogiego wykonywalnego kodu, który dołącza się, nadpisuje lub zmienia inny program w celu reprodukcji samego siebie bez zgody użytkownika<br/>
+                mogą mieć kilka rodzajów:
+                <ul>
+                    <li>wirusy gnieżdżące się w sektorze rozruchowym twardego dysku (boot sector viruses)</li>
+                    <li>wirusy pasożytnicze (parasitic viruses)</li>
+                    <li>wirusy wieloczęściowe (multi-partite viruses)</li>
+                    <li>wirusy towarzyszące (companion viruses)</li>
+                    <li>makro wirusy (macro viruses)</li>
+                </ul>
+            </li>
+            <li>trojan - nie rozmnaża się jak wirus, ale jego działanie jest równie szkodliwe; ukrywa się pod nazwą lub w części pliku, który może wydawać się pomocny, jednak po uruchomieniu wcale nie pełni tej funkcji, której spodziewa się użytkownik</li>
+            <li>wabbit/forkbomb - powoduje samoreplikację aż do wyczerpania zasobów komputera; takie działanie powoduje kompletne zablokowanie komputera</li>
+            <li>backdoor - program otwierający "drzwi" do naszego komputera w celu wykorzystania go do nielegalnej działalności w sieci jako tzw "zombie PC"</li>
+            <li>rootkit - zestaw narzędzi umożliwiający podszywanie się pod administratora systemu w celu uzyskania jego uprawnień i przeprowadzenia szkodliwych działań w naszym komputerze</li>
+            <li>spyware - oprogramowanie które szpieguje użytkownika (zbiera dane bez jego zgody)</li>
+            <li>scumware - to ogólnie każde oprogramowanie pobrane z internetu bez naszej wiedzy</li>
+            <li>adware - oprogramowanie wyświetlajace niepożądane reklamy</li>
+            <li>keylogger - zapisuje jakie klawisze wciska użytkownik, na przykład w celu przejęcia jego haseł czy innych tajnych danych</li>
+            <li>hijacker - oprogramowanie wprowadzające w konfiguracji przeglądarek niepożądane zmiany, takie jak podmiana strony startowej czy doinstalowanie paska narzędzi</li>
+            <li>stealware - oprogramowanie, które bez naszej wiedzy wykrada nasze dane i wysyła je do osób trzecich</li>
+            <li>hoaxes - fałszywe alarmy dotyczące rzekomo nowych i groźnych wirusów</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Dodatkowe zagrożenia w sieci:</strong>
+        <ul>
+            <li>phishing - podszywanie się pod inną osobę lub instytucję, najczęściej w celu wyłudzenia poufnych informacji</li>
+            <li>pharming - polega na modyfikacji zawartości adresu www w celu przekierowania użytkownika na fałszywą stronę, mimo wpisania prawidłowego adresu strony; wymaga zaatakowania serwera DNS lub mechanizmu, który w systemie operacyjnym odpowiada za tłumaczenie nazw domenowych na adresy IP</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Jak chronić się przed złośliwym oprogramowaniem?</strong>
+        <ul>
+            <li>uważnie czytać komunikaty, które pojawiają się w czasie instalacji programów</li>
+            <li>pobierać proigramy i aplikacje jedynie z zaufanych źródeł</li>
+            <li>regularnie aktualizować zainstalowane oprogramowanie, a przede wszystkim system operacyjny</li>
+            <li>regularnie skanować dyski antywirusem</li>
+            <li>nie otwierać załącznikó we wiadomościach mailowych od nieznanych nadawcó</li>
+            <li>nie klikać w pojawiające się reklamy i informacje o wygranych</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Systemy szyfrowania</strong>
+        <ul>
+            <li>symetryczne – do szyfrowania i rozszyfrowania sluży ten sam klucz (klucz tajny) [na przykład system DES]</li>
+            <li>asymetryczne – mamy dwa klucze: publiczny do szyfrowania i tajny do rozszyfrowania [system RSA]</li>
+        </ul>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Podział komputerów</h1>
+
+    <div class="note-subsection">
+        <strong>Podział komputerów</strong>
+        <ul>
+            <li>
+                superkomputer - komputer o bardzo dużej mocy obliczeniowej; moc tę uzyskuje się dzięki przetwarzaniu równoległemu; superkomputery są przeznaczone do obliczeń naukowo-technicznych; do budowy superkomputerow stosuje się nawet tysiące standardowych procesorów
+                
+            </li>
+            <li>
+                mainframe - komputery o bardzo dużej mocy obliczeniowej, ale ich celem nie jest wykonywanie bardzo skomplikowanych obliczeń, a świadczenie usług dużej liczbie użytkowników; są one przeznaczone do pracy non-stop; ich istotą jest duża niezawodność
+            </li>
+            <li>
+                minikomputer - komputer o dużej mocy obliczeniowej (wieloprocesowy) wykorzystywany przez wielu użytkowników np. w systemie wielodostępowym (praca na terminalach)
+            </li>
+            <li>
+                mikrokomputer - komputer zbudowany na 1 mikroprocesorze, przeznaczony przede wszystkim do użytku domowego czy też biurowego
+            </li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Najszybszy superkomputer</strong>
+        <p>Najszybszy superkomputer w Polsce to Prometheus, a na świecie - japoński superkomputer Fugaku.</p>
+        <p>TOP listę najlepszych superkomputerów można sprawdzić na stronie top500.org</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Inne superkomputery w Polsce</strong>
+        <ul>
+            <li>Orzeł</li>
+            <li>Okeanos</li>
+            <li>Bem</li>
+            <li>CATO</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Do czego są wykorzystywane polskie superkomputery?</strong>
+        <p>Biologia molekularna, biochemia, energetyka, kosmologia, metorologia, chemia kwantowa, fizyka jądrowa</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Podział mikrokomputerów</strong>
+        <ol>
+            <li>
+                Stacjonarne (desktop computers)
+            </li>
+            <li>
+                Przenośne (portable computers)
+                <ul>
+                    <li>notebook</li>
+                    <li>netbook</li>
+                    <li>ultrabook</li>
+                    <li>chromebook</li>
+                    <li>tablet</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Urządzenia komputerowe</h1>
+
+    <div class="note-subsection">
+        <strong>Budowa systemu komputerowego</strong>
+        <p><strong>Dane</strong> → Wejście → Przetwarzanie → Wyjście → <strong>Informacje</strong></p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Podział urządzeń komputerowych</strong>
+        <ol>
+            <li>
+                urządzenia wprowadzania danych<br/>
+                (klawiatura, czytnik, skaner)
+            </li>
+            <li>
+                urządzenia przetwarzania danych<br/>
+                (procesor, pamięć operacyjna, układy I/O)
+            </li>
+            <li>
+                urządzenia przechowywania danych<br/>
+                (dysk magnetyczny, dyskietka, karta SD)
+            </li>
+            <li>
+                urządzenia wyprowadzania danych<br/>
+                (monitor, drukarka, ploter)
+            </li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Dobór urządzenia wprowadzania danych</strong><br/>
+        <u>Trzeba wziąć pod uwagę czynniki:</u>
+        <ol>
+            <li>ilość wprowadzanych danych</li>
+            <li>szybkość wprowadzania danych</li>
+            <li>dokładność i precyzja wprowadzanych danych</li>
+            <li>złożoność danych</li>
+            <li>koszt</li>
+            <li>częstotliwość wprowadzania danych</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Dobór urządzenia wyprowadzania danych</strong><br/>
+        <u>Trzeba wziąć pod uwagę czynniki:</u>
+        <ol>
+            <li>odpowiedniość (dostosowanie do rodzaju wyprowadzanych informacji)</li>
+            <li>trwałość</li>
+            <li>szybkość</li>
+            <li>czas odpowiedzi</li>
+            <li>koszt</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Dobór urządzenia przechowywania danych</strong><br/>
+        <u>Trzeba wziąć pod uwagę czynniki:</u>
+        <ol>
+            <li>szybkość (czas dostępu i szybkość transferu danych)</li>
+            <li>koszt przechowywana</li>
+            <li>inne czynniki: niezawodność, trwałość, bezpieczeństwo</li>
+            <li>pojemność</li>
+        </ol>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Oprogramowanie</h1>
+
+    <div class="note-subsection">
+        <strong>Dwie grupy oprogramowania</strong>
+        <ol>
+            <li>
+                Systemowe<br/>
+                (na przykład systemy operacyjne, środowiska programistyczne i programy narzędziowe)
+            </li>
+            <li>
+                Użytkowe
+                <ul>
+                    <li>
+                        oprogramowanie ogólnego przeznaczenia<br/>
+                        (na przykład biurowe, programy graficzne, przeglądarki internetowe)
+                    </li>
+                    <li>
+                        oprogramowanie specjalistyczne<br/>
+                        (na przykład systemy informatyczne, programy dydaktyczne, systemy ekspertowe, programy rozrywkowe)
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>System operacyjny</strong>
+        <p>System operacyjny jest programem, który działa jako pośrednik między użytkownikiem komputera a sprzętem komputerowym. Zadaniem systemu operacyjnego jest tworzenie środowiska, w którym użytkownik może wykonywać programy.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Cechy systemu operacyjnego</strong>
+        <ul>
+            <li>Wielozadaniowość (możliwość uruchamiania wielu procesów jednocześnie)</li>
+            <li>Wielodostępnosć (możliwość jednoczesnej pracy wielu użytkowników)</li>
+            <li>Ochrona danych (autoryzacja i autentykacja, zarządzanie dostępem do plików</li>
+        </ul>
+    </div>
+    
+    <div class="note-subsection">
+        <strong>Autoryzacja a autentykacja</strong>
+        <p>Autoryzacja - sprawdzenie, czy użytkownik ma prawo do określonego zasobu</p>
+        <p>Autentykacja (uwierzytelnianie) - sprawdzenie czy użytkownik jest na pewno tym, za kogo się podaje</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Podstawowe rodzaje baz danych</strong>
+        <ol>
+            <li>kartotekowe – każda tablica z danymi jest samodzielnym dokumentem i nie może współpracoać z innymi tablicami</li>
+            <li>relacyjne – wiele tablic z danymi jest ze sobą powiązanych poprzez relacje</li>
+            <li>obiektowe – powstały jako rozwinięcie programowania obiektowego, bazy danych przechowują obiekty (dane ze skojarzonymi metodami – funkcjami)</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Grupy języków programowania</strong>
+        <ul>
+            <li>maszynowe (nieprzenośne, związane z konkretnym zestawem instrukcji procesora)</li>
+            <li>języki asemblera</li>
+            <li>języki strukturalne</li>
+            <li>języki obiektowe</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Oprogramowanie do tworzenia dokumentów tekstowych</strong>
+        <ul>
+            <li>procesory tekstu</li>
+            <li>programy DTP (desktop publishing)</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Cechy i możliwości procesorów tekstu</strong>
+        <p>edytowanie tekstu, wyrównywanie tekstu, tabele, macra, narzędzie graficzne, nagłówki i stopki, narzędzia językowe, korespondencja seryjna, formatowanie tekstu, wyszukiwanie i zamiana</p>
+    </div>
+
+
+    <div class="note-subsection">
+        <strong>Cechy i możliwości arkuszy kalkulacyjnych</strong>
+        <p>podział obszaru roboczego na komórki, formuły, funkcje, formatowanie danych, wykresy, narzędzia analizy danych, narzędzia poszukiwania celu, import i eksport</p>       
+    </div>
+
+    <div class="note-subsection">
+        <strong>Programy graficzne - 3 grupy</strong>
+        <ol>
+            <li>programy do rysowania</li>
+            <li>programy do tworzenia diagramów</li>
+            <li>programy do edycji zdjęć</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Programy do zarządzania produktywnością</strong>
+        <ol>
+            <li>pakiety do zarządzania zadaniami i projektami</li>
+            <li>pakiety do zarządzania czasem i informacjami osobistymi (PIM)</li>
+            <li>pakiety do zarządzania kontaktami</li>
+            <li>pakiety do planowania zajęć</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Programy do korzystania z internetu</strong>
+        <ol>
+            <li>przeglądarki internetowe</li>
+            <li>programy poczty elektronicznej</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Poczta elektroniczna - cechy i możliwości</strong>
+        <ol>
+            <li>narzędzia edytorskie</li>
+            <li>możliwość dodawania załączników</li>
+            <li>filtrowanie treści</li>
+            <li>narzęzdia do zarządzania</li>
+            <li>szyfrowanie</li>
+            <li>książka adresowa</li>
+            <li>sygnowanie listów</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przeglądarki - cechy i możliwości</strong>
+        <ol>
+            <li>przyciski nawigacyjne</li>
+            <li>historia przeglądania</li>
+            <li>zakładki (bookmarks)</li>
+            <li>karty (tabs)</li>
+            <li>rozszerzenia (extensions)</li>
+            <li>narzędzia zintegrowane (search engine, cache)</li>
+            <li>bezpieczeństwo (certyfikaty)</li>
+            <li>wykonywanie skryptów i apletów</li>
+        </ol>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Sieci komputerowe</h1>
+
+    <div class="note-subsection">
+        <strong>Czym jest sieć komputerowa?</strong>
+
+        <p>
+            <u>Mniej techniczna definicja słownika PWN:<br/></u>
+            Zespół oddalonych od siebie urządzeń komputerowych i urządzeń peryferyjnych połączonych liniami transmisji danych.
+        </p>
+
+        <p>
+            <u>Bardziej techniczna definicja:<br/></u>
+            Zespół urządzeń transmisyjnych (jak karta sieciowa, koncentrator czy mostek), które połaczone są ze sobą medium transmisyjnym (kabel miedziany, światłowód, fale radiowe) i pracują pod kontrolą odpowiedniego oprogramowania, tzw. sieciowego systemu operacyjnego.
+        </p>
+    </div>
+
+    <div class="note-subsection">
+        Sieci komputerowe umożliwiają wykorzystanie tych samych zasobów informacji i urządzeń peryferyjnych przez wielu użytkowników, szybkie przesyłanie informacji. Ich zadaniem jest przesyłanie i wymiana danych przy użyciu odpowiedniego protokołu (np. IPX, TCP/IP) pomiędzy hostami w sieci.
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym jest sieć konwergentna?</strong>
+
+        <p>Sieć konwergentna stanowi jednolitą, wielousługową i szerokopasmową infrastrukturę sieciową charakteryzującą się:</p>
+
+        <ul>
+            <li>bardzo dużą skalowalnością</li>
+            <li>wysoką niezawodnością</li>
+            <li>zarządzalnością</li>
+            <li>wysoką jakością działania QoS</li>
+        </ul>
+
+        <p>W praktyce oznacza to zespolenie wszystkich typów i funkcji kanałów komunikacyjnych służących do transmisji głosu, obrazu, danych oraz aplikacji w jedną, wielousługową, szerokopasmową sieć. Obecne sieci komputerowe są właśnie sieciami konwergentnymi.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Podział sieci ze względu na zajmowany obszar</strong>
+        <ol>
+            <li>PAN (Personal Area Network) - do 10 metrów, obejmują jednego użytkownika</li>
+            <li>Sieci lokalne (Local Area Network, LAN)</li>
+            <li>Sieci metropolitalne (Metropolitan Area Network, MAN)</li>
+            <li>Sieci rozległe (Wide Area Network, WAN) – łączą ze sobą sieci LAN i MAN; sieci rozległe swoim zasięgiem obejmują cały świat</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Elementy składowe sieci</strong>
+        <ol>
+            <li>medium transmisyjne (kabel miedziany, światłowód, powietrze)</li>
+            <li>elementy transmisyjne (karty sieciowe, modemy, huby, switche, routery, repeatery)</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przewodowe media transmisyjne</strong>
+        <ul>
+            <li>kabel symetryczny (w tym tak zwana skrętka)</li>
+            <li>kabel współosiowy (koncentryczny)</li>
+            <li>kabel światłowodowy (jednomodowy, wielomodowy)</li>
+            <li>kable energetyczne</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Podział fal</strong>
+        <p>bardzo długie, długie, średnie, pośrednie, krótkie, ultrakrótkie, mikrofale</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Topologie sieci</strong>
+        <ol>
+            <li>topologia gwiazdy – grupa urządzeń podłączonych do jednego punktu centralnego, zwykle przełącznika</li>
+            <li>topologia magistrali – wszystkie urządzenia podłączone są do wspólnego medium transmisyjnego, na przykład kabla koncentrycznego</li>
+            <li>topologia pierścienia – każde urządzenie jest podłączone z dwoma sąsiadami</li>
+            <li>topologia podwójnego pierścienia – nadmiarowe połączenie w celu zwiększenia bezpieczeństwa i niezawodności</li>
+            <li>topologia siatki – połączenie układa się w siatkę (w przypadku pełnej siatki każde urządzenie jest połączone z każdym)</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Model odniesienia ISO/OSI</strong>
+        <ol>
+            <li>warstwa fizyczna – zajmje się przesyłaniem bitów na pomocą kanału transmisyjnego, zajmuje się ustaleniem napięcia reprezentującego 0 i 1 i wszystkim co fizyczne</li>
+            <li>wartswa łącza danych – przekształcenie łącza danych w taki sposób, by w warstwie sieci było ono widziane jako kanał komunikacyjny wolny od błędów transmksji; jej zadaniem jest podział strumienia danych na ramki (tworzenie ramek i rozpoznawanie początku i końca każdej ramki); warstwa fizyczna dostaje tylko strumień bitów i nie bada jego struktury, więc zadaniem warstwy fizycznej jest ewentualna korekcja błędwów</li>
+            <li>warstwa sieci – nie ma mechanizmu kontroli błędów i musi polegać na wiarygodnej tramsisji od warstwy łącza danych; w warstwie sieci stosuje się już adresowanie IP; warstwa sieci działa wyłącznie w obrębie jednej sieci LAN</li>
+            <li>warstwa transportowa – odpowiedzialna za końcową integralność transmisji; umożliwia łączęnie się poza segmentami sieci LAN za pośrednictwem routerów</li>
+            <li>warstwa sesji – zarządzanie przebiegiem komunikacji podczas połączenia między dwoma komputerami; gwarantuje zakończenie wykonywania jednego żądania przed rozpoczęciem drugiego</li>
+            <li>warstwa prezentacji  - dokonanie translacji danych do formatu zrozumiałego dla odbiorcy (kompresja, kodowanie, kryptografia)</li>
+            <li>warstwa aplikacji – interfejs między aplikacją a usługą sieci; zajmuje się transferem plików, obsługą poczty elektronicznej,</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Model TCP/IP</strong>
+        <ol>
+            <li>warstwa dostępu do sieci</li>
+            <li>warstwa internet</li>
+            <li>warstwa transportowa</li>
+            <li>warstwa aplikacji</li>
+        </ol>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Routing</h1>
+
+    <div class="note-subsection">
+        <strong>Protokoły routingu</strong>
+        <ol>
+            <li>bramy wewnętrznej (IGP, EIGRP, OSPF, RIP, IS-IS)</li>
+            <li>bramy zewnętrznej (EGP, BGP)</li>
+            <li>trasowania multicastowego (DVMRP)</li>
+        </ol>
+    </div>
+
+    <p>Protokoły routingu korzystają z tzw. metryki, na podstawie której wyznacza się która trasa jest najlepsza. Algorytm wyznaczania tej metryki jest inny dla każdego protokołu.</p>
+
+    <div class="note-subsection">
+        <strong>Podział ze względu na sposób działania</strong>
+
+        <ul>
+            <li>protokoły wektora odległości (nie mają pełnej informacji o odległych routerach) [RIP, IGRP]</li>
+            <li>protokoły stanu łącza (mają pełną informację o odległych routerach) [OSPF, IS-IS]</li>
+            <li>hybrydowe protokoły routingu [EIGRP]</li>
+            <li>protokoły typu path-vector (opisują trasy przy pomocy atrybutów)</li>
+        </ul>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Gromadzenie informacji</h1>
+
+    <div class="note-subsection">
+        <strong>Czym jest macierz dyskowa?</strong>
+        <p>Jest to urządzenie zawierające zbiór od kilku do kilkuset dysków fizycznych, które pogrupowane są w grupy RAID.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Do czego stosujemy macierze dyskowe?</strong>
+        <ul>
+            <li>zwiększenie niezawodności</li>
+            <li>zwiększenie wydajności</li>
+            <li>zwiększenie przestrzeni dostępnej jako jedna całość</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przykładowe strategie szeregowania danych na dyskus</strong>
+        <ul>
+            <li>FIFO (sprawiedliwa strategia nieprowadząca do zagłodzenia)</li>
+            <li>LIFO (ryzyko zagłodzenia, bo przy dużym obciążeniu tylko nowe zadania będą wykonywane)</li>
+            <li>Priorytet – małe zadanie dostają większy priorytet i są wykonywane szybciej (optymalizuje się wykonanie zadań, a nie wykorzystanie dysku)</li>
+            <li>SSTF (shortest service time first) – najpierw obsługiwane są żądania, przy których będą najmniejsze ruchy głowicą</li>
+            <li>SCAN – ramię „skanuje” dysk realizując napotkane na swojej drodze żądania</li>
+            <li>C-SCAN – zoptymalizowana wersja SCAN</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Sposoby adresowania danych na dysku</strong>
+        <ul>
+            <li>CHS (cylinder, head, sector) [cylinder, głowica, sektor]</li>
+            <li>LBA (logical block adressing) [bloki są numerowane od zera] [metoda funkcjonuje w każdym OS oprócz MS-DOSa]</li>
+            <li>MZR (multiple zone recording]</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Rodzaje pamięci flash w dyskach SSD</strong>
+        <ol>
+            <li>SLC - single level cell – pojedyncza komórka mieści tylko jeden bit</li>
+            <li>MLC – multi level cell – pojedyncza komórka mieści dwa bity danych</li>
+            <li>TLC – triple level cell – komórka mieści trzy bity danych (więcej danych, ale ma mniejszą żywotność)</li>
+            <li>QLC BiCS (quadriple level cell) – cztery bity na komórkę</li>
+            <li>3D NAND [TLC lub MLC] – stosując tę technologię można uzyskać dyski o pojemności 10TB, a nawet i więcej</li>    
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Cztery kategorie SSD</strong>
+        <ol>
+            <li>SATA</li>
+            <li>mSATA</li>
+            <li>M.2</li>
+            <li>PCI-E</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Protokoły wykorzystywane w SSD</strong>
+        <ol>
+            <li>AHCI - "gorszy"</li>
+            <li>NVMe - "lepszy"</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Zasada działania płyty CD</strong>
+        <p>
+            Płyta CD to krążek z tworzywa zwanego poliwęglanem o średnicy 12 lub 8 cm. Na jednej stronie umieszczona jest spiralna ścieżka biegnąca od środka krążka do jego krawędzi zewnętrznej. Powierzchnia jest cienką warstwą złota lub aluminium, jej zadaniem jest lepsze odbijanie światła lasera.
+        </p>
+        <p>
+            Informacja na płycie CD jest zapisywana w postaci szeregu zagłębień i wypukłości, zwanych odpowiednio pitami i landami, płyty tłoczone są za pomocą odpowiednio przygotowanej matrycy. Odczytywanie informacji odbywa się za pomocą lasera. Światło pada na ścieżkę i odbija się od pitów i landów. Przejście promienia lasera z pitu na land lub odwrotnie oznacza stan logiczny "1", brak zmiany - "0". w ten sposób odczytujemy informacje zapisane cyfrowo.
+        </p>
+    </div>
+
+    <div class="note-subsecton">
+        <strong>Zasada działania płyty DVD</strong>
+        <p>
+            Płyty DVD mają podobną mechanikę działania do płyt CD, ale mogą mieć o wiele większą pojemność. Jest to spowodowane zwiększeniem gęstości zapisu, a także wprowadzeniem zapisu wielowarstwowego - puszczając wiązkę lasera pod odpowiednim kątem można zczytać dane z odpowiedniej warstwy płyty.
+        </p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Kompresja</h1>
+
+    <strong>Algorytmy kompresji bezstratnej</strong>
+    <ol>
+        <li>RLE</li>
+        <li>LZ77, LZ78, LZSS, LZW</li>
+        <li>LZMA</li>
+        <li>BZIP2 (tar.bz2)</li>
+        <li>Deflate (PNG, gzip, PKZIP)</li>
+        <li>Kodowanie Huffmana</li>
+        <li>Kodwanie arytmetyczne</li>
+        <li>Move to Front</li>
+        <li>Transformata Burrowsa-Wheelera</li>
+    </ol>
+
+
+    <strong>Algorytmy kompresji stratnej:</strong>
+    <ol>
+        <li>DCT (Discrete Cosine Transform, czyli dyskretna transformata kosinusowa)</li>
+        <li>Falki (ang. wavelet)</li>
+        <li>Kompresja fraktalna</li>
+        <li>MDCT (Modified DCT)</li>
+        <li>Transformata Karhunena-Loevego</li>
+    </ol>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Organizacje związane ze standardami WWW</h1>
+
+    <div class="note-subsection">
+        <strong>Organizacje: </strong>
+        <ul>
+            <li>World Wide Web Consortium (W3C)</li>
+            <li>Internet Engineering Task Force (IETF)</li>
+            <li>Międzynarodowa Organizacja Normalizacyjna (ISO)</li>
+            <li>American National Standards Institute (ANSI)</li>
+            <li>ECMA</li>
+            <li>WHATWG</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>W3C</strong>
+        <p>Jednym z założycieli jest Tim Berners-Lee, wynalazca usługi WWW. W3C tworzy otwarte (nie własnościowe) standardy języków i protokołów oraz wytyczne. Prowadzi edukację z zakresu wykorzystania technologii internetowych. Funkcjonuje również jako otwarte forum dyskusyjne nt sieci.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>IETF</strong>
+        <p>Nieformalne stowarzyszenie osób zainteresowanych ustanawianiem standardów technicznych i organizacyjnych w Internecie</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>ISO</strong>
+        <p>Organizacja pozarządowa zrzeszająca krajowe organizacje normalizacyjne</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>ECMA</strong>
+        <p>Organizacja odpowiedzialna między innymi za specyfikację ECMAScript, na której oparty jest język JavaScript.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>WHATWG</strong>
+        <p>Nieformalna organizacja tworzona przez producentów przeglądarek internetowych, mająca na celu rozwijanie nowych technologii służących do tworzenia aplikacji sieciowych. W przeciwieństwie do neutralnego W3C, WHATWG jest kierowane głównie przez producentów kilku przeglądarek, przede wszystkim Mozilla Foundation, Google, Opera Software oraz Apple Inc.</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Pojęcia związane z technologiami webowymi</h1>
+
+    <div class="note-subsection">
+        <strong>Wyszukiwarka</strong>
+        <p>Aplikacja internetowa umożliwiająca wyszukanie stron zawierających poszukiwaną frazę; baza wyszukiwarki jest nieustatnnie uzupełniana i aktualizowana za pomocą programów (tzw. robotów czy pająków), które przeszukują internet.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Katalog</strong>
+        <p>Moderowany ręcznie, pogrupowane tematycznie zbiór adresów internetowych</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Silnik</strong>
+        <p>Program, który realizuje główne cele stawiane aplikacji</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Algorytm wyszukiwania</strong>
+        <p>Schemat podejmowania decyzji o przeszukaniu strony i nadawaniu odpowiedniej pozycji</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Pozycjonowanie</strong> 
+        
+        <p>Polega na osiągnięciu jak najwyższej pozycji danej strony dla podanych fraz w wyszukiwarkach internetowych.</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>SEO - Search Engine Optimization</h1>
+
+    <div class="note-subsection">
+        <strong>Czynniki wpływające na pozycję (związane z domeną):</strong> 
+        
+        <ol>
+            <li>wiek domeny</li>
+            <li>słowo kluczowe w nazwie domeny</li>
+            <li>historia domeny</li>
+            <li>nazwa i rozszerzenie</li>
+            <li>whois – informacje o właścielu domeny</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czynniki wpływające na pozycję (związane z czynnikami w obrębie strony):</strong> 
+        
+        <ol>
+            <li>tytuł strony</li>
+            <li>opis</li>
+            <li>nagłówki</li>
+            <li>treść</li>
+            <li>grafiki</li>
+            <li>responsywność</li>
+            <li>architektura strony</li>
+            <li>mapa strony</li>
+            <li>szybkość ładowania się strony</li>
+            <li>funkcjonalność i użyteczność</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czynniki wpływające na pozycję (związane z czynnikami poza stroną):</strong> 
+        
+        <ol>
+            <li>ilość linków prowadzących do witryn</li>
+            <li>jakość linków</li>
+            <li>obecność na portalach społecznościowych</li>
+        </ol>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Technologie webowe</h1>
+
+    <div class="note-subsection">
+        <strong>Technologie działające po stronie klienta</strong> 
+        
+        <ol>
+            <li>HTML - HyperText Markup Language</li>
+            <li>XHTML - eXtensible HyperText Markup Language (wersja HTML zgodna z XML – extensible markup language)</li>
+            <li>CSS - Cascading Style Sheets</li>
+            <li>Javascript (i AJAX)</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Na co pozwala PHP (PHP Hypertext Preprocessor)?</strong> 
+        
+        <ol>
+            <li>generowanie dynamiczne zawartości strony</li>
+            <li>operacje na plikach na serwerze</li>
+            <li>zbieranie danych z formularzy</li>
+            <li>wysyłanie i odbieranie cookies</li>
+            <li>dodawania, uswanie i modyfikowanie danych w bazie danych</li>
+            <li>zarządzanie dostępem użytkownika do danych</li>
+            <li>szyfrowanie danych</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym jest MySQL?</strong> 
+        <p>System zarządzania relacyjnym bazami danych.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Zalety PHP</strong>
+        <ol>
+            <li>Działa na różnych OS (np. Windows i Linux)</li>
+            <li>Jest kompatybilny z wieloma serwerami (Apache, Nginx, IIS)</li>
+            <li>Może współpracować z wieloma systemami bazodanowymi</li>
+            <li>Jest darmowy</li>
+            <li>Jest łatwy do nauczenia</li>
+            <li>Jest efektywny</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym jest AJAX?</strong>
+        <p>
+            Jest to technologia występująca w JavaScripcie, która pozwala na zmianę zawartości strony bez potrzeby jej ponownego załadowania. Dzięki AJAX-owi możliwe jest wysyłanie danych na serwer oraz pobieranie danych z serwera w tle
+        </p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Do czego wykorzystywany jest Python?</strong>
+        <ol>
+            <li>tworzenie aplikacji webowych</li>
+            <li>tworzenie odzielnych aplikacji typu workflows</li>
+            <li>tworzenie aplikacji wykorzystujących systemy bazodanowe</li>
+            <li>do przetwarzania i analizy dużych zbiorów danych</li>
+            <li>do obliczeń matematycznych</li>
+        </ol>            
+    </div>
+
+    <div class="note-subsection">
+        <strong>Cechy chakterystyczne Pythona</strong>
+        <ol>
+            <li>pracuje na różnych platformach</li>
+            <li>ma prostą syntaktykę podbną do języka angielskiego</li>
+            <li>interpretowany</li>
+            <li>może być traktowany jako język proceduralny, obiektowy lub funkcyjny</li>
+            <li>prosta syntaktyka sprawia że programy mają mniej linijek, niż w innych językach</li>
+        </ol>            
+    </div>
+
+    <div class="note-subsection">
+        <strong>Python jako język backendowy (po stronie serwera)</strong>
+        <ol>
+            <li>Django</li>
+            <li>Zope</li>
+        </ol>            
+    </div>
+
+    <div class="note-subsection">
+        <strong>Inne technologie backendowe</strong>
+        <ol>
+            <li>Perl</li>
+            <li>ASP (Active Server Pages) – technologia Microsoftu, używa VBScript, rozszerzenie asp</li>
+            <li>ASP.NET - następca ASP, rozszerzenie aspx, obsługuje na C#</li>
+            <li>CGI</li>
+            <li>JSP (JavaServlet Pages)</li>
+        </ol>            
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>CMS</h1>
+
+    <div class="note-subsection">
+        <strong>Czym jest CMS?</strong>
+        <p>CMS (Content Management System, System zarządzania treścią) pozwala na łatwe utworzenie serwisu WWW oraz jego późniejszą aktualizację osobom, które nie znają zasad ręcznego tworzenia stron WWW.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Jakie są zalety CMS?</strong>
+        <ol>
+            <li>Podstawowe zadanie: oddzielanie treści od graficznego sposobu jej reprezentacji</li>
+            <li>Wprowadzanie informacji: system zapisuje je w bazie danych</li>
+            <li>Wykorzystanie szablonów: bardzo łatwa zmiana koncepcji graficznej całego serwisu</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Odmiany CMS</strong>
+        <ol>
+            <li>
+                <u>Content Management Framework</u>
+                <p>
+                    Szkielet służący do budowy systemów CMS. Obsługa systemów CMF jest zazwyczaj kosztowna i wymaga pracy grupy programistów. Przykłady CMF to Vignette, Sageframe, Documentium, Zope, RedDot, INQUISE.
+                </p>
+            </li>
+
+            <li>
+                <u>Page-based systems</u>
+                <p>
+                    Systemy o transparentnych konsolach, pozwalają na edycję w ciele strony. nie wymagają odrębnych konsoli do zarządzania treścią, są łatwe w nauce i nie wymagają dużego doświadczenia podczas wdrożenia. Bardziej zaawansowane aplikacje wykraczające poza tradycyjne zarządzanie treścią wymagają pracy programisty
+                </p>
+            </li>
+
+            <li>
+                <u>Module-based systems</u>
+                <p>
+                    Systemy CMS bazujące na modułach to takie, które do prezentacji treści wykorzystują
+                    napisane do tego celu moduły/funkcje. Typowy system może zawierać zarządzanie
+                    wiadomościami, fora dyskusyjne etc. Zalety tego typu systemów to możliwość szybkiego
+                    uruchomienia portalu. (Przykłady: Drupal, Extreme Fusion, Sienn, eZ publish, Joomla!,
+                    Mambo, Zikula (poprzednia nazwa: PostNuke), PHP-Fusion, PHP-Nuke, Easiest, XOOPS,
+                    Quick.Cms, Umbraco CMS, DotNetNuke, N2 ASP.NET CMS, AxCMS.net, Kentico CMS,
+                    mojoPortal, Sitefinity, Dolphin 7, RODcms)
+                </p>
+            </li>
+
+            <li>
+                <u>Content object systems</u>
+                <p>
+                    Systemy tego typu koncentrują się wokół tzw. obiektów, czyli małych części informacji, które
+                    można reprodukować w wielu miejscach strony WWW. Oprogramowanie tego typu
+                    wykorzystywane jest często jako systemy redakcyjne w czasopismach i wielkich
+                    wydawnictwach. (Przykłady: ActionApps, Rhythmyx, Quantum Content Management)
+                </p>
+            </li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Metody korzystania z CMS</strong>
+        <ol>
+            <li>gotowe szablony stron</li>
+            <li>hosting+predefiniowany zestaw CMSów</li>
+            <li>samodzielna instalacja i konfiguracja CMS</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Cechy CMS: Drupal</strong>
+        <ol>
+            <li>wyposażony w funkcje, które oferują m.in. system blogów, środowiska przeznaczone do wspólnej pracy nad projektem, fora, biuletyny, galerie grafik/zdjęć, możliwość wysyłania i pobierania plików</li>
+            <li>wyposażony w system skórek ułatwiający zmianę wyglądu strony</li>
+            <li>automatycznie tworzy kanąły RSS</li>
+            <li>wyposażony w moduł taksonomii</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Cechy CMS: Joomla!</strong>
+        <ol>
+            <li>kilka tysięcy darmowych wtyczek</li>
+            <li>kompleksowy system nawigacji</li>
+            <li>rozbudowany panel administracyjny</li>
+            <li>wymaga serwera z dość dobrymi parametrami</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Cechy CMS: Wordpress</strong>
+        <ol>
+            <li>zaprojektowany głównie do obsługi blogów</li>
+        </ol>
+    </div>
+</section>
+
+</div>
+
+
+    <script>hljs.highlightAll();</script>
+    <script src="/notes/assets/js/normalize-indents.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+ </body>
+</html>
