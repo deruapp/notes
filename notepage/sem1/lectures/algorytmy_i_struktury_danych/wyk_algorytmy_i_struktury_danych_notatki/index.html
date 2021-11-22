@@ -503,7 +503,8 @@
     <div class="note-subsection">
         <strong>Czym jest graf?</strong>
         <p>Graf – struktura składająca się z wierzchołków (oznaczanych V) i gałęzi między nimi (oznaczanych E).</p>
-        <img src="../img/graf.png" alt="problem 8 hetmanów" class="img-fluid" />
+        <p>Ważne! Graf nie jest algorytmem!</p>
+        <img src="../img/graf.png" alt="grafik" class="img-fluid" />
     </div>
 
     <div class="note-subsection">
@@ -529,6 +530,48 @@
             <li><strong>Pętla własna</strong> - krawędź łącząca wierzchołek z samym sobą</li>
             <li><strong>Ścieżka lub droga</strong> - (w grafie skierowanym) sekcwencja krawędzi taka, że koniec jednej krawędzi jest początkiem następnej</li>
             <li><strong>Długością ścieżki</strong> nazywamy liczbę należących do niej krawędzi</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Metody zapisu grafu w pamięci komputera</strong>
+        <ul>
+            <li>
+                <strong>lista sąsiedztwa</strong>
+                <p>wypisujemy listę wierzchołków, oraz jakie wierzchołki są do nich połączone</p>
+            </li>
+            <li>
+                <strong>macierz sąsiedztwa</strong>
+                <p>macierz o wymiarze liczba_wierzchołków x liczba_wierzchołków</p>
+                <p>na przecięciu dajemy 1 jeśli są połączone i 0 jeśli nie są</p>
+            </li>
+            <li>
+                <strong>lista krawędzi</strong>
+                <p>wypisujemy po kolei jakie mamy krawędzie</p>
+            </li>
+            <li>
+                <strong>macierz incydencji</strong> [przy grafach skierowanych]
+                <p>macierz o wymiarze V*E </p>
+                <p>jeśli krawędź wychodzi z danego wierzchołka, to w odpowiedniej kolumnie wpisuje się -1</p>
+                <p>jeśli do niego wchodzi +1</p>
+                <p>jeśli wierzchołek nie jest połączony 0</p>
+                <p>jeśli to pętla własna, 2</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Metody przeszukiwania grafów</strong>
+        <ul>
+            <li>
+                <strong>metoda wzdłuż</strong>
+                <p>algorytm przechodzi <strong>wybraną ścieżką</strong> aż do jej całkowitego wyczerpania</p>
+                <p>domyślnie wszystkie wierzchołki mają status „nieodwiedzony”, a działanie algorytmu stopniowo nadaje wierzchołkom status „odwiedzony”.</p>
+            </li>
+            <li>
+                <strong>metoda wszerz</strong>
+                <p>procedura porusza się wszerz grafu, aby odwiedzić wszystkich nieodwiedzonych sąsiadów (tworzy jakby gwiazdę)</p>
+            </li>
         </ul>
     </div>
 </section>

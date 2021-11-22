@@ -353,6 +353,14 @@
         <p>Makroinstrukcje mogą być wielolinijkowe – wtedy trzeba umieścić znak \ na końcu linijki</p>
     </div>
 
+    <div class="note-subsection">
+        <strong>Dwa sposoby przyjmowania argumentów</strong>
+
+        <ol>
+            <li>przez wartość - wartość jest kopiowana, metoda działa <strong>na zasadzie zmiennych lokalnych</strong></li>
+            <li>przez wskaźnik - przekazujemy wskaźnik, zmienna nie jest kopiowana, a zmiana zmiennej wewnątrz funkcji powduje zmianę zmiennej również na zewnątrz</li>
+        </ol>
+    </div>
 </section>
 
 <section class="note-section card card-body bg-light">
@@ -395,6 +403,11 @@
     <div class="note-subsection">
         <strong>Jak definiować struktury?</strong>
         <pre><code>
+            struct pkt {
+                int x;
+                int y; 
+            };
+
             struct punkt {
                 int x;
                 int y;
@@ -407,41 +420,266 @@
                 int y;
             } pp11, pp22; // gdy zadeklarowaliśmy zmienne strukturalne, struktura nie musi mieć nazwy
         </code></pre>
+        <p>Przy definiowaniu struktury nie można zapomnieć o średniku na końcu nawiasu klamrowego!!</p>
     </div>
-</section>
-
-<section class="note-section card card-body bg-light">
-    <h1>Dyrektywa preprocesora - typedef</h1>
-
-    <pre><code>
-        #typedef unsigned long int uli
-        uli liczba1, liczba2; // uli to od teraz skrócony zapis dla unsigned long int
-    </code></pre>
 </section>
 
 <section class="note-section card card-body bg-light">
     <h1>Wskaźniki</h1>
 
-    <pre><code>
-        w = &amp;z  // przypisz do w adres zmiennej z
-        z = *w  // przypisz do z wartość, na którą wskazuje wskaźnik w (wyłuskiwanie wartości)
-        w++, w--  // zwiększa adres zmiennej, na jaką wskazuje wskaźnk o 1
-        w1 == w2 // czy wskaźniki wskazują na te samą zmienną?
-        w1 = w2  // podstaw pod w1 adres zmiennej na jaką wskazuje w2
+    <div class="note-subsection">
+        <pre><code>
+            w = &amp;z  // przypisz do w adres zmiennej z
+            z = *w  // przypisz do z wartość, na którą wskazuje wskaźnik w (wyłuskiwanie wartości)
+            w++, w--  // zwiększa adres zmiennej, na jaką wskazuje wskaźnk o 1
+            w1 == w2 // czy wskaźniki wskazują na te samą zmienną?
+            w1 = w2  // podstaw pod w1 adres zmiennej na jaką wskazuje w2
+    
+            int x = 5;
+            printf("%d", sizeof(s));
+            // Wszystkie wskaźniki mają ten sam rozmiar.
+    
+            wsk = 0;
+            wsk = NULL;
+            wsk = &amp;k;
+            wsk = (int*) 25550; // absolutny adres w pamięci
+    
+            register int x = 20;
+            int *wsk = &amp;x; //niepoprawne, zmienne rejestrowe nie mają adresu
+        </code></pre>
+    </div>
 
-        int x = 5;
-        printf("%d", sizeof(s));
-        // Wszystkie wskaźniki mają ten sam rozmiar.
+    <div class="note-subsection">
+        <strong>Czym jest dereferencja?</strong>
+        <pre><code>
+            int x = 10;
+            int* wsk = &amp;x;
 
-        wsk = 0;
-        wsk = NULL;
-        wsk = &amp;k;
-        wsk = (int*) 25550; // absolutny adres w pamięci
+            // Gwiazdka jest operatorem dereferencji
+            // Powoduje zamianę wskaźnika (zamianę adresu zmiennej) na wartość przypisaną tej zmiennej
+            int y = *wsk; // y = 10
+        </code></pre>
+    </div>
 
-        register int x = 20;
-        int *wsk = &amp;x; //niepoprawne, zmienne rejestrowe nie mają adresu
-    </code></pre>
+    <div class="note-subsection">
+        <strong>Rozmiar wskaźników</strong>
+        <p>Wskaźniki (niezależnie do jakiego typu zmiennej) zawsze mają stały rozmiar. W przypadku aplikacji 32-bitowych rozmiar wskaźnika to 4 bajty.</p>
+    </div>
 </section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Dyrektywy preprocesora</h1>
+
+    <div class="note-subsection">
+        <strong>Tworzenie aliasu na typ - dyrektywa typedef</strong>
+        <pre><code>
+            #typedef unsigned long int uli
+            uli liczba1, liczba2; // uli to od teraz skrócony zapis dla unsigned long int
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Dołączanie kodu źródłowego - dyrektywa include</strong>
+        <pre><code>
+            // Dołączenie biblioteki znajdującej się w domyślnym katalogu z bibliotekami
+            #include &lt;stdlib.h&gt;
+
+            // Dołączenie kodu źródłowego znajdującego się pod wskazaną ścieżką
+            #include "C:\folder\plik.h"
+
+            // Dołączenie kodu źródłowego znajdującego się w katalogu z bieżącym programem
+            #include "plik.h"
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Definiowanie stałych symbolicznych i makroinstrukcji - dyrektywa define</strong>
+        <pre><code>
+            // Makroinstrukcja
+            #define MAX(x,y) ((x)>(y)?(x
+
+            // Stała symboliczna
+            #define PI 3.14
+
+            // Stała bez zdefiniowanej wartości (patrz: podrozdział poniżej)
+            #define DEBUG_MODE
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Warunkowa kompilacja</strong>
+        <p>Warunkowa kompilacja pozwala skompilować wyłącznie wskazane fragmenty kodu. Pozwala to na przykład na programowanie programów wieloplatformowych, w których pewne linijki powinny być kompilowane wyłącznie na pewnych platformach.</p>
+        <pre><code>
+            #define DEBUG_MODE
+
+            #ifdef DEBUG_MODE
+                printf("Debug mode włączony"); 
+            #else 
+                printf("Debug mode wyłączony");  
+            #endif 
+        </code></pre>
+        <p>Istnieje też dyrektywa #ifndef, będąca zaprzeczeniem dyrektywy #ifdef.</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Unia</h1>
+    
+    <div class="note-subsection">
+        <strong>Jak definować unię?</strong>
+        <pre><code>
+            union ktk {
+                int x;
+                float y;
+            };
+
+            union zmien {
+                int x1;   // 4 bajty
+                char zn;  // 1 bajt
+            } zm1, zm2; // zmienne globalne, utworzone na podstawie tej unii
+
+            union {
+                int x;
+                char y;
+            } xoxo; // unia nie musi mieć nazwy, jeżeli ma od razu zadeklarowane zmienne
+        </code></pre>
+        <p>Przy definiowaniu unii nie można zapomnieć o średniku na końcu nawiasu klamrowego!!</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Jak inicjować zmienne przy unii?</strong>
+        <pre><code>
+            union ktk {
+                int x;
+                char tab[4];
+            } xoxo = {20}; // domyślnie inicjowana wartość jest przypisywana pierwszemu elementowi, w tym przypadku elementowi int x
+
+            union tkt {
+                char tab[4];
+                int x;
+            } oxox = {'a', 'b', 'c', 'd'}; // w tym przypadku inicjujemy tablicę
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym charakteryzuje się unia?</strong>
+        <p>Wszystkie dane unii są przechowywane w tym samym miejscu pamięci.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Jak wyznaczamy rozmiar unii?</strong>
+        <p>Rozmiar unii jest determinowany przez jej największy składnik. Przykładowo poniższa unia posiada wartość int (4 bajty) oraz char (1 bajt). Cała unia ma więc 4 bajty.</p>
+        <pre><code>
+            union zmien {
+                int x1;   // 4 bajty
+                char zn;  // 1 bajt
+            };
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Unia a wartości różnych typów</strong>
+
+        <pre><code>
+            // Mamy taką unię o rozmiarze 4 bajtów:
+            union ktk {
+                int x;
+                unsigned char tab[4];
+            } xoxo;
+
+            // Bajty tej unii są zapisywane w komputerze w taki sposób:
+            [bajt o wadze 256^0] [bajt o wadze 256^1] [bajt o wadze 256^2] [bajt o wadze 256^3]
+
+            // Dokonując na przykład takiego zapisu: 
+            xoxo.x = 255
+
+            // Ustawiamy pierwszy bajt na 255, a trzy pozostałe na zero.
+
+            // Dokonując natomiast takiego zapisu:
+            xoxo.x = 512
+
+            // Ustawiamy drugi bajt na 2, a wszystkie pozostałe na 0.
+
+            // Gdybyśmy pod xoxo podstawili {10, 0, 0, 8}, to w zmiennej xoxo.x znalazłaby się wartość 10 * 256^0 + 8 * 256^3, czyli 134217738.
+        </code></pre>
+    </div>    
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Operacje na plikach w C</h1>
+
+    <div class="note-subsection">
+        <strong>Niezbędna biblioteka:</strong>
+        <pre><code>
+            // Poniższe operacje na plikach wymagają dołączenia biblioteki obsługi standardowego wejścia/wyjścia
+            #include &lt;stdio.h&gt;
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Otwieranie i zamykanie pliku:</strong>
+        <pre><code>
+            FILE *f = fopen ("test35.txt", "TRYB_OTWARCIA");
+            fclose(f);
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Tryby otwarcia:</strong>
+        <p>Tryby otwarcia wyszczególnione są: <a href="https://www.cplusplus.com/reference/cstdio/fopen/" target="_blank">[tutaj]</a></p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Kontrola błędów:</strong>
+        <pre><code>
+            FILE *f = fopen("test35.txt", "r"); 
+            if(f == NULL) {  
+                printf("Nie moge otworzyc pliku");  
+            } else { 
+                // operacje na pliku 
+                fclose(f); 
+            }
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Funkcje odczytu:</strong>
+        <pre><code>
+            // fscanf, pozwala na odczyt zmiennych (jak przy scanf)
+            fscanf(wskaźnik_do_pliku, "%d", &zmienna_do_ktorej_wczytac);
+
+            // fgets, pozwala na odczyt kolejnych linii pliku
+            fgets(tablica_znakow_do_ktorej_wczytac, 100, wskaznik_do_pliku);
+            // przy czym 100 to maksymalna liczba znaków, jaką możemy wczytać
+
+            // fgetc, pozwala na odczyt pojedynczych znakow
+            fgetc(wskaznik_do_pliku);
+
+            // fread, pozwala na odczyt w trybie binarnym
+            fread(&zmienna , sizeof(typ_zmiennej), 1, wskaźnik_do_pliku); // gdzie 1 to ilość elementów, w przypadku tablic będzie to rozmiar tablicy
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Funkcje zapisu:</strong>
+        <pre><code>
+            // fprintf, pozwala na zapis zmiennych (jak przy printf)
+            fscanf(wskaźnik_do_pliku, "%d", zmienna_którą_zapisać);
+
+            // fputs, pozwala na zapis całej tablicy znaków
+            fputs(tablica_znaków, wskaźnik_do_pliku);
+
+            // fputc, pozwala na zapis pojedynczych znakow
+            fputc(znak_do_zapisania, wskaźnik_do_pliku);
+
+            // fwrite, pozwala na zapis w trybie binarnym
+            fwrite(&zmienna, sizeof(typ_zmiennej), 1, wskaźnik_do_pliku);  // gdzie 1 to ilość elementów, w przypadku tablic będzie to rozmiar tablicy
+        </code></pre>
+    </div>
+
+    <p>Więcej o operacjach na plikach w C można przeczytać <a href="https://cybersecurity.umcs.lublin.pl/wp-content/uploads/kmazur/PP2017/lab15.pdf" target="_blank">(tutaj)</a></p>
+</section>
+
 </div>
 
 

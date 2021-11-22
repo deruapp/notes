@@ -49,6 +49,220 @@
     Notatki z tego przedmiotu kiedyś tu może będą<br />
     Chociaż te prezentacje to też całkiem spoko notatki
 </section>
+
+<section class="note-section card card-body bg-light">
+    <h1>System operacyjny</h1>
+
+    <div class="note-subsection">
+        <strong>Czym jest SO?</strong>
+        <ol>
+            <li>Specjalny program, który steruje i zarządza zasobami komputera</li>
+            <li>Stanowi interfejs (jest pomostem) pomiędzy sprzętem a użytkownikiem</li>
+            <li>Ukrywa szczegóły sprzętowe systemu komputerowego poprzez tworzenie abstrakcji (maszyn wirtualnych).</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Jakie funkcje mogą mieć moduły SO?</strong>
+        <ol>
+            <li>funkcji zarządzania procesami; </li>
+            <li>funkcji zarządzania pamięcią operacyjną; </li>
+            <li>funkcji zarządzania pamięcią pomocniczą; </li>
+            <li>funkcji zarządzania systemem wejścia-wyjścia; </li>
+            <li>funkcji zarządzania plikami; </li>
+            <li>funkcji ochrony procesów w pamięci operacyjnej; </li>
+            <li>funkcji nadzoru pracą systemu rozproszonego (sieci); </li>
+            <li>funkcji interpretera poleceń.  </li>
+        </ol>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Historia SO</h1>
+
+    <div class="note-subsection">
+        <strong>Czym jest program monitor?</strong>
+        <p>Monitor był prostym programem, którego zadaniem było uruchamianie innych zadań. Działało to następująco:</p>
+        <ul>
+            <li>inicjalnie sterowanie było w monitorze </li>
+            <li>monitor przekazywał sterowanie do danego zadania </li>
+            <li>po zakończeniu zadania sterowanie wracało do monitora</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym był wsadowy typ pracy?</strong>
+        <p>W trybie wsadowym ten sam typ zadań realizowany razem, bez rekonfiguracji systemu.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym było AJS?</strong>
+        <p>AJS (Automatic Job Sequences) to mechanizm automatycznego porządkowania zadań. Mechanizm ten występował w systemie monitor.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym była praca pośrednia?</strong>
+        <p>W pracy bezpośredniej, system komputerowy odczytywał dane bezpośrednio z urządzenia (na przykład czytnika kart). Było to bardzo nieefektywne, gdyż takie operacje wejścia/wyjścia są bardzo wolne.</p>
+        <p>Wprowadzono więc przewijaki taśm oraz wprowadzono koncept urządzeń logicznych, które były warstwą abstrakcji łączącą urządzenia fizyczne.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym było buforowanie?</strong>
+        <p>Bufor był obiektem przechowującym dane, znajdującym się między urządzeniami wejścia/wyjścia a komputerem.</p>
+        <p>Urządzenie WE pisze dane do bufora (WY czyta), zaś procesor czyta dane (pisze dane).</p>
+        <p>Bufor to mechanizm mający usprawnić działanie operacji I/O.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym był spooling?</strong>
+        <p>Rozwinięcie: Simultaneous Peripherial Operation On-Line</p>
+        <p>Spooling pojawił się w momencie, w którym pojawiły się pamięci dyskowe (dysk stał się idealnym buforem).</p>
+        <p>Dzięki dyskom, możliwe stało się gromadzenie buforowanych danych w różnych miejscach na dysku (w odróżnieniu od taśm wymuszającyhc zapis sekwencyjny).</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Pojęcia</h1>
+
+    <div class="note-subsection">
+        <strong>Wieloprogramowość a wielozadaniowość</strong>
+        <p>Wieloprogramowość – pojawienie się możliwości równoczesnego utrzymania wielu procesów użytkownika. Procesor mógł je wykonywać w dowolnej kolejności. Komputer wykonuje zadanie umieszczone w pamięci; jeśli zadanie musi oczekiwać na jakiś zasób, wówczas procesor zawiesza ten proces i przechodzi do wykonania innego procesu. </p>
+        <p>Wielozadaniowość – przełączanie między aktywnymi zadaniami. Istnieje wielozadaniowość ze stałym podziałem czasu, oraz wielozadaniowość reagująca na zdarzenia</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym jest przerwanie?</strong>
+        <p>Gdy nastąpi przerwanie, zapisywany jest kontekst aktualnego zadania i jest rozpoczynane nowe (na przykład zadanie odczytu danych z dysku). Gdy to przerwanie się zakończy, kontynuowane jest to pierwsze zadanie.</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Obsługa wejścia/wyjścia</h1>
+
+    <div class="note-subsection">
+        <strong>Trzy metody obsługi operacji I/O:</strong>
+        <ol>
+            <li>
+                <u>programowe we/wy</u>
+                <p>
+                    kiedy procesor napotka na operację wejścia/wyjścia, wysyła rozkaz do odpowiedniego modułu we/wy - moduł wykonuje żądańą zcynność i ustawia odpowiednie bity w rejestrze stanu modułu
+                </p>
+            </li>
+            <li>
+                <u>układ we/wy sterowany przerwaniami</u>
+                <p>operacje wejścia/wyjścia są realizowane na zasadzie przerwania (patrz: rozdział Pojęcia)</p>
+            </li>
+            <li>
+                <u>bezpośredni dostęp do pamięci (DMA)</u>
+                <p>w każdym przypadku, kiedy procesor chce odczytać lub zapisać blok danych, wysyła polecenie do modułu DMA z następującymi informacjami: rodzajem żądanego polecenia,  adresem urządzania we/wy, początkową lokalizacją w pamięci, gdzie zostanie przeprowadzona operacja zapisu/odczytu, liczba słów, które mają zostać zapisane/odczytane</p>
+            </li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Podział urządzeń</strong>
+        <ul>
+            <li>blokowe - możliwy jest niezależny odczyt i zapis każdego bloku (dysk twardy, inne nośniki danych)</li>
+            <li>znakowe - łańcuch znaków bez podziału na bloki (drukarka, klawiatura)</li>
+            <li>urządzenia sieciowe/telekomunikacyjne</li>
+            <li>inne, nie pasujące do żadnej kategorii (np. czasomierze)</li>
+        </ul>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Zarządzanie procesami</h1>
+
+    <div class="note-subsection">
+        <strong>Jak definiujemy proces?</strong>
+        <p>Procesem nazywa się każde działanie systemu komputerowego.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Co to jest proces sekwencyjny?</strong>
+        <p>Ciąg takich instrukcji programu, że następna akcja nie rozpocznie się, zanim nie skończy się poprzednia.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Co to jest proces współbieżny?</strong>
+        <p>Procesy współbieżne są to takie procesy, które współdzielą zasoby (moc obliczeniową) pomiędzy wiele procesów jednocześnie.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Proces niezależny a współpracujący</strong>
+        <p>Proces niezależny - na jego stan nie wpływa działanie żadnego innego procesu.</p>
+        <p>Proces współpracujący - na jego stan może wpłynąć działanie innego procesu.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym jest blok kontrolny procesu?</strong>
+        <p>Blok kontrolny procesu to obiekt zawierający niezbędne dane na temat tegoż procesu.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Co zawiera blok kontrolny procesu?</strong>
+        <ol>
+            <li>stan procesu; </li>
+            <li>licznik rozkazów; </li>
+            <li>rejestry procesora; </li>
+            <li>informacje o planowaniu przydziału procesora; </li>
+            <li>informacje o zarządzaniu pamięcią; </li>
+            <li>informacje do rozliczeń; </li>
+            <li>informacje o stanie urządzeń WE-WY</li>
+        </ol>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Linuxowe systemy plików</h1>
+
+    <div class="note-subsection">
+        <strong>Charakterystyka systemów</strong>
+
+        <ol>
+            <li>
+                <strong>EXT</strong>
+                <p>Extended File System</p>
+                <p>Dopuszczał on pliki o rozmiarze do 64 MB i partycje do 2 GB. Poważną niedogodnością ext był fakt, że po dłuższym działaniu prowadził do dużej fragmentacji. Został szybko zastąpiony przez ext2.</p>
+            </li>
+            <li>
+                <strong>EXT2</strong>
+                <p>Ulepszona wersja EXT2, poprawiła problem fragmentacji.</p>
+                <p>Posiada prosty mechanizm korekcji błędów - przy poprawnym wyłączeniu komputera na dysku była ustawiana pewna flaga. Jeżeli przy starcie systemu ta flaga nie jest ustawiona, oznacza to że komputer był wyłączony niepoprawnie i należy uruchomić program, który spróbuje odzyskać dane.</p>
+                <p>EXT2 przy domyślnym rozmiarze bloku (4 KB) obsługuje partycje o wielkości do 4 TB i pojedyncze pliki o wielkości do 2 GB.</p>
+            </li>
+            <li>
+                <strong>EXT3</strong>
+                <p>W porównaniu do swojego poprzednika, EXT3 posiada dziennik (journaling)</p>
+            </li>
+            <li>
+                <strong>EXT4</strong>
+                <p>Wprowadziło mechanizm ekstentów</p>
+            </li>
+            <li>
+                <strong>ReiserFS (Reiser3)</strong>
+                <p>Jeden z pierwszych systemów z journalingiem.</p>
+                <p>Stworzony przez Hansa Reisera, miał za zadanie zoptymalizować obsługę dużej ilości małych plików. Miał też za zadanie zaimplementować system plików.</p>
+                <p>Używa algorytmu B-drzewa do przechowywania obiektów.</p>
+            </li>
+            <li>
+                <strong>Reiser4</strong>
+                <p>Jest to nowa wersja systemu ReiserFS napisana od podstaw.</p>
+            </li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Wsteczna kompatybilność</strong>
+        <p>Systemy plików EXT są wstecznie kompatybilne. Możliwe jest na przykład zamontowanie systemu EXT2 jako EXT4. Możliwa jest też bezstratna konwersja dysku między tymi systemami.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Journaling</strong>
+        <p>Jest to mechanizm księgowania zwiększający bezpieczeństwo systemu plików.</p>
+        <p>Journaling jest podobny do mechanizmu transakcji funkcjonującego w systemach baz danych.</p>
+    </div>
+</section>
 </div>
 
 
