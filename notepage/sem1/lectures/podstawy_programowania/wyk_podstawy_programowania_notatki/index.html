@@ -96,6 +96,28 @@
         </ul>
     </div>
 
+    <div class="note-subsection">
+        <strong>Abstrakcja:</strong>
+        <p>Abstrakcja polega na wyodrębnieniu i uogólnieniu najważniejszych cech problemu i wyrażeniu rozwiązania właśnie w obrębie tych cech.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Podejścia w programowaniu:</strong>
+        <ul>
+            <li>
+                <u>podejście proceduralne</u>
+                <p>program traktowany jako seria instrukcji i procedur działających na danych</p>
+            </li>
+            <li>
+                <u>podejście strukturalne</u>
+                <p>dane odseparowane od działających na nich funkcji</p>
+            </li>
+            <li>
+                <u>podejście obiektowe</u>
+                <p>program jest logicznie podzielony na klasy, łączące w jedną całość dane i operujące na nich funkcje</p>
+            </li>
+        </ul>
+    </div>
 </section>
 
 <section class="note-section card card-body bg-light">
@@ -680,6 +702,407 @@
     <p>Więcej o operacjach na plikach w C można przeczytać <a href="https://cybersecurity.umcs.lublin.pl/wp-content/uploads/kmazur/PP2017/lab15.pdf" target="_blank">(tutaj)</a></p>
 </section>
 
+<section class="note-section card card-body bg-light">
+    <h1>Zmiany w języku C++</h1>
+
+    <div class="note-subsection">
+        <strong>Nowe mechanizmy obsługi wejścia/wyjścia</strong>
+        <pre><code>
+            // wymagana biblioteka
+            #include &lt;iostream&gt; 
+
+            int zmienna;
+            cin &gt;&gt; zmienna;
+            cout &lt;&lt; zmienna;
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Dowolne rozmieszczanie deklaracji</strong>
+        <p>Zmienne nie muszą już być deklarowane na samym początku funkcji - jedynym wymaganiem jest, aby były one zadeklarowane przed ich pierwszym użyciem.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przekazywanie argumentów przez referencję</strong>
+        <pre><code>
+            void funkcyjka(int &zmienna) {
+                zmienna += 10;
+            }
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Przeciążanie (przeładowanie) funkcji</strong>
+        <p>W języku C++, może być kilka funkcji o tej samej nazwie - muszą się różnić listą argumentów lub typem zwracanym.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Funkcje inline</strong>
+        <p>Funkcje inline języka C++ nie powodują faktycznego skoku procesora, a powodują wstawienie danego zestawu instrukcji w miejsce wyołania.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Dynamiczne zarządzanie pamięcią</strong>
+        <p>Do zarządzania pamięcią w C trzeba było używać niewygodnych w użyciu funkcji, takich jak malloc i free. W C++ służą do tego specjalne operatory new oraz delete.</p>
+        <pre><code>
+            int* wsk = new int;
+            int* tabliczka = new int[100];
+            delete wsk;
+            delete[] tabliczka;
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Programowanie obiektowe</strong>
+        <p>W C++ mamy do dyspozycji mechanizmy programowania obiektowego - nie było ich w języku C.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Nowe typy danych</strong>
+        <p>long double, wchar_t (wchar oznacza wide char), bool</p>
+        <p>pojawia się też typ (czy raczej klasa) string</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Templates (szablony) w języku C++</h1>
+
+    <p>Szablony umożliwiają tworzenie funkcji, które przyjmują i zwracają dane dowolnego typu.</p>
+
+    <pre><code>
+        #include &lt;iostream&gt;
+
+        template&lt;class T&gt; void printVariable(T myVariable) {
+            std::cout &lt;&lt; myVariable;
+        }
+        
+        int main() {
+            printVariable&lt;int&gt;(100);
+            return 0;
+        }
+    </code></pre>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Klasy w języku C++</h1>
+
+    <div class="note-subsection">
+        <strong>Filary programowania obiektowego</strong>
+        <ul>
+            <li>
+                <u>abstrakcja</u>
+                <p>abstrakcja to wolność od konkretnej implementacji; polega na wyodrębnieniu i uogólnieniu najważniejszych cech problemu i wyrażeniu rozwiązania właśnie w obrębie tych cech</p>
+            </li>
+            <li>
+                <u>hermetyzacja (inaczej enkapsulacja)</u>
+                <p>polega na ukrywaniu implementacji (przy użyciu słów kluczowych private); uzyskujemy dzięki temu obiekty hermetycznie zamknięte, których nie da się przez przypadek uszkodzić</p>
+            </li>
+            <li>
+                <u>hermetyzacja (inaczej enkapsulacja)</u>
+                <p>polega na ukrywaniu implementacji (przy użyciu słów kluczowych private); uzyskujemy dzięki temu obiekty hermetycznie zamknięte, których nie da się przez przypadek uszkodzić</p>
+            </li>
+            <li>
+                <u>polimorfizm </u>
+                <p>polimorfizm to inaczej wielopostaciowość; dla przykładu dwie różne klasy mogą mieć metodę drukuj(), która będzie drukowała dane, ale ich implementacje mogą być różne</p>
+            </li>
+            <li>
+                <u>dziedziczenie </u>
+                <p>klasy mogą dziedziczyć po sobie, co pozwala na rozszerzanie możliwości obiektu i uniknięcie duplikacji kodu</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Domyślny kwantyfikator dostępu</strong>
+        <p>Jeśli nie zadeklarowano inaczej, pola w klasie są domyślnie prywatne.</p>
+        <pre><code>
+            class Point {
+                int x, y; // te pola będą prywatne
+            };
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Dwa sposoby definiowania funkcji</strong><br/>
+        <u>Wewnątrz klasy</u>
+        <pre><code>
+            class Point {
+                public:
+                void funkcyjka() {
+                    std::cout &lt;&lt; "jakas funkcja";
+                }
+            };
+        </code></pre>
+        <u>Na zewnątrz klasy</u>
+        <pre><code>
+            class Point {
+                public:
+                void funkcyjka();
+            };
+
+            void Point::funkcyjka() {
+                std::cout &lt;&lt; "jakas funkcja";
+            }
+        </code></pre>
+        <p>W tym pierwszym przypadku (definicja wewnątrz klasy) kompilator automatycznie oznaczy tę funkcję jako inline.</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Dziedziczenie w języku C++</h1>
+
+    <div class="note-subsection">
+        <strong>Czego się nie dziedziczy?</strong>
+        <ul>
+            <li>konstruktorów</li>
+            <li>destruktorów</li>
+            <li>operatorów przypisania</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Jak zapisywać dziedziczenie?</strong>
+        <p>Zwróć uwagę na wywołanie konstruktora bazowego w klasie pochodnej. Jest to wymagane, jeśli klasa bazowa nie posiada konstruktora domyślnego.</p>
+        <pre><code>
+            class Point {
+            public:
+                double x, y;
+            
+                Point(double x, double y) {
+                    this->x = x;
+                    this->y = y;
+                }
+            };
+                
+            class ColoredPoint : public Point {
+            public:
+                std::string color;
+            
+                ColoredPoint(double x, double y, std::string color) : Point(x, y) {
+                    this->color = color;
+                }
+            };
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Dziedziczenie wielokrotne</strong>
+        <p>W języku C++, w odróżnieniu do np. Javy czy C#, klasy pochodne mogą dziedziczyć po kilku klasach bazowych.</p>
+        <pre><code>
+            class Point3D : public Point, public ColoredPoint { ... }
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Rodzaje dziedziczenia</strong><br/>
+        <img src="../files/cpp-inheritance.png" alt="dziedziczenie" class="img-fluid" style="width: 60%; border: 1px solid black;" />
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Notacja UML</h1>
+
+    <img src="../files/uml-class.png" alt="uml" class="img-fluid" style="width: 15%; border: 1px solid black;"/>
+
+    <div>
+        <p>Trzy sekcje:</p>
+        <ul>
+            <li>Górna (nazwa klasy)</li>
+            <li>Środkowa (właściwości)</li>
+            <li>Dolna (metody)</li>
+        </ul>
+    </div>
+
+    <div>
+        <p>Trzy oznaczenia:</p>
+        <ul>
+            <li># &rarr; składnik protected</li>
+            <li>+ &rarr; składnik public</li>
+            <li>- &rarr; składnik public</li>
+        </ul>
+    </div>
+
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Typ wyliczeniowy - enum</h1>
+
+    <pre><code>
+        enum Color {
+            RED=0, GREEN, BLUE=1000, OTHER
+        };
+    </code></pre>
+
+    <pre><code>
+        std::cout &lt;&lt; GREEN; // wyświetli 1
+        std::cout &lt;&lt; OTHER; // wyświetli 1001
+
+        Color kolorek; // zmienna która może przyjmować wyłącznie wartości {RED, GREEN, BLUE, OTHER}
+    </code></pre>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Przeciążanie operatorów</h1>
+
+
+    <div class="note-subsection">
+        <strong>Sposób 1 - poprzez funkcję będącą częścią klasy</strong>
+        <pre><code>
+            class GeometricalVector {
+            public:
+                int x, y;
+            
+                GeometricalVector(int x, int y) {
+                    this->x = x;
+                    this->y = y;
+                }
+            
+                GeometricalVector operator +(GeometricalVector whatToAdd) {
+                    return GeometricalVector(this->x + whatToAdd.x, this->y + whatToAdd.y);
+                }
+            };
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Sposób 2 - poprzez dodatkową funkcję, nie będącą częścią klasy</strong>
+        <pre><code>
+            class GeometricalVector {
+            public:
+                int x, y;
+            
+                GeometricalVector(int x, int y) {
+                    this->x = x;
+                    this->y = y;
+                }
+            };
+                
+            GeometricalVector operator +(GeometricalVector a, GeometricalVector b) {
+                return GeometricalVector(a.x + b.x, a.y + b.y);
+            }
+        </code></pre>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Przyjaźń</h1>
+
+    <div class="note-subsection">
+        <strong>Funkcja zaprzyjaźniona</strong>
+        <pre><code>
+            class GeometricalVector {
+            private:
+                int x, y;
+            public:
+                friend void pokaWektor(GeometricalVector jakisWektor);
+            
+                GeometricalVector(int x, int y) {
+                    this->x = x;
+                    this->y = y;
+                }
+            };
+            
+            // Funkcja pokaWektor używa prywatnych składowych klasy GeometricalVector
+            // bo klasa przyjaźni się z tą funkcją
+            void pokaWektor(GeometricalVector jakisWektor) {
+                std::cout &lt;&lt; jakisWektor.x &lt;&lt; " " &lt;&lt; jakisWektor.y;
+            }
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Klasa zaprzyjaźniona</strong>
+        <pre><code>
+            class GeometricalVector {
+            private:
+                int x, y;
+            public:
+                // Klasa JakasCiekawaKlasa będzie mieć dostęp do wszystkich prywatnych składowych klasy GeometricalVector
+                friend class JakasCiekawaKlasa;
+            
+                GeometricalVector(int x, int y) {
+                    this->x = x;
+                    this->y = y;
+                }
+            };
+        </code></pre>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Słowo kluczowe static</h1>
+
+    <div class="note-subsection">
+        <strong>Metody statyczne</strong>
+        <pre><code>
+            class SomeClass {
+            public:
+                static void sayHello() {
+                    std::cout &lt;&lt; "hello";
+                }
+            };
+                
+            int main() {
+                SomeClass::sayHello();
+            }
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Atrybuty statyczne</strong>
+        <pre><code>
+            class SomeClass {
+            public:
+                static int ktk;
+            };
+              
+            // Ta definicja jest wymagana, inaczej program się nie skompiluje
+            int SomeClass::ktk;
+                
+            int main() {
+                // Wyświetli 0, bo zmienne statyczne są traktowane jak zmienne globalne i są inicjowane zerami
+                std::cout &lt;&lt; SomeClass::ktk; 
+            }
+        </code></pre>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Funkcje wirtualne i abstrakcyjne</h1>
+
+    <div class="note-subsection">
+        <strong>Jak definiować funkcje/klasy abstrakcyjne?</strong>
+        <pre><code>
+            class Figura {
+            public:
+                // Dzięki takiemu zapisowi, klasa Figura zostanie oflagowana jako abstrakcyjna
+                virtual double obliczPole() = 0;
+            };
+        </code></pre>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Wskaźniki na funkcje</h1>
+
+    <pre><code>
+        double add(double a, double b) {
+            return a + b;
+        }
+        
+        double substract(double a, double b) {
+            return a - b;
+        }
+        
+        int main() {
+            double (*pointer)(double, double) = add;
+            std::cout &lt;&lt; (*pointer)(10, 20); // wyświetli 30
+        
+            pointer = substract;
+            std::cout &lt;&lt; (*pointer)(10, 20); // wyświetli -10
+        }
+    </code></pre>
+</section>
 </div>
 
 

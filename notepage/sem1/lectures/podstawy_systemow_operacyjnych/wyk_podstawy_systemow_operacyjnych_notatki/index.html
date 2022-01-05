@@ -134,6 +134,20 @@
         <strong>Czym jest przerwanie?</strong>
         <p>Gdy nastąpi przerwanie, zapisywany jest kontekst aktualnego zadania i jest rozpoczynane nowe (na przykład zadanie odczytu danych z dysku). Gdy to przerwanie się zakończy, kontynuowane jest to pierwsze zadanie.</p>
     </div>
+
+    <div class="note-subsection">
+        <strong>Czym jest sekcja krytyczna?</strong>
+        <p>Sekcja krytyczna jest segmentem programu, który dokonuje modyfikacji wspólnych zmiennych.</p>
+        <p>Jeżeli jeden proces realizuje swoją sekcję krytyczną, wówczas żaden inny proces nie może wejść do sekcji krytycznej.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym jest semafor?</strong>
+        <p>Semafor to zmienna, która służy do implementacji sekcji krytycznej.</p>
+        <p>Obsługa semafora polega na zastosowaniu dwóch operacji - Sygnalizuj i Czekaj.</p>
+        <p>Semafor jest <strong>niepodzielny</strong>, oznacza to że jeżeli jeden proces aktualnie modyfikuje jego wartość, żaden inny proces nie może tego zrobić.</p>
+        <p>Istnieje też semafor binarny - wtedy do jego realizacji używa się wartości logicznych, a nie liczbowych.</p>
+    </div>
 </section>
 
 <section class="note-section card card-body bg-light">
@@ -211,6 +225,167 @@
             <li>informacje o stanie urządzeń WE-WY</li>
         </ol>
     </div>
+
+    <div class="note-subsection">
+        <strong>Jakie są algorytmy przydziału procesora?</strong>
+        <ol>
+            <li>
+                <strong>FCFS (First-Come First-Serve)</strong>
+                <p>Działa jak kolejka FIFO</p>
+            </li>
+            <li>
+                <strong>Shortest-Job-First</strong>
+            </li>
+            <li>
+                <strong>Algorytm priorytetowy</strong>
+                <p>Wymaga nadania każdemu procesowi priorytetu z góry</p>
+            </li>
+            <li>
+                <strong>Round-Robin</strong>
+                <p>Algorytm rotacyjny, każdemu procesowi przydziela się stały kwant czasu procesora</p>
+            </li>
+            <li>
+                <strong>Algorytm planowania z kolejkami wielopoziomowymi</strong>
+                <p>Istnieje szereg kolejek dla różnych procesów, każda kolejka może być moderowana innym algorytmem</p>
+            </li>
+            <li>
+                <strong>Algorytm planowania z kolejkami wielopoziomowymi oraz sprzężeniem zwrotnym</strong>
+                <p>Podobne jak 5, ale 
+                    istnieje możliwość zmiany kolejki</p>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Wątki</h1>
+
+    <div class="note-subsection">
+        <strong>Czym są wątki?</strong>
+        <p>Wątki nazywamy czasami "procesami lekkimi". Każdy proces może mieć jeden lub więcej wątków.</p>
+        <p>Wątki tego samego procesu współdzielą między sobą dane oraz zasoby systemu operacyjnego. </p>
+        <p>Wątek posiada własny stan rejestrów oraz w 
+        większości przypadków własny stos.</p>
+        <p>Przełączanie procesora pomiędzy wątkami jest 
+        rozwiązaniem znacznie tańszym niż przełączanie 
+        procesora pomiędzy klasycznymi procesami.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Jakie wyróżniamy typy wątków?</strong>
+        <ol>
+            <li>Wątki  użytkownika<br/>Realizowane na poziomie użytkownika, jądro nic o nich nie wie</li>
+            <li>Wątki jądra<br/>udostępniane  bezpośrednio  przez system operacyjny; jądro zajmuje się tworzeniem i planowaniem wątków oraz administruje je we własnej przestrzeni</li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Jakie mamy typy wielowątkowości?</strong>
+        <ol>
+            <li><a href="../files/watki-1.png" data-toggle="lightbox"><img src="../files/watki-1.png" class="img-fluid" style="border: 1px solid black; width: 20%;"/></a></li>
+            <li><a href="../files/watki-2.png" data-toggle="lightbox"><img src="../files/watki-2.png" class="img-fluid" style="border: 1px solid black; width: 20%;"/></a></li>
+            <li><a href="../files/watki-3.png" data-toggle="lightbox"><img src="../files/watki-3.png" class="img-fluid" style="border: 1px solid black; width: 20%;"/></a></li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym są P-Wątki?</strong>
+        <p>Jest to standard POSIX, określający interfejs programów użytkowych API do tworzenia wątków i ich synchronizowania.</p>
+        <p>Jest to specyfikacja, nie implemntacja.</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Problemy synchronizacji procesów</h1>
+
+    <div class="note-subsection">
+        <strong>Problem czytelników i pisarzy</strong>
+        <p>Rozróżniamy 2 typy procesów: zainteresowane czytaniem danych – czytelnicy oraz zainteresowane aktualizacją danych – pisarze.</p>
+        <p>Kilku czytelników może "czytać" naraz, ale kilku pisarzy nie może naraz pisać, bo to spowodowałoby chaos - trzeba więc wprowadzić wyłączność procesów pisarzy do obiektu.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Problem ucztujących filozofów</strong>
+        <p><a href="../files/filozofowie.png" data-toggle="lightbox"><img src="../files/filozofowie.png" class="img-fluid" style="border: 1px solid black; width: 20%;"/></a></p>
+        <p>Możliwe rozwiązania:</p>
+        <ul>
+            <li>Pozwolić zasiadać do stołu najwyżej 4 filozofom</li>
+            <li>Pozwolić na podnoszenie filozofom pałeczek tylko wtedy, gdy obie są wolne</li>
+            <li>Filozofowie parzyści i nieparzyści podnoszą pałeczki lewe i prawe w odwrotnych kolejnościach (rozwiązanie nieparzyste)</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Na czym polega zakleszczenie?</strong>
+        <p>O zakleszczeniu mówimy wtedy, gdy dwa procesy oczekują na wzajemnie przetrzymywane zasoby. <strong>Zakleszczenie</strong> to inaczej blokada.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Jak odczytywać grafy przydziału zasobów?</strong>
+        <img src="files/graf-przydzialu.png" />
+        <p>Kropki u góry, to procesy (P).</p>
+        <p>Prostokąty u dołu, to zasoby (Z).</p>
+        <p>Strzałki wychodzące od procesu, do zasobu, to zamówienia na zasoby.</p>
+        <p>Strzałki wychodzące od zasobu, do procesu, to przydziały zasobów.</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Zarządzanie pamięcią operacyjną</h1>
+
+    <div class="note-subsection">
+        <strong>W jakim celu SO zarządza pamięcią operacyjną?</strong>
+        <ol>
+            <li>
+                <u>Relokacja (przemieszczenie) procesów w pamięci</u>
+                <p>System operacyjny jest odpowiedzialny na przekształcenie adresów używanych w programie na adresy rzeczywiste.</p>
+            </li>
+            <li>
+                <u>Ochrona zawartości pamięci</u>
+                <p>Gdy kilka procesów dzieli pamięć, wówczas niezwykle istotne staje się zapewnienie nienaruszalności poszczególnych obszarów pamięci. Dotyczy to zarówno pisania do pamięci, jak i jej odczytu.</p>
+            </li>
+            <li>
+                <u>Kontrola dostępu do pamięci współdzielonej</u>
+                <p>Kontrola nad pamięcią współdzieloną (gdy kilka procesów współdzieli ten sam obszar pamięci).</p>
+            </li>
+            <li>
+                <u>Organizacja logiczna pamięci</u>
+                <p>Pamięć fizyczna jest liniowa, ale elementy programu mogą znajdować się w różnych miejscach pamięci - dlatego system operacyjny najczęściej dzieli pamięć na logicznie wydzielone części, na przykład przy użyciu segmentacji.</p>
+            </li>
+            <li>
+                <u>Organizacja fizyczna pamięci</u>
+                <p>Polega na dwupoziomowym organizowaniu pamięci - np. dysk twardy na którym jest partycja wymiany i pamięć RAM.</p>
+            </li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym był program nakładkowy?</strong>
+        <p>Mechanizm nakładek umożliwiał uruchamianie programów, które były większe niż dostępna pamięć operacyjna. Taki program składał się z części sterującej (była załadowana w pamięci cały czas) oraz nakładek, które w razie potrzeby były wymieniane.</p>
+        <p>Obecnie ten mechanizm jest już raczej nieużywany.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym jest pamięć wirtualna?</strong>
+        <p>Jest to mechanizm zarządzania pamięcią komputera zapewniający procesowi wrażenie pracy w jednym, dużym, ciągłym obszarze pamięci operacyjnej, podczas gdy fizycznie może być ona pofragmentowana, nieciągła i częściowo przechowywana na urządzeniach pamięci masowej</p>
+    </div>
+
+    <div class="note-subsection">
+        <p>Jeden ze sposobów implementacji pamięci wirtualnej wykorzystuje tzw. rejestry bazowe i graniczne. Rejestr bazowy i graniczny to kolejno najniższy i najwyższy adres pamięci, który może użyć proces.</p>
+        <p>adres fizyczny = rejestr bazowy + adres logiczny</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Czym jest stronicowanie?</strong>
+        <p>Stronicowanie to jeden ze sposobów organizacji pamięci.</p>
+        <p>Jest to podział pamięci fizycznej na ramki stron oraz podział logicznej przestrzeni adresowej (przestrzeni adresów wirtualnych) na strony o takim samym rozmiarze jak ramki w pamięci fizycznej. Pozwala to na zwiększenie przestrzeni adresów – celem stronicowania jest fizyczny podział pamięci</p>
+    </div>
+    
+    <div class="note-subsection">
+        <strong>Czym jest segmentacja?</strong>
+        <p>Stronicowanie to jeden ze sposobów organizacji pamięci.</p>
+        <p>Celem segmentacji jest logiczny podział przestrzeni adresów. Rozmiar segmentów może być dowolnie określony przez programistę. Podział adresu programu na numery segmentu i bajtu jest logiczny (podczas gdy w przypadku stronicowania podział na strony był fizyczny).</p>
+    </div>
 </section>
 
 <section class="note-section card card-body bg-light">
@@ -249,6 +424,10 @@
                 <strong>Reiser4</strong>
                 <p>Jest to nowa wersja systemu ReiserFS napisana od podstaw.</p>
             </li>
+            <li>
+                <strong>Btrfs (B-tree file system)</strong>
+                <p>Można za jego pomocą zrobić RAID 0 lub 1 bez żadnego dodatkowego sterownika ani macierzy sprzętowej</p>
+            </li>
         </ol>
     </div>
 
@@ -262,7 +441,200 @@
         <p>Jest to mechanizm księgowania zwiększający bezpieczeństwo systemu plików.</p>
         <p>Journaling jest podobny do mechanizmu transakcji funkcjonującego w systemach baz danych.</p>
     </div>
+
+    <div class="note-subsection">
+        <strong>Repacker</strong>
+        <p>Repacker to program, który defragmentuje dane ("upycha ogony").</p>
+    </div>
 </section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Dyski</h1>
+
+    <div class="note-subsection">
+        <strong>Sposoby przydziału miejsca na dysku</strong>
+        <ul>
+            <li>ciągły - każdy plik musi mieć zadeklarowaną długość, a bloki muszą być ułożone jeden po drugim</li>
+            <li>listowy - pliki są tworzone na zasadzie listy</li>
+            <li>indeksowy - każdemu plikowi odpowiada zapisana na dysku tablica, która zawiera adresy bloków</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Sposoby przeszukiwania dysków</strong>
+        <ul>
+            <li>metoda FCFS – First Come First Serve (jak przy planowaniu przydziału procesora), przeszukiwanie dysku realizowane według kolejki ścieżek</li>
+            <li>metoda SSFT  - Shortest Seek Time First – przeszukiwanie dysku realizowane jest poprzez  poruszanie się na zasadzie punkt najmniej oddalony od obecnego najpierw;</li> 
+            <li>metoda SCAN – przeszukiwanie dysku realizowane jest poprzez powrót do punktu 0 przez 
+            wszystkie punkty mniejsze niż obecny i następnie przejście przez punkty większe niż punkt z którego zaczęto;</li>
+            <li>metoda C-SCAN – Cyclic SCAN – na odwrót niż wyżej, z punktu startowego do punktu 
+            największego i dalej do 0, skąd do punktów mniejszych</li>
+            <li>metoda LOOK oraz C-LOOK</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Na czym polega formatowanie fizyczne?</strong>
+        <p>Jest to fizyczne zdefiniowanie położenia ścieżek i sektorów na jednolitej powierzchni magnetycznej nowego dysku.</p>
+        <p>Obecnie formatowania fizycznego dokonuje producent.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Macierze RAID</strong>
+        <p>Macierze RAID mogą przyśpieszać operacje wejścia/wyjścia, zwiększać ilość miejsca widzianego jako jedna całość oraz zwiększać bezpieczeństwo danych.</p>
+        <ul>
+            <li>RAID 0 - połączenie dwóch dysków w jedną całość</li>
+            <li>RAID 1 - duplikacja</li>
+            <li>RAID 2 - kod Hamminga</li>
+            <li>RAID 3</li>
+            <li>RAID 4</li>
+            <li>RAID 5</li>
+            <li>RAID 6</li>
+        </ul>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Linuxowe systemy plików</h1>
+
+    <div class="note-subsection">
+        <strong>Charakterystyka systemów</strong>
+
+        <ol>
+            <li>
+                <strong>EXT</strong>
+                <p>Extended File System</p>
+                <p>Dopuszczał on pliki o rozmiarze do 64 MB i partycje do 2 GB. Poważną niedogodnością ext był fakt, że po dłuższym działaniu prowadził do dużej fragmentacji. Został szybko zastąpiony przez ext2.</p>
+            </li>
+            <li>
+                <strong>EXT2</strong>
+                <p>Ulepszona wersja EXT2, poprawiła problem fragmentacji.</p>
+                <p>Posiada prosty mechanizm korekcji błędów - przy poprawnym wyłączeniu komputera na dysku była ustawiana pewna flaga. Jeżeli przy starcie systemu ta flaga nie jest ustawiona, oznacza to że komputer był wyłączony niepoprawnie i należy uruchomić program, który spróbuje odzyskać dane.</p>
+                <p>EXT2 przy domyślnym rozmiarze bloku (4 KB) obsługuje partycje o wielkości do 4 TB i pojedyncze pliki o wielkości do 2 GB.</p>
+            </li>
+            <li>
+                <strong>EXT3</strong>
+                <p>W porównaniu do swojego poprzednika, EXT3 posiada dziennik (journaling)</p>
+            </li>
+            <li>
+                <strong>EXT4</strong>
+                <p>Wprowadziło mechanizm ekstentów</p>
+            </li>
+            <li>
+                <strong>ReiserFS (Reiser3)</strong>
+                <p>Jeden z pierwszych systemów z journalingiem.</p>
+                <p>Stworzony przez Hansa Reisera, miał za zadanie zoptymalizować obsługę dużej ilości małych plików. Miał też za zadanie zaimplementować system plików.</p>
+                <p>Używa algorytmu B-drzewa do przechowywania obiektów.</p>
+            </li>
+            <li>
+                <strong>Reiser4</strong>
+                <p>Jest to nowa wersja systemu ReiserFS napisana od podstaw.</p>
+            </li>
+            <li>
+                <strong>Btrfs (B-tree file system)</strong>
+                <p>Można za jego pomocą zrobić RAID 0 lub 1 bez żadnego dodatkowego sterownika ani macierzy sprzętowej</p>
+            </li>
+        </ol>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Wsteczna kompatybilność</strong>
+        <p>Systemy plików EXT są wstecznie kompatybilne. Możliwe jest na przykład zamontowanie systemu EXT2 jako EXT4. Możliwa jest też bezstratna konwersja dysku między tymi systemami.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Journaling</strong>
+        <p>Jest to mechanizm księgowania zwiększający bezpieczeństwo systemu plików.</p>
+        <p>Journaling jest podobny do mechanizmu transakcji funkcjonującego w systemach baz danych.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Repacker</strong>
+        <p>Repacker to program, który defragmentuje dane ("upycha ogony").</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Architektura</h1>
+
+    <div class="note-subsection">
+        <strong>Jak rozumieć pojęcie architektura?</strong>
+        <ul>
+            <li>
+                Potocznie: oznacza typ procesora wraz z zestawem jego instrukcji
+            </li>
+            <li>
+                Oficjalnie: oznacza organizację połączeń komputera
+            </li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Podział architektur [ze względu na sposób organizacji pamięci i wykonywania programu]</strong>
+        <ul>
+            <li>architektura von Neumanna (brak podział pomiędzy pamięcią zawierającą rozkazy i dane)</li>
+            <li>architektura Harvardzka (pamięć  danych programu  jest  oddzielona  od  pamięci  rozkazów)</li>
+            <li>architektura mieszana (rozkazy i dane programów są w odrębnych pamięciach, ale jest między nimi wspólna magistrala)</li>
+        </ul>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Maszyna wirtualna</h1>
+
+    <div class="note-subsection">
+        <strong>Na czym polega koncepcja maszyny wirtualnej?</strong>
+        <p>Dzięki maszynie wirtualnej, możliwe jest odseparowanie warstwy fizycznej (sprzętowej) od warstwy oprogramowania. Oprogramowanie "myśli", że pracuje na fizycznym sprzęcie, podczas gdy tak naprawdę pracuje na sprzęcie logicznym, "udawanym".</p>
+        <p>W maszynach wirtualnych można uruchamiać pojedyncze programy (na przykład umożliwia to maszyna wirtualna Javy) lub nawet całe systemy operacyjne. Możliwe jest też utworzenie maszyny wirtualnej wewnątrz maszyny wirtualnej.</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Charakterystyka systemów operacyjnych</h1>
+
+    <div class="note-subsection">
+        <strong>Czym się różni system monolityczny od systemu warstwowego?</strong>
+        <p>W systemie monolitycznym, poszczególne "warstwy" nie są w jasny sposób zdefiniowane, a cały system operacyjny działa w przestrzeni jądra. </p>
+        <p>Systemy operacyjne są natomiast podzielone na komunikujące się między sobą warstwy, z których każda ma odrębne zadania</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Co charakteryzuje systemy z mikrojądrem?</strong>
+        <p>Mikrojądro to jądro zredukowane do wyłącznie małego zbioru funkcji rdzeniowych. Przykładowe mikrojądro to Jądro Mach (Mach Kernel). </p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>MS-DOS</strong>
+        <ul>
+            <li>Brak wyraźnego podziału na moduły</li>
+            <li>Brak wydzielonych interfejsów i poziomów funkcjonalności - np. programy użytkowe mogą pisać bezpośrednio po ekranie</li>
+            <li>System jednozadaniowy, jednoużytkownikowy</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Windows</strong>
+        <p>Popularny system graficzny, będący najpierw nakładką na MS-DOS, a następnie samodzielnym systemem operacyjnym.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Unix</strong>
+        <ul>
+            <li>System warstwowy: najniższa warstwa to warstwa sprzętu, a najwyższa to warstwa interfejsu użytkownika</li>
+            <li>Każda warstwa korzysta z funkcji (operacji) i usług tylko niżej położonych warstw</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>THE</strong>
+        <ul>
+            <li>System warstwowy, podzielony na 6 warstw, oznaczonych cyframi od 0 do 5</li>
+            <li>System wsadowy</li>
+            <li>Rozwiązywał zakleszczenia algorytmem bankiera</li>
+        </ul>
+    </div>
+</section>
+
 </div>
 
 

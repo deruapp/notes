@@ -36,7 +36,7 @@
                     </li>
                 
                     <li class="nav-item">
-                        <a class="nav-link" href="/notes/notepage/sem1/lectures/algorytmy_i_struktury_danych/wyk_algorytmy_i_struktury_danych_info/">Informacje o zaliczeniu i wykładowcy</a>
+                        <a class="nav-link" href="/notes/notepage/sem1/lectures/algorytmy_i_struktury_danych/wyk_algorytmy_i_struktury_danych_info/">Pytania na zaliczenie</a>
                     </li>
                 
             </ul>
@@ -516,10 +516,35 @@
     </div>
 
     <div class="note-subsection">
-        <strong>Graf Eulerowski</strong>
+        <strong>Cykl i ścieżka Eulera</strong>
         <ul>
-            <li>Graf Eulera (eulerowski) to taki graf, w którym można skonstruować cykl Eulera, czyli cykl, który przechodzi przez każdą jego krawędź dokładnie raz i wraca do punktu wyjściowego.</li>
-            <li>Aby było możliwe zbudowanie takiej ścieżki, każdy wierzchołek grafu z wyjątkiem najwyżej dwóch musi mieć parzysty stopień (łączyć się z parzystą liczbą krawedzi).</li>
+            <li>Graf Eulera (eulerowski) to taki graf, w którym można skonstruować cykl Eulera.</li>
+            <li>Cykl Eulera to cykl, który przechodzi przez każdą krawędź grafu dokładnie raz i wraca do punktu wyjściowego.</li>
+            <li>Ścieżka Eulera to ścieżka przechodząca przez każdą krawędź dokładnie raz (ale niekoniecznie wracająca do punktu wyjścia).</li>
+            <li>Aby dało się skonstruować cykl Eulera wszystkie wierzchołki muszą mieć parzysty stopień, a żeby dało się skonstruować ścieżkę Eulera - wszystkie za wyjątkiem co najwyżej dwóch.</li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Cykl i ścieżka Hamiltona</strong>
+        <ul>
+            <li>Cykl Hamiltona to cykl, który przechodzi przez każdy wierzchołek grafu dokładnie raz i wraca do punktu wyściowego.</li>
+            <li>Ścieżka Hamiltona to ścieżka, która przechodzi przez każdy wierzchołek grafu dokładnie raz (ale niekoniecznie wracająca do punktu wyjściowego).</li>
+            <li>Badaniem minimalnego cyklu Hamiltona dla grafu ważonego zajmuje się <strong>problem komiwojażera.</strong></li>
+        </ul>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Dwa sposoby rozwiązania problemu komiwojażera</strong>
+        <ul>
+            <li>Dokładny - polega na porównaniuze sobą każdej możliwej ścieżki; bardzo trudny w realizacji, bo w przypadku większej ilości miast trzeba będzie wykonać gigantyczną liczbę porównań</li>
+            <li>
+                Heurystyczny - algorytmy o wiele szybsze, ale dające mniej dokładny wynik
+                <ul>
+                    <li>minimalne drzewo rozpinające</li>
+                    <li>najbliższy sąsiad</li>
+                </ul>
+            </li>
         </ul>
     </div>
 
@@ -528,7 +553,10 @@
         <ul>
             <li>Jeśli krawędź łączy dwa wierzchołki, to jest z nimi <strong>incydentna</strong>. W grafach skierowanych rozróżnia się początkowy i końcowy wierzchołek krawędzi.</li>
             <li><strong>Pętla własna</strong> - krawędź łącząca wierzchołek z samym sobą</li>
-            <li><strong>Ścieżka lub droga</strong> - (w grafie skierowanym) sekcwencja krawędzi taka, że koniec jednej krawędzi jest początkiem następnej</li>
+            <li><strong>Ścieżka lub droga</strong> - (w grafie skierowanym) sekwencja krawędzi taka, że koniec jednej krawędzi jest początkiem następnej</li>
+            <li><strong>Stopień wierzchołka</strong> to liczba wychodzących z niego krawędzi.</li>
+            <li><strong>Stopień grafu</strong> to najwyższy stopień wierzchołka występujący w danym grafie. .</li>
+            <li><strong>Graf regularny</strong> stopnia r to graf w którym wszystkie wierzchołki mają stopień r.</li>
             <li><strong>Długością ścieżki</strong> nazywamy liczbę należących do niej krawędzi</li>
         </ul>
     </div>
@@ -576,7 +604,23 @@
     </div>
 </section>
 
+<section class="note-section card card-body bg-light">
+    <h1>Algorytmy które trzeba znać</h1>
+    
+    <div class="note-subsection">
+        <strong>Algorytm dijkstry</strong>
+        <p>Algorytm szukania "najkrótszej ścieżki" pomiędzy punktem początkowym a końcowym. Przez najkrótszą ścieżkę rozumie się taką ścieżkę, której suma wag jest możliwie jak najniższa.</p>
+        <img src="../img/dijkstra.gif" alt="dijkstra" class="img-fluid" />
+        <p>Jego matematyczny zapis polega na przeanalizowaniu każdego wierzchołka - przesuwając się wzdłuż grafu każdemu wierzchołkowi przypisujemy liczbę oznaczającą aktualny koszt dotarcia do tego wierzchołka. Na końcu należy na podstawie tych wyznaczonych liczb odczytać właściwą ścieżkę.</p>
+    </div>
 
+    <div class="note-subsection">
+        <strong>Wieże Hanoi</strong>
+        <p>Są trzy drążki, trzeba przenieść krążki z drążka 1 na drążek 3.</p>
+        <p>Nie można brać więcej niż jednego krążka na raz, nie można kłaść małego na duży.</p>
+        <img src="../img/hanoi.png" alt="hanoi.png" class="img-fluid" />
+    </div>
+</section>
 </div>
 
 

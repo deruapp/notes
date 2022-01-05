@@ -28,15 +28,15 @@
         
                 
                     <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem1/lectures/grafika_komputerowa/wyk_grafika_komputerowa_zeszyt/">Skany zeszytu</a>
+                    </li>
+                
+                    <li class="nav-item">
                         <a class="nav-link active" href="/notes/notepage/sem1/lectures/grafika_komputerowa/wyk_grafika_komputerowa_notatki/">Notatki z zajęć</a>
                     </li>
                 
                     <li class="nav-item">
                         <a class="nav-link" href="/notes/notepage/sem1/lectures/grafika_komputerowa/wyk_grafika_komputerowa_materialy/">Opracowania i materiały do nauki</a>
-                    </li>
-                
-                    <li class="nav-item">
-                        <a class="nav-link" href="/notes/notepage/sem1/lectures/grafika_komputerowa/wyk_grafika_komputerowa_info/">Informacje o zaliczeniu i wykładowcy</a>
                     </li>
                 
             </ul>
@@ -46,55 +46,399 @@
     </header>
 
     <section class="note-section card card-body bg-light">
-    11 października był wykład o historii komputerów, ale nie ma chuja że to będzie na zaliczeniu grafiki komputerowej, więc tylko wypisałem sobie hasła o czym tak mniej więcej było:
+    <h1>Macierze transformacji 2D</h1>
 
-    <ul style="font-size: 75%;">
-        <li>Sumerowie - gliniane tabliczki, pismo sumeryjskie</li>
-        <li>Indie - symbol 0 (zera)</li>
-        <li>Abacus - liczydło</li>
-        <li>mechaniczny kalkulator Da Vinci</li>
-        <li>rok 1614 - Napier odkrył logarytmy</li>
-        <li>tabliczki Napiera</li>
-        <li>1622 - suwak logarytmiczny Oughtreda</li>
-        <li>Blaise Pascal - maszyna Pascaline (1645)</li>
-        <li>Morland - 1666 - mechaniczny kalkulator na korbkę</li>
-        <li>Leibniz - mechanizm umożliwiający dzielenie i mnożenie</li>
-        <li>Jacquard - krosno sterowane kartami perforowanymi</li>
-        <li>Babbage - maszyna do zadań matematycznych</li>
-        <li>Ada Countess of Lovelace - nie, to nie tytuł pornola</li>
-        <li>1844 - Samuel Morse wysłał pierwszą wiadomość telegraficzną</li>
-        <li>1854 - algebra Boola</li>
-        <li>1876 - patent Bella na telefon (telefon Graya był lepszy, ale Graham Bell pierwszy dostał patent)</li>
-        <li>1890 - spis powrzechny w USA, maszyna tabulacyjna</li>
-        <li>1895 - Macroni transmituje pierwsze sygnały radiowe</li>
-        <li>1904 - Fleming - lampa elektronowa, dwuelektronowa, trójelektronowa</li>
-        <li>1927 - pierwszy czarno-biały obraz w TV</li>
-        <li>1936 - teoretyczny model komputera Alana Turninga (maszyna Turinga)</li>
-        <li>1939 - ABC Computer</li>
-        <li>Konrad Zuse - Z1, Z2, Z3...</li>
-        <li>1944 - Harward Mark 1 (brak pamięci, programowało się przełączając kabelki)</li>
-        <li>Grace Hopper - pierwszy bug (robak) komputerowy</li>
-        <li>1946 - ENIAC</li>
-        <li>von Neumann - EDVAC - komputer który potrafił zapamiętać program</li>
-        <li>1945 - Bush, podwaliny hipertekstu</li>
-        <li>1947 - tranzystor</li>
-        <li>1948 - IBM 604</li>
-        <li>Richard Hamming - debugger</li>
-        <li>pamięć bębnowa</li>
-        <li>Menchester Mark I</li>
-        <li>1949 - BINIAC</li>
-        <li>1951 - algorytm Huffmana do kompresji</li>
-        <li>An Wang - pamięć oparta na rdzeniach ferrytowych</li>
-        <li>IBM 701</li>
-        <li>1953 - IBM 650 - pierwszy komp produkowany na skalę masową</li>
-        <li>1954 - Fortran - ogromny krok w przód w programowaniu kompów</li>
-        <li>RANAC 350 - pierwszy dysk twardy, miał 5MB, kosztował $1 000 000 </li>
-        <li>John McCarthy - pierwszy raz użył terminu sztuczna inteligencja </li>
-        <li>Agencja ARPA - później przyczyni się do powstania internetu </li>
-        <li>Sketchpad - pierwszy system graficzny</li>
-    </ul>
+    <div class="note-subsection">
+        <strong>Macierz przesunięcia (translacji)</strong><br/>
+        <math xmlns = "http://www.w3.org/1998/Math/MathML">
+            <mrow>
+               <mo>[</mo>
+               <mtable>
+                  <mtr>
+                     <mtd><mn>1</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>Px</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                     <mtd><mn>Py</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                  </mtr>
+               </mtable>
+               <mo>]</mo>
+            </mrow>
+         </math> 
+    </div>
+
+    <div class="note-subsection">
+        <strong>Macierz skalowania</strong><br/>
+        <math xmlns = "http://www.w3.org/1998/Math/MathML">
+            <mrow>
+               <mo>[</mo>
+               <mtable>
+                  <mtr>
+                     <mtd><mn>sx</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>sy</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                  </mtr>
+               </mtable>
+               <mo>]</mo>
+            </mrow>
+         </math> 
+    </div>
+
+    <div class="note-subsection">
+        <strong>Macierz obrotu</strong><br/>
+        <math xmlns = "http://www.w3.org/1998/Math/MathML">
+            <mrow>
+               <mo>[</mo>
+               <mtable>
+                  <mtr>
+                     <mtd><mn>cos β</mn></mtd>
+                     <mtd><mn>-sin β</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>sin β</mn></mtd>
+                     <mtd><mn>cos β</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                  </mtr>
+               </mtable>
+               <mo>]</mo>
+            </mrow>
+         </math> 
+    </div>    
+    
+    <div class="note-subsection">
+        <strong>Macierz pochylenia (inaczej ścinania, rozciągania) w kierunku ox</strong> (elementy równoległe do ox pozostają równległe, resztę pochylamy)<br/>
+        <math xmlns = "http://www.w3.org/1998/Math/MathML">
+            <mrow>
+               <mo>[</mo>
+               <mtable>
+                  <mtr>
+                     <mtd><mn>1</mn></mtd>
+                     <mtd><mn>h</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                  </mtr>
+               </mtable>
+               <mo>]</mo>
+            </mrow>
+         </math> 
+         <p>      
+            (aby rozciągnąć o określony kąt, pod h podstawiamy tangens tego kąta)
+        </p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Macierz pochylenia (inaczej ścinania, rozciągania) w kierunku oy</strong> (elementy równoległe do oy pozostają równległe, resztę pochylamy)<br/>
+        <math xmlns = "http://www.w3.org/1998/Math/MathML">
+            <mrow>
+               <mo>[</mo>
+               <mtable>
+                  <mtr>
+                     <mtd><mn>1</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>h</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                  </mtr>
+               </mtable>
+               <mo>]</mo>
+            </mrow>
+         </math> 
+         <p>      
+            (aby rozciągnąć o określony kąt, pod h podstawiamy tangens tego kąta)
+        </p>
+    </div>
 </section>
 
+<section class="note-section card card-body bg-light">
+    <h1>Macierze transformacji 3D</h1>
+
+    <div class="note-subsection">
+        <strong>Macierz przesunięcia (translacji)</strong><br/>
+        <math xmlns = "http://www.w3.org/1998/Math/MathML">
+            <mrow>
+               <mo>[</mo>
+               <mtable>
+                  <mtr>
+                     <mtd><mn>1</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>Px</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>Py</mn></mtd>
+                  </mtr>
+
+                  <mtr>
+                    <mtd><mn>0</mn></mtd>
+                    <mtd><mn>0</mn></mtd>
+                    <mtd><mn>1</mn></mtd>
+                    <mtd><mn>Pz</mn></mtd>
+                 </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                  </mtr>
+               </mtable>
+               <mo>]</mo>
+            </mrow>
+         </math> 
+    </div>
+
+    <div class="note-subsection">
+        <strong>Macierz skalowania</strong><br/>
+        <math xmlns = "http://www.w3.org/1998/Math/MathML">
+            <mrow>
+               <mo>[</mo>
+               <mtable>
+                  <mtr>
+                     <mtd><mn>Sx</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>Sy</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+
+                  <mtr>
+                    <mtd><mn>0</mn></mtd>
+                    <mtd><mn>0</mn></mtd>
+                    <mtd><mn>Sz</mn></mtd>
+                    <mtd><mn>0</mn></mtd>
+                 </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                  </mtr>
+               </mtable>
+               <mo>]</mo>
+            </mrow>
+         </math> 
+    </div>
+
+    <div class="note-subsection">
+        <strong>Macierz obrotu wokół osi X</strong><br/>
+        <math xmlns = "http://www.w3.org/1998/Math/MathML">
+            <mrow>
+               <mo>[</mo>
+               <mtable>
+                  <mtr>
+                     <mtd><mn>1</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>cos β </mn></mtd>
+                     <mtd><mn>-sin β</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+
+                  <mtr>
+                    <mtd><mn>0</mn></mtd>
+                    <mtd><mn>sin β</mn></mtd>
+                    <mtd><mn>cos β</mn></mtd>
+                    <mtd><mn>0</mn></mtd>
+                 </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                  </mtr>
+               </mtable>
+               <mo>]</mo>
+            </mrow>
+         </math> 
+    </div>
+
+    <div class="note-subsection">
+        <strong>Macierz obrotu wokół osi Y</strong><br/>
+        <math xmlns = "http://www.w3.org/1998/Math/MathML">
+            <mrow>
+               <mo>[</mo>
+               <mtable>
+                <mtr>
+                    <mtd><mn>cos β </mn></mtd>
+                    <mtd><mn>0</mn></mtd>
+                    <mtd><mn>sin β</mn></mtd>
+                    <mtd><mn>0</mn></mtd>
+                 </mtr>
+
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+                  
+                  <mtr>
+                    <mtd><mn>-sin β</mn></mtd>
+                    <mtd><mn>0</mn></mtd>
+                    <mtd><mn>cos β</mn></mtd>
+                    <mtd><mn>0</mn></mtd>
+                 </mtr>
+                  
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                  </mtr>
+               </mtable>
+               <mo>]</mo>
+            </mrow>
+         </math> 
+    </div>
+
+    <div class="note-subsection">
+        <strong>Macierz obrotu wokół osi Z</strong><br/>
+        <math xmlns = "http://www.w3.org/1998/Math/MathML">
+            <mrow>
+               <mo>[</mo>
+               <mtable>
+                <mtr>
+                    <mtd><mn>cos β </mn></mtd>
+                    <mtd><mn>-sin β</mn></mtd>
+                    <mtd><mn>0</mn></mtd>
+                    <mtd><mn>0</mn></mtd>
+                 </mtr>
+
+                 <mtr>
+                    <mtd><mn>sin β</mn></mtd>
+                    <mtd><mn>cos β</mn></mtd>
+                    <mtd><mn>0</mn></mtd>
+                    <mtd><mn>0</mn></mtd>
+                 </mtr>
+
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                  </mtr>
+                                    
+                  <mtr>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>0</mn></mtd>
+                     <mtd><mn>1</mn></mtd>
+                  </mtr>
+               </mtable>
+               <mo>]</mo>
+            </mrow>
+         </math> 
+    </div>
+</section>
+
+
+<section class="note-section card card-body bg-light">
+    <h1>Algorytm Cohena-Sutherlanda</h1>
+
+    <a href="../files/cohen-sutherland-1.jpg" data-toggle="lightbox">
+        <img src="../files/cohen-sutherland-1.jpg" class="note-img img-fluid" style="width: 250px; margin-bottom: 20px;" />
+    </a>
+
+    <a href="../files/cohen-sutherland-2.jpg" data-toggle="lightbox">
+        <img src="../files/cohen-sutherland-2.jpg" class="note-img img-fluid" style="width: 250px;" />
+    </a>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <h1>Algorytm Bresenhama (dla linii)</h1>
+
+    <a href="../files/bresenham-1.jpg" data-toggle="lightbox">
+        <img src="../files/bresenham-1.jpg" class="note-img img-fluid" style="width: 250px; margin-bottom: 20px;" />
+    </a>
+
+    <a href="../files/bresenham-2.jpg" data-toggle="lightbox">
+        <img src="../files/bresenham-2.jpg" class="note-img img-fluid" style="width: 250px; margin-bottom: 20px;" />
+    </a>
+
+    <a href="../files/bresenham-3.jpg" data-toggle="lightbox">
+        <img src="../files/bresenham-3.jpg" class="note-img img-fluid" style="width: 250px; margin-bottom: 20px;" />
+    </a>
+</section>
+
+<section class="note-section card card-body bg-light">
+   <h1>Algorytm Bresenhama (dla okręgu)</h1>
+
+   <a href="../files/kolko-1.png" data-toggle="lightbox">
+       <img src="../files/kolko-1.png" class="note-img img-fluid" style="width: 250px; margin-bottom: 20px;" />
+   </a>
+
+   <a href="../files/kolko-2.png" data-toggle="lightbox">
+       <img src="../files/kolko-2.png" class="note-img img-fluid" style="width: 250px; margin-bottom: 20px;" />
+   </a>
+</section>
 </div>
 
 
