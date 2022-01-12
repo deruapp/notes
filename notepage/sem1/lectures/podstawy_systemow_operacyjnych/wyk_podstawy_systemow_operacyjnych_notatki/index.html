@@ -49,11 +49,6 @@
     </header>
 
     <section class="note-section card card-body bg-light">
-    Notatki z tego przedmiotu kiedyś tu może będą<br />
-    Chociaż te prezentacje to też całkiem spoko notatki
-</section>
-
-<section class="note-section card card-body bg-light">
     <h1>System operacyjny</h1>
 
     <div class="note-subsection">
@@ -324,8 +319,8 @@
     </div>
 
     <div class="note-subsection">
-        <strong>Jak odczytywać grafy przydziału zasobów?</strong>
-        <img src="files/graf-przydzialu.png" />
+        <strong>Jak odczytywać grafy przydziału zasobów?</strong><br/>
+        <img src="../files/graf-przydzialu.png" />
         <p>Kropki u góry, to procesy (P).</p>
         <p>Prostokąty u dołu, to zasoby (Z).</p>
         <p>Strzałki wychodzące od procesu, do zasobu, to zamówienia na zasoby.</p>
@@ -467,7 +462,7 @@
         <strong>Sposoby przeszukiwania dysków</strong>
         <ul>
             <li>metoda FCFS – First Come First Serve (jak przy planowaniu przydziału procesora), przeszukiwanie dysku realizowane według kolejki ścieżek</li>
-            <li>metoda SSFT  - Shortest Seek Time First – przeszukiwanie dysku realizowane jest poprzez  poruszanie się na zasadzie punkt najmniej oddalony od obecnego najpierw;</li> 
+            <li>metoda SSTF  - Shortest Seek Time First – przeszukiwanie dysku realizowane jest poprzez poruszanie się na zasadzie "punkt najmniej oddalony od obecnego najpierw";</li> 
             <li>metoda SCAN – przeszukiwanie dysku realizowane jest poprzez powrót do punktu 0 przez 
             wszystkie punkty mniejsze niż obecny i następnie przejście przez punkty większe niż punkt z którego zaczęto;</li>
             <li>metoda C-SCAN – Cyclic SCAN – na odwrót niż wyżej, z punktu startowego do punktu 
