@@ -1,51 +1,78 @@
 <!DOCTYPE html>
- <html lang="pl">
+ <html>
  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/notes/assets/css/libs/bootstrap.min.css" />
-    <link rel="stylesheet" href="/notes/assets/css/libs/ekko-lightbox.css" />
-    <link rel="stylesheet" href="/notes/assets/css/libs/highlight.min.css" />
-    <link rel="stylesheet" href="/notes/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/libs/ekko-lightbox.css" />
+    <link rel="stylesheet" href="/assets/css/libs/highlight.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
 
-    <script src="/notes/assets/js/libs/jquery-3.6.0.min.js"></script>
-    <script src="/notes/assets/js/libs/bootstrap.min.js"></script>
-    <script src="/notes/assets/js/libs/ekko-lightbox.min.js"></script>
-    <script src="/notes/assets/js/libs/highlight.min.js"></script>
+    <script src="/assets/js/libs/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/libs/bootstrap.min.js"></script>
+    <script src="/assets/js/libs/ekko-lightbox.min.js"></script>
+    <script src="/assets/js/libs/highlight.min.js"></script>
 
+    <!--MathJax-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-    <title>Notatki z informatyki stosowanej</title>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+    <meta name="description" content=""/>
+    <title>
+        
+            Grafika komputerowa | Najprzydatniejsze fragmenty notatek
+        
+        Katalog notatek z informatyki stosowanej
+    </title>
  </head>
  <body>
     <div class="container" id="main-container">
     <header class="note-section card card-body bg-light">
-        <h1>Grafika komputerowa (wykłady, semestr  1)</h1>
+        <h1>Grafika komputerowa (wykłady, semester  1)</h1>
+        
+            <p style="color: gray; margin-bottom: 8px;">
+                Prowadzący: prof. dr hab. inż. Ryszard Choraś
+            </p>
+        
 
         <nav>
             <ul class="nav nav-tabs">
                 
+
+                
+
+                
+
+                
         
                 
                     <li class="nav-item">
-                        <a class="nav-link" href="/notes/notepage/sem1/lectures/grafika_komputerowa/wyk_grafika_komputerowa_zeszyt/">Skany zeszytu</a>
+                        <a class="nav-link" href="/notepage/sem1/lectures/grafika_komputerowa/wyk_grafika_komputerowa_zeszyt/">Skany zeszytu</a>
                     </li>
                 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/notes/notepage/sem1/lectures/grafika_komputerowa/wyk_grafika_komputerowa_notatki/">Notatki z zajęć</a>
+                        <a class="nav-link" href="/notepage/sem1/lectures/grafika_komputerowa/wyk_grafika_komputerowa_bresenham/">Bresenham Generator</a>
                     </li>
                 
                     <li class="nav-item">
-                        <a class="nav-link" href="/notes/notepage/sem1/lectures/grafika_komputerowa/wyk_grafika_komputerowa_materialy/">Opracowania i materiały do nauki</a>
+                        <a class="nav-link" href="/notepage/sem1/lectures/grafika_komputerowa/wyk_grafika_komputerowa_materialy/">Opracowania i materiały do nauki</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/notepage/sem1/lectures/grafika_komputerowa/wyk_grafika_komputerowa_notatki/">Najprzydatniejsze fragmenty notatek</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notepage/sem1/lectures/grafika_komputerowa/wyk_grafika_komputerowa_pytania/">Pytania z kolokwium</a>
                     </li>
                 
             </ul>
         </nav>
     
-        <p style="margin-top: 20px;"><a href="/notes/">(&larr; powrót do strony głównej)</a></p>
+        <p style="margin-top: 20px;"><a href="/">(&larr; powrót do strony głównej)</a></p>
     </header>
 
     <section class="note-section card card-body bg-light">
@@ -416,7 +443,7 @@
 </section>
 
 <section class="note-section card card-body bg-light">
-    <h1>Algorytm Bresenhama (dla linii)</h1>
+    <h1>Algorytm Bresenhama dla linii o \(m ∈ (0, 1)\)</h1>
 
     <a href="../files/bresenham-1.jpg" data-toggle="lightbox">
         <img src="../files/bresenham-1.jpg" class="note-img img-fluid" style="width: 250px; margin-bottom: 20px;" />
@@ -446,12 +473,17 @@
 
 
     <script>hljs.highlightAll();</script>
-    <script src="/notes/assets/js/normalize-indents.js"></script>
+    <script src="/assets/js/normalize-indents.js"></script>
     <script>
         $(document).on('click', '[data-toggle="lightbox"]', function(event) {
             event.preventDefault();
             $(this).ekkoLightbox();
         });
+    </script>
+    <script>
+        MathJax = {
+            chtml: { displayAlign: 'left' }
+        };
     </script>
  </body>
 </html>
