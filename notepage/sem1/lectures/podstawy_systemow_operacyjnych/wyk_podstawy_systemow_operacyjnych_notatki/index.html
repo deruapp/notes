@@ -103,13 +103,14 @@
         <ul>
             <li>inicjalnie sterowanie było w monitorze </li>
             <li>monitor przekazywał sterowanie do danego zadania </li>
-            <li>po zakończeniu zadania sterowanie wracało do monitora</li>
+            <li>po zakończeniu zadania sterowanie wracało do monitora, który mógł znowu przekazać sterowanie do innego zadania</li>
         </ul>
     </div>
 
     <div class="note-subsection">
         <strong>Czym był wsadowy typ pracy?</strong>
-        <p>W trybie wsadowym ten sam typ zadań realizowany razem, bez rekonfiguracji systemu.</p>
+        <p>W trybie wsadowym ten sam typ zadań realizowany jeden po drugim, bez rekonfiguracji systemu.</p>
+        <p>Systemy wsadowe można skojarzyć z programem monitor. Program monitor realizował funkcje systemu wsadowego.</p>
     </div>
 
     <div class="note-subsection">
@@ -335,6 +336,18 @@
     <div class="note-subsection">
         <strong>Na czym polega zakleszczenie?</strong>
         <p>O zakleszczeniu mówimy wtedy, gdy dwa procesy oczekują na wzajemnie przetrzymywane zasoby. <strong>Zakleszczenie</strong> to inaczej blokada.</p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Jakie są warunki konieczne zakleszczenia?</strong><br/>
+        <strong>Albo: są konieczne warunki blokady?</strong>
+
+        <ul>
+            <li><u>Wzajemne wykluczanie</u> — przynajmniej jeden zasób musi być niepodzielny, czyli używanie egzemplarza tego zasobu przez jeden proces uniemożliwia używanie go przez inny proces do czasu zwolnienia.</li>
+            <li><u>Przetrzymywanie i oczekiwanie</u> — proces, któremu przydzielono jakieś jednostki, oczekuje na dodatkowe jednostki blokowane przez inny proces.</li>
+            <li><u>Brak wywłaszczeń</u> — jednostki zasobu zwalniane są tylko z inicjatywy odpowiednich procesów.</li>
+            <li><u>Cykl w oczekiwaniu</u> — istnieje podzbiór {P1 ,...., Pk} ⊆ P taki, że P1, czeka na jednostkę zasobu przetrzymywaną przez P2, P2 na jednostkę przetrzymywany przez P3 ,..., Pk czeka na jednostkę przetrzymywany przez P1.</li>
+        </ul>
     </div>
 
     <div class="note-subsection">
@@ -643,11 +656,12 @@
     </div>
 
     <div class="note-subsection">
-        <strong>THE</strong>
+        <strong>THE [skrót od Technische Hogeschool Eindhoven]</strong>
         <ul>
             <li>System warstwowy, podzielony na 6 warstw, oznaczonych cyframi od 0 do 5</li>
             <li>System wsadowy</li>
             <li>Rozwiązywał zakleszczenia algorytmem bankiera</li>
+            <li>Więcej info: <a href="https://en.wikipedia.org/wiki/THE_multiprogramming_system">wikipedia.org</a></li>
         </ul>
     </div>
 </section>

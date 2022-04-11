@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/notes/assets/css/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/ekko-lightbox.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/highlight.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/style.css" />
+
+    <script src="/notes/assets/js/libs/jquery-3.6.0.min.js"></script>
+    <script src="/notes/assets/js/libs/bootstrap.min.js"></script>
+    <script src="/notes/assets/js/libs/ekko-lightbox.min.js"></script>
+    <script src="/notes/assets/js/libs/highlight.min.js"></script>
+
+    <!--MathJax-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+    <meta name="description" content=""/>
+    <title>
+        
+            Podstawy baz danych | Notatka z wykładu
+        
+        Katalog notatek z informatyki stosowanej
+    </title>
+ </head>
+ <body>
+    <div class="container" id="main-container">
+    <header class="note-section card card-body bg-light">
+        <h1>Podstawy baz danych (wykłady, semester  2)</h1>
+        
+            <p style="color: gray; margin-bottom: 8px;">
+                Prowadzący: dr inż. Zbigniew Lutowski
+            </p>
+        
+
+        <nav>
+            <ul class="nav nav-tabs">
+                
+
+                
+
+                
+
+                
+        
+                
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/notes/notepage/sem2/lectures/bazy_danych/wyk_bazy_danych_notatka/">Notatka z wykładu</a>
+                    </li>
+                
+            </ul>
+        </nav>
+    
+        <p style="margin-top: 20px;"><a href="/notes/">(&larr; powrót do strony głównej)</a></p>
+    </header>
+
+    <section class="note-section card card-body bg-light">
+    <strong>Cztery komponenty językowe</strong>
+
+    <div>
+        DDL – Data Definition Language<br/>
+        DML – Data Manipulation Language<br/>
+        DCL – Data Control Language<br/>
+        TCL – Transaction Control Language
+    </div>
+
+    <img src="../img/dml.png" class="img-fluid" style="width: 40%; border: 1px solid black;" />
+</section>
+
+<section class="note-section card card-body bg-light">
+    <strong>Garść pojęć</strong>
+
+    <div>
+        <div><strong>Współdzielenie danych</strong><br/>
+        Korzystanie z danych przez więcej niż jednego klienta – współbieżność dostępu do danych.</div>
+
+        <div style="margin: 1rem;"><strong>Integracja danych</strong><br/>
+        Wszystkie dane przechowywane w jednym miejscu, unikanie nadmiarowości danych,
+        ułatwiona administracja danymi, ułatwione uzyskiwanie informacji wymagających łączenia ze
+        sobą różnych zbiorów danych</div>
+
+        <div><strong>Integralność (spójność) danych</strong><br/>
+        Zachowanie prawidłowych związków pomiędzy danymi mimo ich nieustannej aktualizacji</div>
+
+        <div style="margin: 1rem;"><strong>Bezpieczeństwo danych</strong><br/>
+        Ograniczenie dostępu do danych osobom nieuprawnionym, scentralizowany dostęp do
+        danych umożliwia zastosowanie własnych mechanizmów kontroli dostępu do danych</div>
+
+        <div><strong>Abstrakcja i niezależność danych</strong><br/>
+        Ukrycie wewnętrznej organizacji bazy danych przed użytkownikami – programami
+        użytkowymi, zmiana wewnętrznej organizacji b.d. nie powoduje konieczności zmian w
+        programach użytkowych</div>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <strong>Architektura i skalowalność</strong>
+
+    <div class="note-subsection">
+        <strong>Dwie architektury</strong>
+
+        <p>
+            <u>Architektura klient – serwer</u><br/>
+            Zapytania nie mogą być inicjowane ze strony serwera; wszystko musi być inicjowane przez
+            klienta.
+        </p>
+
+        <p>
+            <u>Architektura 3-warstwowa: sieć – serwer aplikacji – serwer bazodanowy</u><br/>
+            Serwer aplikacji komunikuje się z serwerem bazodanowym.
+        </p>
+    </div>
+
+    <div class="note-subsection">
+        <strong>Dwa rodzaje skalowalności</strong><br/>
+
+        <img src="../img/skalowalnosc.png" class="img-fluid" style="width: 40%; border: 1px solid black;" />
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <strong>Systemy NoSQL</strong>
+
+    <div class="note-subsection">
+        Klucz ---> wartość<br/>
+        Redis, Memcached, DynamoDB od AWS
+    </div>
+
+    <div class="note-subsection">
+        Systemy kolumnowe<br/>
+        Cassandra, Hadoop
+    </div>
+
+    <div class="note-subsection">
+        Systemy dokumentowe<br/>
+        MongoDB
+    </div>
+
+    <div class="note-subsection">
+        Oparte na grafach<br/>
+        neo4j -> Cypher Query Language  [more like ciekawostka]
+    </div>
+</section>
+</div>
+
+
+    <script>hljs.highlightAll();</script>
+    <script src="/notes/assets/js/normalize-indents.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+    <script>
+        MathJax = {
+            chtml: { displayAlign: 'left' }
+        };
+    </script>
+ </body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/notes/assets/css/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/ekko-lightbox.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/highlight.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/style.css" />
+
+    <script src="/notes/assets/js/libs/jquery-3.6.0.min.js"></script>
+    <script src="/notes/assets/js/libs/bootstrap.min.js"></script>
+    <script src="/notes/assets/js/libs/ekko-lightbox.min.js"></script>
+    <script src="/notes/assets/js/libs/highlight.min.js"></script>
+
+    <!--MathJax-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+    <meta name="description" content=""/>
+    <title>
+        
+            Matematyka | Statystyka
+        
+        Katalog notatek z informatyki stosowanej
+    </title>
+ </head>
+ <body>
+    <div class="container" id="main-container">
+    <header class="note-section card card-body bg-light">
+        <h1>Matematyka (laboratorium, semester  2)</h1>
+        
+            <p style="color: gray; margin-bottom: 8px;">
+                Prowadzący: dr Paulina Grzegorek
+            </p>
+        
+
+        <nav>
+            <ul class="nav nav-tabs">
+                
+
+                
+
+                
+
+                
+        
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem2/labs/matematyka/lab_matematyka_notatki/">Notatki - Octave</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/notes/notepage/sem2/labs/matematyka/lab_matematyka_statystyka/">Statystyka</a>
+                    </li>
+                
+            </ul>
+        </nav>
+    
+        <p style="margin-top: 20px;"><a href="/notes/">(&larr; powrót do strony głównej)</a></p>
+    </header>
+
+    <section class="note-section card card-body bg-light">
+    <div class="note-subsection">
+        <b>Wstęp teoretyczny: <br/></b>
+
+        Funkcja gęstości wygląda następująco:<br/>
+        <img src="../files/gauss.png" style="width: 35%; border: 1px solid black;" />
+
+        <br><br>Funkcja jest dana parametrami \(N(μ, ρ)\), <br>
+        gdzie μ oznacza przesunięcie (miejsce na osi X, gdzie jest najwyższy punkt funkcji),<br>
+        natomiast ρ to współczynnik spłaszczenia - od jego wartości zależy jak stroma lub płaska jest funkcja
+
+        <br><br>Pojęcie "standardowy rozkład normalny" oznacza funkcję \(N(0, 1)\)
+
+        <br><br>Funkcja, którą Octave dla nas tworzy, wygląda następująco.<br>
+        Pod wartości μ oraz ρ są wstawiane konkretne liczby.<br>
+        <img src="../files/gauss2.png" style="width: 35%; border: 1px solid black;" />
+        <br>(<i>nie trzeba znać tego wzoru ani zapisywać go w Octave, funkcje których będziemy używać mają ten wzór już wbudowany</i>)
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <div class="note-subsection">
+        <b>Octave - funkcje których będziemy używać: <br/><br></b>
+
+        Funkcja \(normpdf(x, μ, ρ)\) zwraca wartość funkcji \(N(μ, ρ)\) dla wskazanego argumentu \(x\).
+        <pre><code>
+            # Zwraca wartość funkcji N(0, 1) dla argumentu x=100
+            normpdf(100, 0, 1)
+        </code></pre>
+
+        Funkcja \(normcdf(x, μ, ρ)\) zwraca wartość dystrybuanty \(P(X≤x)\) dla funkcji \(N(μ, ρ)\).
+        <pre><code>
+            # Zwraca wartość dystrubuanty w punkcie x=100 dla funkcji N(0, 1)
+            # Wartość dystrubuanty to inaczej wartość prawdopodobieństwa
+            normpdf(100, 0, 1)
+        </code></pre>
+    </div>
+
+    <div class="note-subsection">
+        <b>Standardowy rozkład normalny: <br/><br></b>
+
+        Dla standardowego rozkładu normalnego - czyli funkcji \(N(0, 1)\) można pominąć pisanie dwóch ostatnich argumentów. Octave "domyśli się", że chodzi nam o μ=0, ρ=1
+
+        <pre><code>
+            normcdf(100, 0, 1) 
+            # to jest to samo co 
+            normcdf(100)
+
+            normpdf(20)
+            # to jest to samo co
+            normpdf(20, 0, 1)
+        </code></pre>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <b>Przykładowe zadania:</b>
+    <i>(zgodnie z instrukcją na Moodle, wszystkie wyniki są zaokrąglane do 3 miejsc po przecinku)</i>
+
+    <div class="note-subsection">
+        <b>Podaj maksimum funkcji gęstości standardowego rozkładu normalnego \(N(0, 1)\).</b>
+
+        <p>Funkcja gęstości osiąga swoje maksimum w punkcie środkowym, czyli w punkcie μ. W tym przypadku mamy dane μ=0, zatem trzeba obliczyć wartość funkcji gęstości \(N(0, 1)\) w punkcie 0.</p>
+
+        <pre><code>
+            normpdf(0, 0, 1)
+        </code></pre>
+
+        <strong>Prawidłowa odpowiedź: 0,398</strong>
+    </div>
+
+    <hr/>
+
+    <div class="note-subsection">
+        <b>Podaj maksimum funkcji gęstości rozkładu normalnego \(N(1, 2)\).</b>
+
+        <p>Analogicznie jak wyżej, tylko tutaj mamy podaną inną funkcję gęstości. W tej funkcji mamy dane μ=1, zatem obliczamy wartość funkcji w punkcie x=1.</p>
+
+        <pre><code>
+            normpdf(1, 1, 1)
+        </code></pre>
+
+        <strong>Prawidłowa odpowiedź: 0,200</strong>
+    </div>
+
+    <hr/>
+
+    <div class="note-subsection">
+        <b>Podaj wartość funkcji gęstości w punkcie 3 dla rozkładu normalnego \(N(4, 1/3)\).</b>
+
+        <p>Obliczamy to korzystając z funkcji normpdf.</p>
+
+        <pre><code>
+            normpdf(3, 4, 1/3)
+        </code></pre>
+
+        <strong>Prawidłowa odpowiedź: 0,013</strong>
+    </div>
+
+    <hr/>
+
+    <div class="note-subsection">
+        <b>Podaj prawdopodobieństwo \(P(X≤5)\) dla funkcji \(N(4, 1/3)\).</b>
+
+        <p>Obliczamy to korzystając z funkcji normcdf.</p>
+
+        <pre><code>
+            normcdf(5, 4, 1/3)
+        </code></pre>
+
+        <strong>Prawidłowa odpowiedź: 0,999</strong>
+    </div>
+
+    <hr/>
+
+    <div class="note-subsection">
+        <b>X ma standardowy rozkład normalny. Podaj prawdopodobieństwo \(P(x≤1,4)\).</b>
+
+        <p>Standardowy rozkład normalny to \(N(0, 1)\). Zatem używamy funkcji normcdf w następujący sposób:</p>
+
+        <pre><code>
+            normcdf(1.4, 0, 1)
+        </code></pre>
+
+        <strong>Prawidłowa odpowiedź: 0,919</strong>
+    </div>
+
+    <hr/>
+
+    <div class="note-subsection">
+        <b>X ma standardowy rozkład normalny. Podaj prawdopodobieństwo \(P(x>1,4)\).</b>
+
+        <p>Wcześniej liczyliśmy dystrubuantę dla x≤1,4. Teraz mamy do obliczenia x>1,4.</p>
+        <p>Trzeba więc wziąć dystrybuantę z poprzedniego zadania i odjąć ją od jedynki.</p>
+
+        <pre><code>
+            1 - normcdf(1.4, 0, 1)
+        </code></pre>
+
+        <strong>Prawidłowa odpowiedź: 0,081</strong>
+    </div>
+
+    <hr/>
+
+    <div class="note-subsection">
+        <b>X ma standardowy rozkład normalny. Podaj prawdopodobieństwo \(P(0.8 &lt; X ≤ 1.6)\).</b>
+
+        <p>Tutaj trzeba obliczyć dwie dystrybuanty, a następnie odjąć tą drugą od tej pierwszej.</p>
+
+        <pre><code>
+            normcdf(1.6) - normcdf(0.8)
+        </code></pre>
+
+        <strong>Prawidłowa odpowiedź: 0,157</strong>
+    </div>
+
+    <hr/>
+
+    <div class="note-subsection">
+        <b>Jest dana funkcja \(N(100, 10)\). Oblicz \(P(X≤85)\)</b>
+
+        <p>Typowe zastosowanie funkcji normcdf:</p>
+
+        <pre><code>
+            normcdf(85, 100, 10)
+        </code></pre>
+
+        <strong>Prawidłowa odpowiedź: 0,067</strong>
+    </div>
+
+    <hr/>
+
+    <div class="note-subsection">
+        <b>Jest dana funkcja \(N(100, 10)\). Oblicz \(P(X>115)\)</b>
+
+        <p>Ponieważ użyto tutaj znaku >, a nie ≤, to wynik obliczamy w taki sposób:</p>
+
+        <pre><code>
+            1 - normcdf(115, 100, 10)
+        </code></pre>
+
+        <strong>Prawidłowa odpowiedź: 0,067</strong>
+    </div>
+
+    <hr/>
+
+    <div class="note-subsection">
+        <b>Ile wynosi pole pod dystrybuantą rozkładu normalnego \(N(90, 9)\)?</b>
+        <br><br>
+        <strong>Prawidłowa odpowiedź: nie wiadomo</strong> (w treści zadania nie podano o dystrybuantę w którym punkcie chodzi)
+    </div>
+
+</section>
+</div>
+
+
+    <script>hljs.highlightAll();</script>
+    <script src="/notes/assets/js/normalize-indents.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+    <script>
+        MathJax = {
+            chtml: { displayAlign: 'left' }
+        };
+    </script>
+ </body>
+</html>
