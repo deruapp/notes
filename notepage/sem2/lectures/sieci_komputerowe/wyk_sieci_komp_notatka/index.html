@@ -186,7 +186,7 @@
 
 <section class="note-section card card-body bg-light">
     <strong>Topologie</strong>
-    Topologia fizyczna a logiczna. Rodzaje topologii są szeoko opisane w prezentacji #2.
+    Topologia fizyczna a logiczna. Rodzaje topologii są szeroko opisane w prezentacji #2 na dysku Google.
 </section>
 
 <section class="note-section card card-body bg-light">
@@ -203,6 +203,102 @@
             <li>127.0.0.0/8 - pętla własna</li>
             <li>169.254.0.0/16 - adres lokalnego łącza, gdy nie znaleziono serwera DHCP</li>
             <li>192.0.2.0/24 - testnet</li>
+        </ol>
+    </section>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <strong>IPv6</strong>
+
+    <section class="note-subsection">
+        <strong>Zapis adresu</strong>
+        <p>
+            Adres jest 128 bitowy. Jest podzielony na 8 hekstetów, a każdy hekstet składa się z 4 liczb szesnastkowych. Każdy hekstet ma zatem 16 bitów.<br/><br/>
+
+            <strong>Przykładowy adres:</strong><br/>
+            2001:0db8:0000:0000:0008:0800:200c:417a
+        </p>
+    </section>
+
+    <section class="note-subsection">
+        <strong>Reguły skracania</strong>
+        <p>
+            <ol>
+                <li>Można pomijać zera wiodące w hekstetach</li>
+                <li>Można jednorazowo pominąć hekstety zerowe i zastąpić podwójnym dwukropkiem</li>
+            </ol>
+            2001:0db8:0000:0000:0008:0800:200c:417a --> 2001:db8::8:800:200c:417a
+        </p>
+    </section>
+
+    <section class="note-subsection">
+        <strong>Rodzaje adresów</strong>
+        <p>
+            <ol>
+                <li>
+                    Unicast: komunikacja między dwoma pojedynczymi urządzeniami
+                    <ol>
+                        <li>
+                            Unikalne adresy globalne: adresy routowalne w Internecie
+                            <ul>
+                                <li>trzy pierwsze bity to zawsze 001</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Unikalne adresy lokalne: odpowiednik adresów prywatnych IPv4
+                            <ul>
+                                <li>FC00::/7</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Adresy łącza lokalnego: adres link-local
+                            <ul>
+                                <li>ma go każdy interfejs</li>
+                                <li>(każde urządzenie IPv6 ma dwa adresy: link-local i ten normalny)</li>
+                                <li>adres jest w postaci FE80::/10</li>
+                            </ul>
+                        </li>
+                        <li>Adres pętli zwrotnej: adres ::1/128</li>
+                        <li>Adres nieokreślony: adres ::/128</li>
+                        <li>Adres IPv4 wbudowany w IPv6</li>
+                    </ol>
+                </li>
+
+                <li>
+                    Multicast: komunikacja od jednego urządzenia do kilku urzadzeń naraz
+
+                    <ol>
+                        <li>
+                            Przypisany: komunikacja do z góry ustalonych urządzeń
+                            <ol>
+                                <li>Wszystkie węzły (to samo, co broadcast w IPv4)</li>
+                                <li>Wszystkie routery</li>
+                            </ol>
+                        </li>
+
+                        <li>Solicited node: umożliwia odnajdowanie adresów MAC sąsiadujących urządzeń</li>
+                    </ol>
+                </li>
+
+                <li>Anycast: komunikacja do najbliższego wyznaczonego urządzenia (analogia do dzwonienia na nr 112, gdzie połączenie odbiera najbliższa centrala powiadamiania ratunkowego)</li>
+            </ol>
+        </p>
+    </section>
+
+    <section class="note-subsection">
+        <strong>Sposoby dynamicznego przydzielania adresów</strong>
+
+        <ol>
+            <li>
+                SLAAC: bezstanowa wymiana komunikatów Router Advertisement & Router Solicitaiton<br/>
+                Adres hosta jest wtedy generowany na podstawie adresu MAC (procedura EUI-64) lub losowany
+            </li>
+
+            <li>
+                SLAAC + DHCP: router wysyła tylko część informacji, a o resztę (np o DNSy) trzeba zapytać serwera DHCP
+            </li>
+
+            <li>DHCP: działa tak jak w IPv4, obecnie rzadko używa się tej metody</li>
         </ol>
     </section>
 </section>
