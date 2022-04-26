@@ -63,7 +63,8 @@
     <strong>Modele referencyjne</strong>
 
     <section class="note-subsection">
-        <strong>Model referencyjny stosu protokołów TCP/IP:</strong>
+        <strong>Model TCP/IP:</strong>
+        <p style="font-style: italic;">(uproszczony model, rzadziej stosowany)</p>
         <ol reversed>
             <li>Warstwa aplikacji</li>
             <li>Warstwa transportowa</li>
@@ -74,28 +75,22 @@
 
     <section class="note-subsection">
         <strong>Model OSI/ISO:</strong>
+        <p style="font-style: italic;">(bardziej rozbudowany model, z nim może być związane więcej zadań na kolokwium)</p>
         <ol reversed>
             <li>aplikacji (dns, ftp, http, ntp, smtp, telnet)</li>
             <li>prezentacji (mime, tls, ssl)</li>
             <li>sesji (netbios, l2tp, pptp)</li>
             <li>transportowa (tcp, udp)</li>
             <li>sieciowa (ipv4, ipv6, icmp, ipsec, appletalk)</li>
-            <li>łącza danych (atm, hdlc, arp, slip, ieee802.3, frame relay, ppp, x.25)</li>
-            <li>fizyczna (strumien bitów odpowiednio zakodowany)</li>
+            <li>łącza danych (atm, hdlc, arp, slip, ethernet, frame relay, ppp, x.25)</li>
+            <li>fizyczna (strumień bitów odpowiednio zakodowany)</li>
         </ol>
     </section>
 
     <section class="note-subsection">
         <strong>Model OSI/ISO a model TCP/IP:</strong>
         <div>
-            OSI/ISO -> TCP/IP<br/>
-            Aplikacji -> Aplikacji<br/>
-            Prezentacji -> Aplikacji<br/>
-            Sesji -> Aplikacji<br/>
-            Transportowa -> Transportowa<br/>
-            Sieciowa -> internet<br/>
-            Łącza danych -> Warstwa dostępu do sieci<br/>
-            Fizyczna -> Warstwa dostępu do sieci<br/>
+            <img src="../img/osi-tcp.png" style="border: 1px solid black; width: 600px; "/>
         </div>
     </section>
 
@@ -109,13 +104,12 @@
     </section>
 
     <section class="note-subsection">
-        <strong>Enkapsulacja danych</strong>
-        Warstwa 7,6,5 -> dane<br/>
-        Wastwa 4 -> nagłówek segmentu, dane<br/>
-        Warstwa 3 -> nagłówek pakietu, dane<br/>
-        Warstwa 2 -> nagłówek ramki, dane<br/>
-        Warstwa 1 -> strumień bitów<br/>
-        <u>-- W górę odbieranie, w dół wysyłanie --</u>
+        <strong>Jednostki danych w poszczególnych warstwach</strong><br/>
+        Warstwy 7,6,5 -> dane<br/>
+        Warstwa transportowa -> segment + datagram<br/>
+        Warstwa sieciowa -> pakiet<br/>
+        Warstwa łącza danych -> ramka<br/>
+        Warstwa fizyczna -> strumień bitów<br/>
     </section>
 </section>
 
@@ -143,6 +137,21 @@
         <p>Podwarstwa LLC jest taka sama dla każdego medium transmisyjnego. Podwarstwa MAC natomiast odpowiada za interakcję z warstwą fizyczną i wygląda inaczej dla różnych mediów.</p>
         <p>Zadaniem warstwy łącza danych jest przekazanie ramki do medium transmisyjnego lub odczyt ramki z tego medium i przesłanie jej wyżej. Warstwa łącza danych może też posiadać mechanizmy detekcji błędów.</p>
         <p>Przykładowe protokoły tej warstwy: Ethernet, 802.11 WLAN, PPP, Frame Relay</p>
+    </section>
+
+    <section class="note-subsection">
+        <strong>Warstwa sieci</strong>
+        <p style="text-decoration: underline; text-decoration-style: dotted;">
+            Jednostka danych: pakiet
+        </p>
+        <p>Warstwa wykonuje 4 główne operacje: </p>
+        <ol>
+            <li>Enkapsulacja: dane z warstwy 4 otrzymują nagłówek warstwy 3 wraz z adresami</li>
+            <li>Deenkapsulacja: jeśli adres jest poprawny, a dane są przekazywane do warstwy wyższej</li>
+            <li>Routing: dane są kierowane do odpowiedniej sieci za pośrednictwem routerów</li>
+            <li>Adresowanie: warstwa sieci zapewnia mechanizmy adresowania (obecnie głównie używa się adresacji IPv4 oraz IPv6)</li>
+        </ol>
+        <p>Warstwy sieci "nie interesuje", czy pakiety dotarły. Można to porównać do wysyłania listu na poczcie - wysyłając list nie mamy pojęcia, czy dojdzie do nadawcy i czy go odbierze. Z tego powodu protokół IP nazywany jest protokołem zawodnym.</p>
     </section>
 </section>
 
@@ -185,8 +194,12 @@
 </section>
 
 <section class="note-section card card-body bg-light">
-    <strong>Topologie</strong>
-    Topologia fizyczna a logiczna. Rodzaje topologii są szeroko opisane w prezentacji #2 na dysku Google.
+    <strong>Topologie fizyczne</strong><br/>
+    <img src="../img/topologie.png" style="border: 1px solid black; width: 600px; "/>
+    <p><u>Topologia gwiazdy</u>: przełącznik w centrum, do przełącznika podłączamy urządzenia końcowe i routery</p>
+    <p><u>Topologia gwiazdy rozszerzonej</u>: tak jak wyżej, ale mamy więcej niż jeden przełącznik</p>
+    <p><u>Topologia pierścienia</u>: dane wędrują od urzadzenia do urządzenia, tak długo, aż jakieś urządzenie je odbierze; topologia bardzo awaryjna, gdyż w przypadku awarii któregokolwiek urządzenia tracimy możliwość komunikacji</p>
+    <p><u>Topologia magistrali</u>: urządzenia podłączone do wspólnego medium transmisyjnego; medium transmisyjne musi być zakończone tzw. terminatorem; topologia dość awaryjna, gdyż w przypadku awarii medium transmisyjnego żadne urządzenie nie może nadawać</p>
 </section>
 
 <section class="note-section card card-body bg-light">
@@ -201,8 +214,17 @@
             <li>172.16.0.0/12 - pula prywatna</li>
             <li>192.168.0.0/16 - pula prywatna</li>
             <li>127.0.0.0/8 - pętla własna</li>
-            <li>169.254.0.0/16 - adres lokalnego łącza, gdy nie znaleziono serwera DHCP</li>
+            <li>169.254.0.0/16 - adres lokalnego łącza, gdy nie znaleziono serwera DHCP (tak zwane adresy APIPA)</li>
             <li>192.0.2.0/24 - testnet</li>
+        </ol>
+    </section>
+
+    <section class="note-subsection">
+        <strong>Trzy rodzaje komunikacji</strong>
+        <ol>
+            <li>Unicast: transmisja między dwoma pojedynczymi urządzeniami</li>
+            <li>Multicast: transmisja do wielu urządzeń naraz; adresy multicastowe mają pierwszy oktet w przedziale 224-239</li>
+            <li>Broadcast: wysłanie danych na adres rozgłoszeniowy powoduje przesłanie tych danych do każdego interfejsu w podsieci</li>
         </ol>
     </section>
 </section>
@@ -242,6 +264,7 @@
                             Unikalne adresy globalne: adresy routowalne w Internecie
                             <ul>
                                 <li>trzy pierwsze bity to zawsze 001</li>
+                                <li>oznacza to, że adres jest postaci 2000::/3</li>
                             </ul>
                         </li>
                         <li>
@@ -302,6 +325,26 @@
         </ol>
     </section>
 </section>
+
+<section class="note-section card card-body bg-light">
+    <strong>Organizacje związane z sieciami</strong>
+
+    <section class="note-subsection">
+        <strong>IANA:</strong>
+        <p>instytucja odpowiedzialna za przyznawanie adresów IP, nazw domen internetowych, oraz za nadzór nad działaniem serwerów DNS na całym świecie</p>
+    </section>
+
+    <section class="note-subsection">
+        <strong>ICANN:</strong>
+        <p>autonomiczna część IANA, zajmuje się domenami najwyższego rzędu i nadzorem nad DNS</p>
+    </section>
+
+    <section class="note-subsection">
+        <strong>NASK</strong>
+        <p>operator polski, zajmuje się między innymi domenami pl</p>
+    </section>
+</section>
+
 </div>
 
 
