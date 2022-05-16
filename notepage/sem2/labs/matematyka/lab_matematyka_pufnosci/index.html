@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/notes/assets/css/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/ekko-lightbox.css" />
+    <link rel="stylesheet" href="/notes/assets/css/libs/highlight.min.css" />
+    <link rel="stylesheet" href="/notes/assets/css/style.css" />
+
+    <script src="/notes/assets/js/libs/jquery-3.6.0.min.js"></script>
+    <script src="/notes/assets/js/libs/bootstrap.min.js"></script>
+    <script src="/notes/assets/js/libs/ekko-lightbox.min.js"></script>
+    <script src="/notes/assets/js/libs/highlight.min.js"></script>
+
+    <!--MathJax-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+    <meta name="description" content=""/>
+    <title>
+        
+            Matematyka | Przedziały ufności
+        
+        Katalog notatek z informatyki stosowanej
+    </title>
+ </head>
+ <body>
+    <div class="container" id="main-container">
+    <header class="note-section card card-body bg-light">
+        <h1>Matematyka (laboratorium, semester  2)</h1>
+        
+            <p style="color: gray; margin-bottom: 8px;">
+                Prowadzący: dr Paulina Grzegorek
+            </p>
+        
+
+        <nav>
+            <ul class="nav nav-tabs">
+                
+
+                
+
+                
+
+                
+        
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem2/labs/matematyka/lab_matematyka_notatki/">Notatki - Octave</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/notes/notepage/sem2/labs/matematyka/lab_matematyka_pufnosci/">Przedziały ufności</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notes/notepage/sem2/labs/matematyka/lab_matematyka_statystyka/">Statystyka</a>
+                    </li>
+                
+            </ul>
+        </nav>
+    
+        <p style="margin-top: 20px;"><a href="/notes/">(&larr; powrót do strony głównej)</a></p>
+    </header>
+
+    <section class="note-section card card-body bg-light">
+    <div class="note-subsection">
+        <b>Rodzaje wariancji: <br/></b>
+
+        <ul>
+            <li>
+                <b>Wariancja</b><br/>
+
+                <div>
+                    <u>Jak obliczyć ręcznie?</u><br/>
+                    <img src="../files/wariancja_normal.png" />
+                </div>
+
+                <div>
+                    <u>Jak obliczyć w GNU/Octave?</u><br/>
+                    Liczba zero, użyta jako drugi argument funkcji <i>var</i>, oznacza żądanie obliczenia zwykłej, niepoprawionej wariancji.
+                    <pre><code>
+                        liczby = [1 2 3 4 819 291 10942 -100]
+                        wariancja = var(liczby, 0)
+                    </code></pre>
+                </div>
+
+                <div>
+                    <u>Dodatkowa informacja</u><br/>
+                    <i>PS. Większość internetu nazywa tę wartość "wariancją populacji". Pod taką nazwą można ją znaleźć na przykład w programie Excel. Doktor Grzegorek zdaje się nie używać tego określenia.</i>
+                </div>
+            </li>
+
+            <li>
+                <b>Wariancja poprawiona</b><br/>
+
+                <div>
+                    <u>Jak obliczyć ręcznie?</u><br/>
+                    <img src="../files/wariancja_poprawiona.png" />
+                </div>
+
+
+                <div>
+                    <u>Jak obliczyć w GNU/Octave?</u><br/>
+                    Liczba 1, użyta jako drugi argument funkcji <i>var</i>, oznacza żądanie obliczenia wariancji poprawionej.
+                    <pre><code>
+                        liczby = [1 2 3 4 819 291 10942 -100]
+                        wariancja = var(liczby, 1)
+                    </code></pre>
+                </div>
+
+                <div>
+                    <u>Dodatkowa informacja</u><br/>
+                    <i>PS. Większość internetu nazywa tę wartość "wariancją próbki". Notatki od doktor Grzegorek używają określenia "wariancja poprawiona", zatem takiej wartości będę używał w niniejszym opracowaniu.</i>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <div class="note-subsection">
+        <b>Rodzaje odchylenia standardowego: <br/></b>
+
+        <ul>
+            <li>
+                <b>Odchylenie standardowe</b><br/>
+
+                <div>
+                    <u>Jak obliczyć ręcznie?</u><br/>
+                    jest to pierwiastek z wariancji (wzór jest powyżej)
+                </div>
+
+                <div>
+                    <u>Jak obliczyć w GNU/Octave?</u><br/>
+                    Liczba zero, użyta jako drugi argument funkcji <i>std</i>, oznacza żądanie obliczenia zwykłego, niepoprawionego odchylenia standardowego.
+                    <pre><code>
+                        liczby = [1 2 3 4 819 291 10942 -100]
+                        wariancja = std(liczby, 0)
+                    </code></pre>
+                </div>
+
+                <div>
+                    <u>Dodatkowa informacja</u><br/>
+                    <i>PS. Większość internetu nazywa tę wartość "odchyleniem standardowym populacji". Pod taką nazwą można ją znaleźć na przykład w programie Excel. Doktor Grzegorek zdaje się nie używać tego określenia.</i>
+                </div>
+            </li>
+
+            <li>
+                <b>Odchylenie standardowe poprawione</b><br/>
+
+                <div>
+                    <u>Jak obliczyć ręcznie?</u><br/>
+                    jest to pierwiastek z odchylenia standardowego poprawionego (wzór jest powyżej)
+                </div>
+
+
+                <div>
+                    <u>Jak obliczyć w GNU/Octave?</u><br/>
+                    Liczba 1, użyta jako drugi argument funkcji <i>std</i>, oznacza żądanie obliczenia odchylenia standardowego poprawionego.
+                    <pre><code>
+                        liczby = [1 2 3 4 819 291 10942 -100]
+                        wariancja = std(liczby, 1)
+                    </code></pre>
+                </div>
+
+                <div>
+                    <u>Dodatkowa informacja</u><br/>
+                    <i>PS. Większość internetu nazywa tę wartość "wariancją próbki". Notatki od doktor Grzegorek używają określenia "wariancja poprawiona", zatem takiej wartości będę używał w niniejszym opracowaniu.</i>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+<section class="note-section card card-body bg-light">
+    <div class="note-subsection">
+        <b>Jak wyznaczać wartości krytyczne: </b><br/>
+
+        Wartości krytyczne to lewy i prawy koniec dystrybuanty danego prawdopodobieństwa. Aby je obliczyć, należy znać trzy parametry:
+        <ol>
+            <li>Poziom ufności (na przykład 90% albo 95%)</li>
+            <li>Żądany rozkład (na przykład rozkład normalny, rozkład chi-kwadrat, rozkład t-studenta)</li>
+            <li>Jeżeli żądany rozkład to rozkład chi-kwadrat albo t-studenta, należy oprócz tego znać liczbę stopni swobody (są one podane w treści zadania)</li>
+        </ol>
+
+        <br/>
+        <p style="text-decoration: underline;">Jak obliczać wartości krytyczne dla rozkładu normalnego</p>
+        <pre><code>
+            #  Pod tę zmienną należy podstawić wartość z zadania
+            poziom_ufnosci = 0.95;
+
+            lewa = (1 - poziom_ufnosci) / 2;
+            prawa = 1 - lewa;
+
+            format long;
+            disp(norminv(lewa));
+            disp(norminv(prawa));
+        </code></pre>
+
+        <p style="text-decoration: underline;">Jak obliczać wartości krytyczne dla rozkładu chi-kwadrat o określonej ilości stopniach swobody</p>
+        <pre><code>
+            #  Pod te dwie zmienne należy podstawić wartości z zadania
+            poziom_ufnosci = 0.95;
+            stopnie_swobody = 99;
+
+            lewa = (1 - poziom_ufnosci) / 2;
+            prawa = 1 - lewa;
+
+            format long;
+            disp(chi2inv(lewa, stopnie_swobody));
+            disp(chi2inv(prawa, stopnie_swobody));
+        </code></pre>
+
+        <p style="text-decoration: underline;">Jak obliczać wartości krytyczne dla rozkładu t-studenta o określonej ilości stopniach swobody</p>
+        <pre><code>
+            #  Pod te dwie zmienne należy podstawić wartości z zadania
+            poziom_ufnosci = 0.95;
+            stopnie_swobody = 99;
+
+            lewa = (1 - poziom_ufnosci) / 2;
+            prawa = 1 - lewa;
+
+            format long;
+            disp(tinv(lewa, stopnie_swobody));
+            disp(tinv(prawa, stopnie_swobody));
+        </code></pre>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <div class="note-subsection">
+        <b>Rodzaje prób: </b><br/>
+
+        <p>Licząc przedział ufności dla wariancji albo średniej, należy mieć świadomość z jakim rodzajem próby pracujemy.</p>
+
+        <ul>
+            <li>Próba mała (do 100 pomiarów)</li>
+            <li>Próba duża (100 pomiarów i powyżej)</li>
+        </ul>
+
+        <p>Ma to znaczenie, ponieważ średnią i wariancję liczymy innymi wzorami dla próby małej i próby dużej. Jeśli próba jest duża, to średnią i wariancję wyznacza rozkład normalny. Jeśli próba jest mała,s to wariancję wyznacza rozkład chi-kwadrat, natomiast średnią wyznacza rozkład t-studenta.</p>
+    </div>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <strong>Wzory na przedziały ufności</strong>
+
+    <p>
+        <a href="http://imif.utp.edu.pl/grzegorek/przedzialy%20ufnosci%20stud.pdf" class="btn btn-info">(link: karta wzorów)</a>
+    </p>
+
+    <p>Powyższa karta wzorów zawiera wzory na:</p>
+
+    <ul>
+        <li>Średnią (dla próby małej i dużej)</li>
+        <li>Wariancję (dla próby małej i dużej)</li>
+        <li>Część populacji (na przykład ile procent patyczaków lubi jodłę, a ile świerk - w tym przypadku nie ma rozgraniczenia na próbę małą i dużą, wszystko wyznaczamy rozkładem normalnym)</li>
+    </ul>
+
+    <p>Wszystkie powyższe wzory odwołują się do wartości krytycznych różnych rozkładów - więc należy umieć obliczać wartości krytyczne wszystkich 3 rozkładów (tinv, norminv, chi2inv).</p>
+</section>
+
+<section class="note-section card card-body bg-light">
+    <strong>Bonus: jak obliczać średnią/medianę/wariancję/odchylenie standardowe metodą bootstrapową?</strong>
+
+    <p>Zamiast <i>mean</i> podstawiamy funkcję która ma być obliczona (mean/median/var/std)</p>
+    <pre><code>
+        proba = [1 2 3 4 5];
+        poziomUfnosci = 0.95;
+
+        rs=100000;
+
+        n = length(proba);
+        reproby = proba(randi(n, rs, n));
+        srednie = sort(mean(reproby'));
+        l = round((1 - poziomUfnosci)/2 * rs);
+        p = round(rs - ((1 - poziomUfnosci)/2 * rs));
+        p = [srednie(l) srednie(p)];
+
+        format long g;
+        disp(p);
+    </code></pre>
+</section>
+</div>
+
+
+    <script>hljs.highlightAll();</script>
+    <script src="/notes/assets/js/normalize-indents.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+    <script>
+        MathJax = {
+            chtml: { displayAlign: 'left' }
+        };
+    </script>
+ </body>
+</html>
